@@ -18,6 +18,10 @@
   list-style-type: none;
 }
 
+.marquee__content_reverse {
+  animation-direction: reverse;
+}
+
 /* Pause animation when reduced-motion is set */
 @media (prefers-reduced-motion: reduce) {
   .marquee__content {

@@ -2,11 +2,18 @@ import Image from "next/image";
 import styles from "./marquee.module.css"
 import shuffle from "../utils/shuffle";
 
-export default function Marquee({ items }: { items: string[] }) {
+export default function Marquee({ items, shuffleItems, reverse }: {
+  items: string[]
+  shuffleItems?: boolean
+  reverse?: boolean
+}) {
+  if (shuffleItems) {
+    items = shuffle(items);
+  }
   return (
     <div className={styles.marquee}>
-      <ul className={styles.marquee__content}>
-        {shuffle(items).map(item => (
+      <ul className={`${styles.marquee__content} ${reverse ?? styles.marquee__content_reverse}`}>
+        {items.map(item => (
           <li key={item}>
             <Image
               height="200"
@@ -20,8 +27,8 @@ export default function Marquee({ items }: { items: string[] }) {
         ))}
       </ul>
 
-      <ul aria-hidden="true" className={styles.marquee__content}>
-        {shuffle(items).map(item => (
+      <ul className={`${styles.marquee__content} ${reverse ?? styles.marquee__content_reverse}`}>
+        {items.map(item => (
           <li key={item}>
             <Image
               height="200"
