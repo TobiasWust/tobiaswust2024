@@ -2,7 +2,7 @@ import Marquee from "./Marquee";
 
 export default function Skills() {
   return (
-    <section>
+    <section id="skills">
       <h2>SKILLS</h2>
       <Marquee
         shuffleItems={true}

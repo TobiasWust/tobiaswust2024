@@ -2,7 +2,7 @@ import style from './Contact.module.css'
 
 export default function Contact() {
   return (
-    <section>
+    <section id="contact">
       <h2>CONTACT</h2>
       <p>Share the details of your project with me, and I&apos;ll get back to you within 48 hours.</p>
 
