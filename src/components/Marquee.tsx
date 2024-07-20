@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./marquee.module.css"
+import styles from "./Marquee.module.css"
 import shuffle from "../utils/shuffle";
 
 export default function Marquee({ items, shuffleItems, reverse }: {
