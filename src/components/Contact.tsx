@@ -3,7 +3,7 @@ import style from './Contact.module.css'
 export default function Contact() {
   return (
     <section id="contact">
-      <h2>CONTACT</h2>
+      <h2>GET IN TOUCH</h2>
       <p>Share the details of your project with me, and I&apos;ll get back to you within 48 hours.</p>
 
       <form className={style.form} name="contact" method="POST" data-netlify="true">

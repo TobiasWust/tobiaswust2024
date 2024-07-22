@@ -16,8 +16,8 @@ export default function Marquee({ items, shuffleItems, reverse }: {
         {items.map(item => (
           <li key={item}>
             <Image
-              height="200"
-              width="200"
+              height="100"
+              width="100"
               alt={item}
               title={item.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase())}
               // src={`https://github.com/gilbarbara/logos/raw/main/logos/${item}.svg`}
@@ -31,8 +31,8 @@ export default function Marquee({ items, shuffleItems, reverse }: {
         {items.map(item => (
           <li key={item}>
             <Image
-              height="200"
-              width="200"
+              height="100"
+              width="100"
               alt={item}
               title={item.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase())}
               src={`https://cdn.svgporn.com/logos/${item}.svg`}

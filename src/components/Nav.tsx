@@ -1,6 +1,9 @@
+import styles from "./Nav.module.scss";
+
 export default function Nav() {
   return (
-    <nav>
+    <nav className={styles.nav}>
+      <div>logo</div>
       <ul>
         <li>
           <a href="#about">About</a>
