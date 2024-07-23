@@ -1,3 +1,4 @@
+import skills from "../data/skills";
 import Marquee from "./Marquee";
 
 export default function Skills() {
@@ -6,27 +7,11 @@ export default function Skills() {
       <h2>What I Bring to the Table</h2>
       <Marquee
         shuffleItems={true}
-        items={[
-          'react', 'nextjs', 'javascript', 'typescript',
-          'docker', 'redux', 'supabase',
-          'react-query', 'nodejs', 'gulp', 'webpack', 'vitejs', 'handlebars',
-          'stripe', 'openai', 'tailwindcss', 'mobx', 'mongodb', 'php',
-          'jquery', 'couchdb', 'wordpress', 'microsoft-azure', 'aws', 'html-5', 'css-3',
-          'bootstrap', 'git', 'npm', 'pnpm', 'sendgrid', 'sass',
-          'sentry', 'express', 'bitbucket', 'jira', 'figma'
-        ]} />
+        items={skills} />
       <Marquee
         reverse={true}
         shuffleItems={true}
-        items={[
-          'react', 'nextjs', 'javascript', 'typescript',
-          'docker', 'redux', 'supabase',
-          'react-query', 'nodejs', 'gulp', 'webpack', 'vitejs', 'handlebars',
-          'stripe', 'openai', 'tailwindcss', 'mobx', 'mongodb', 'php',
-          'jquery', 'couchdb', 'wordpress', 'microsoft-azure', 'aws', 'html-5', 'css-3',
-          'bootstrap', 'git', 'npm', 'pnpm', 'sendgrid', 'sass',
-          'sentry', 'express', 'bitbucket', 'jira', 'figma'
-        ]} />
+        items={skills} />
     </section>
   )
 }

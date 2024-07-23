@@ -1,9 +1,10 @@
 import Image from "next/image";
 import styles from "./Marquee.module.css"
 import shuffle from "../utils/shuffle";
+import { Skills } from "../data/skills";
 
 export default function Marquee({ items, shuffleItems, reverse }: {
-  items: string[]
+  items: Skills
   shuffleItems?: boolean
   reverse?: boolean
 }) {
@@ -14,14 +15,14 @@ export default function Marquee({ items, shuffleItems, reverse }: {
     <div className={styles.marquee}>
       <ul className={`${styles.marquee__content} ${reverse ?? styles.marquee__content_reverse}`}>
         {items.map(item => (
-          <li key={item}>
+          <li key={item.id}>
             <Image
               height="100"
               width="100"
-              alt={item}
-              title={item.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase())}
+              alt={item.label}
+              title={item.label}
               // src={`https://github.com/gilbarbara/logos/raw/main/logos/${item}.svg`}
-              src={`https://cdn.svgporn.com/logos/${item}.svg`}
+              src={`https://cdn.svgporn.com/logos/${item.id}.svg`}
             />
           </li>
         ))}
@@ -29,13 +30,13 @@ export default function Marquee({ items, shuffleItems, reverse }: {
 
       <ul className={`${styles.marquee__content} ${reverse ?? styles.marquee__content_reverse}`}>
         {items.map(item => (
-          <li key={item}>
+          <li key={item.id}>
             <Image
               height="100"
               width="100"
-              alt={item}
-              title={item.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase())}
-              src={`https://cdn.svgporn.com/logos/${item}.svg`}
+              alt={item.label}
+              title={item.label}
+              src={`https://cdn.svgporn.com/logos/${item.id}.svg`}
             />
           </li>
         ))}
