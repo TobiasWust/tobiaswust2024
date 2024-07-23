@@ -3,11 +3,12 @@
   position: relative;
   display: flex;
   overflow: hidden;
-  user-select: none;
   gap: var(--gap);
-  width: 100%;
-  background-color: #f9cb9c;
+  background-color: var(--skills-bg);
   padding: 1rem;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
 }
 
 .marquee__content {
