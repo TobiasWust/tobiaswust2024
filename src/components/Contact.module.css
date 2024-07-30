@@ -1,6 +1,4 @@
 .form {
-    /* unique and beautiful form design with animations */
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,11 +9,11 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .form input {
-    /* input field design */
-
     width: 100%;
     padding: 0.5rem;
     margin: 0.5rem 0;
@@ -25,14 +23,10 @@
 }
 
 .form input:focus {
-    /* input field focus design */
-
     border-color: #007bff;
 }
 
 .form textarea {
-    /* textarea design */
-
     width: 100%;
     padding: 0.5rem;
     margin: 0.5rem 0;
@@ -42,14 +36,10 @@
 }
 
 .form textarea:focus {
-    /* textarea focus design */
-
     border-color: #007bff;
 }
 
 .form button {
-    /* button design */
-
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
     border: none;
@@ -61,8 +51,6 @@
 }
 
 .form button:hover {
-    /* button hover design */
-
     background-color: #0056b3;
 }
 

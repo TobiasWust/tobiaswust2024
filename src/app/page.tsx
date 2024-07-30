@@ -4,7 +4,6 @@ import Skills from "../components/Skills";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import About from "../components/About";
-import Countdown from "../components/Countdown";
 
 export default function Home() {
   return (

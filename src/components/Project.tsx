@@ -7,7 +7,9 @@ import skills from '../data/skills';
 export default function Project({ project }: { project: TProject }) {
   return (
     <div className={style.project}>
-      {<Image src={project.screenshot || 'https://picsum.photos/500/300'} alt={project.label} width={500} height={300} />}
+      <button className={style.cardFlipper}>
+        {<Image src={project.screenshot || 'https://picsum.photos/500/300'} alt={project.label} width={500} height={300} />}
+      </button>
       <div className={style.content}>
         <div className={style.header}>
           <h3>{project.label}</h3>

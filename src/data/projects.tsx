@@ -19,7 +19,7 @@ const projects: Projects = [{
   screenshot: 'https://picsum.photos/500/300',
   year: 2022,
   description: 'As the Lead Developer at Summarizeit, a SaaS company using AI to create summaries from videos, I was responsible for the development and implementation of various features including user management, payment processing, and the product itself. Utilizing modern technologies, I successfully managed and overcame various technical challenges to deliver a high-quality product.',
-  skills: ['react', 'nextjs', 'react-query', 'tailwindcss', 'nodejs', 'supabase', 'openai', 'sendgrid', 'stripe'],
+  skills: ['react', 'nextjs', 'react-query', 'tailwindcss', 'nodejs', 'supabase', 'openai', 'sendgrid', 'stripe', 'typescript'],
   url: 'https://summarizeit.io/',
 },
 {
