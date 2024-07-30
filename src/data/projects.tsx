@@ -33,28 +33,28 @@ const projects: Projects = [{
   url: 'https://gamesweallown.com/'
 },
 {
-  label: 'tobiaswust.de2024',
-  id: 'tobiaswust2024',
+  label: 'tobiaswust.de2024c',
+  id: 'tobiaswust2024c',
   screenshot: 'https://picsum.photos/500/300',
   year: 2023,
   description: 'very cool website',
-  skills: ['react', 'nextjs', 'react-query', 'tailwindcss', 'react', 'nextjs', 'react-query', 'tailwindcss'],
+  skills: ['react', 'nextjs', 'react-query', 'tailwindcss'],
   github: 'https://github.com/TobiasWust/sharedgames',
   url: 'https://gamesweallown.com/'
 },
 {
-  label: 'tobiaswust.de2024',
-  id: 'tobiaswust2024',
+  label: 'tobiaswust.de2024b',
+  id: 'tobiaswust2024b',
   screenshot: 'https://picsum.photos/500/300',
   year: 2023,
   description: 'very cool website',
-  skills: ['react', 'nextjs', 'react-query', 'tailwindcss', 'react', 'nextjs', 'react-query', 'tailwindcss'],
+  skills: ['react', 'nextjs', 'react-query', 'tailwindcss'],
   github: 'https://github.com/TobiasWust/sharedgames',
   url: 'https://gamesweallown.com/'
 },
 {
-  label: 'tobiaswust.de2024',
-  id: 'tobiaswust2024',
+  label: 'tobiaswust.de2024a',
+  id: 'tobiaswust2024a',
   screenshot: 'https://picsum.photos/500/300',
   year: 2023,
   description: 'very cool website',

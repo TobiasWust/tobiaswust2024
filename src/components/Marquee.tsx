@@ -1,5 +1,3 @@
-'use client';
-
 import Image from "next/image";
 import styles from "./Marquee.module.css"
 import shuffle from "../utils/shuffle";
