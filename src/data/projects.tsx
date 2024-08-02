@@ -16,7 +16,7 @@ export type Projects = Project[]
 const projects: Projects = [{
   label: 'SummarizeIt',
   id: 'summarizeit',
-  screenshot: 'https://picsum.photos/500/300',
+  screenshot: 'tobiaswust.de/summarizeIt',
   year: 2022,
   description: 'As the Lead Developer at Summarizeit, a SaaS company using AI to create summaries from videos, I was responsible for the development and implementation of various features including user management, payment processing, and the product itself. Utilizing modern technologies, I successfully managed and overcame various technical challenges to deliver a high-quality product.',
   skills: ['react', 'nextjs', 'react-query', 'tailwindcss', 'nodejs', 'supabase', 'openai', 'sendgrid', 'stripe', 'typescript'],
@@ -25,44 +25,22 @@ const projects: Projects = [{
 {
   label: 'GamesWeAllOwn',
   id: 'gamesweallown',
-  screenshot: 'https://picsum.photos/500/300',
+  screenshot: 'tobiaswust.de/gamesweallown',
   year: 2023,
-  description: 'very cool website',
+  description: 'gamesweallown.com is a website where you can see which games you and your friends own on steam. The website is built with Next.js and uses the Steam API to get the games.',
   skills: ['react', 'nextjs', 'react-query', 'tailwindcss'],
   github: 'https://github.com/TobiasWust/sharedgames',
   url: 'https://gamesweallown.com/'
 },
 {
-  label: 'tobiaswust.de2024c',
-  id: 'tobiaswust2024c',
-  screenshot: 'https://picsum.photos/500/300',
+  label: 'Accessible Search for government website',
+  id: 'ktzhStats',
+  screenshot: 'tobiaswust.de/ktzhStats',
   year: 2023,
-  description: 'very cool website',
-  skills: ['react', 'nextjs', 'react-query', 'tailwindcss'],
-  github: 'https://github.com/TobiasWust/sharedgames',
-  url: 'https://gamesweallown.com/'
+  description: 'I built the statistics search for the cantone of Zurich. The search is accessible and can be used by everyone. I pixel-perfectly implemented the design and made sure that the search is fast and easy to use.',
+  skills: ['handlebars', 'css-3', 'html-5', 'gulp', 'webpack', 'typescript', 'figma'],
+  url: 'https://www.zh.ch/de/bildung/bildungssystem/zahlen-fakten.html'
 },
-{
-  label: 'tobiaswust.de2024b',
-  id: 'tobiaswust2024b',
-  screenshot: 'https://picsum.photos/500/300',
-  year: 2023,
-  description: 'very cool website',
-  skills: ['react', 'nextjs', 'react-query', 'tailwindcss'],
-  github: 'https://github.com/TobiasWust/sharedgames',
-  url: 'https://gamesweallown.com/'
-},
-{
-  label: 'tobiaswust.de2024a',
-  id: 'tobiaswust2024a',
-  screenshot: 'https://picsum.photos/500/300',
-  year: 2023,
-  description: 'very cool website',
-  skills: ['react'],
-  github: 'https://github.com/TobiasWust/sharedgames',
-  url: 'https://gamesweallown.com/'
-}
-
 ];
 
 export default projects;

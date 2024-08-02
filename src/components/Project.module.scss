@@ -12,6 +12,27 @@
     height: auto;
   }
 
+  .description {
+    display: grid;
+    align-items: end;
+
+    >* {
+      grid-area: 1 / 1;
+    }
+
+    p {
+      padding: 1rem;
+      background: #fef8f8dd;
+      margin: 0;
+      max-height: 0;
+      transition: all 1s cubic-bezier(0.280, 0.840, 0.420, 1);
+    }
+
+    &:hover p {
+      max-height: 100%;
+    }
+  }
+
   .content {
     padding: 1rem;
     background: #fef8f8;

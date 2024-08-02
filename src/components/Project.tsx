@@ -3,13 +3,25 @@ import { VscGithub, VscLinkExternal } from "react-icons/vsc";
 import { Project as TProject } from "../data/projects";
 import Image from 'next/image';
 import skills from '../data/skills';
+import { CldImage } from 'next-cloudinary';
 
 export default function Project({ project }: { project: TProject }) {
   return (
     <div className={style.project}>
-      <button className={style.cardFlipper}>
-        {<Image src={project.screenshot || 'https://picsum.photos/500/300'} alt={project.label} width={500} height={300} />}
-      </button>
+      <div className={style.description}>
+        <CldImage
+          src={project.screenshot} // Use this sample image or upload your own via the Media Explorer
+          width="500" // Transform the image: auto-crop to square aspect_ratio
+          height="300"
+          alt={project.label}
+          crop={{
+            type: 'auto',
+            source: true
+          }}
+        />
+        {/* {<Image src={project.screenshot || 'https://picsum.photos/500/300'} alt={project.label} width={500} height={300} />} */}
+        <p>{project.description}</p>
+      </div>
       <div className={style.content}>
         <div className={style.header}>
           <h3>{project.label}</h3>

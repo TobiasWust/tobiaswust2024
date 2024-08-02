@@ -20,7 +20,7 @@ export default function Projects() {
   return (
     <section id='projects'>
       <h2>Built with Passion</h2>
-      <div className={style.filter}>Looking for something?<input type="text" placeholder="Search" onChange={e => setFilter(e.target.value)} /></div>
+      <div className={style.filter}><input type="text" placeholder="Search" onChange={e => setFilter(e.target.value)} /></div>
       {/* <button onClick={() => setFilter(['stripe'])}>stripe</button> */}
       {/* <button onClick={() => setFilter([])}>all</button> */}
       <div className={style.projectgrid}>
