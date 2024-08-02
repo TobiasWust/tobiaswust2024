@@ -67,6 +67,16 @@ const projects: Projects = [{
   skills: ['unity', 'c-sharp'],
   url: 'https://chinyone.itch.io/motherhouseofhorror'
 },
+{
+  label: 'funkhelfer.de',
+  id: 'funkhelfer',
+  screenshot: 'tobiaswust.de/funkhelfer',
+  year: 2020,
+  description: 'funkhelfer.de is a simple webapp to find the right frequency for your radio. It was built with plain HTML, CSS, and JavaScript. The website is responsive and works on all devices. It used to be a cordova app, but now it is a webapp.',
+  skills: ['html-5', 'css-3', 'javascript'],
+  url: 'https://funkhelfer.de/',
+  github: 'https://github.com/TobiasWust/Funkhelfer',
+},
 ];
 
 export default projects;
