@@ -9,17 +9,16 @@ export default function Project({ project }: { project: TProject }) {
   return (
     <div className={style.project}>
       <div className={style.description}>
-        <CldImage
-          src={project.screenshot} // Use this sample image or upload your own via the Media Explorer
-          width="500" // Transform the image: auto-crop to square aspect_ratio
+        {project.screenshot ? <CldImage
+          src={project.screenshot}
+          width="500"
           height="300"
           alt={project.label}
           crop={{
             type: 'auto',
             source: true
           }}
-        />
-        {/* {<Image src={project.screenshot || 'https://picsum.photos/500/300'} alt={project.label} width={500} height={300} />} */}
+        /> : <Image src="https://picsum.photos/500/300" alt={project.label} width={500} height={300} />}
         <p>{project.description}</p>
       </div>
       <div className={style.content}>

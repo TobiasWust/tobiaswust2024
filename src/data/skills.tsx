@@ -32,6 +32,8 @@ const skills: Skills = [
   { id: 'aws', label: 'aws' },
   { id: 'html-5', label: 'HTML' },
   { id: 'css-3', label: 'CSS' },
+  { id: 'unity', label: 'unity' },
+  { id: 'c-sharp', label: 'c-sharp' },
   { id: 'bootstrap', label: 'Bootstrap' },
   { id: 'git', label: 'Git' },
   { id: 'npm', label: 'npm' },
