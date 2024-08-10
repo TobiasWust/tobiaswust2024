@@ -5,9 +5,10 @@ export default function Contact() {
     <section id="contact">
       <h2>GET IN TOUCH</h2>
 
-      <form className={style.form} name="contact" method="POST" data-netlify="true">
+      <form action="/success/" className={style.form} name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
         <p>Share the details of your project with me, and I&apos;ll get back to you within 48 hours.</p>
 
+        <input type="hidden" name="form-name" value="contact" />
         <label htmlFor="name">Name</label>
         <input type="text" id="name" name="name" required placeholder='Name' />
 
