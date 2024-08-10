@@ -1,11 +1,39 @@
+import { FormEvent, useState } from 'react';
 import style from './Contact.module.css'
 
 export default function Contact() {
+  const [status, setStatus] = useState<String | null>(null);
+  const [error, setError] = useState<String | null>(null);
+
+  const handleFormSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    try {
+      setStatus('pending');
+      setError(null);
+      const myForm = event.target;
+      const formData = new FormData(myForm as HTMLFormElement);
+      const res = await fetch('/__forms.html', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as unknown as Record<string, string>,).toString()
+      });
+      if (res.status === 200) {
+        setStatus('ok');
+      } else {
+        setStatus('error');
+        setError(`${res.status} ${res.statusText}`);
+      }
+    } catch (e) {
+      setStatus('error');
+      setError(`${e}`);
+    }
+  };
+
   return (
     <section id="contact">
       <h2>GET IN TOUCH</h2>
 
-      <form action="/success/" className={style.form} name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+      <form onSubmit={handleFormSubmit} className={style.form} name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
         <p>Share the details of your project with me, and I&apos;ll get back to you within 48 hours.</p>
 
         <input type="hidden" name="form-name" value="contact" />
@@ -18,8 +46,19 @@ export default function Contact() {
         <label htmlFor="message">Message</label>
         <textarea id="message" name="message" required placeholder='Message'></textarea>
 
-        <button type="submit">Send</button>
+        <button type="submit" disabled={status === 'pending'}>Send</button>
+        {status === 'ok' && (
+          <p>
+            Thank you for reaching out :)
+          </p>
+        )}
+        {status === 'error' && (
+          <p>
+            Error: {error}
+          </p>
+        )}
       </form>
+
     </section>
   )
 }
