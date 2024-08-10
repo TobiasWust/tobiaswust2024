@@ -1,3 +1,5 @@
+'use client';
+
 import { FormEvent, useState } from 'react';
 import style from './Contact.module.css'
 
