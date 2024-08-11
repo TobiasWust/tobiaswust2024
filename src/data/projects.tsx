@@ -87,6 +87,16 @@ const projects: Projects = [
     url: 'https://funkhelfer.de/',
     github: 'https://github.com/TobiasWust/Funkhelfer',
   },
+  {
+    label: 'Game Snowbody',
+    id: 'snowbody',
+    screenshot: 'tobiaswust.de/funkhelfer',
+    year: 2020,
+    description: "Snowbody is a game that I built in Unity. The game is a 2D shooter where you play as a snowman and have to defend yourself against evil Bunnys.",
+    skills: ['unity', 'c-sharp'],
+    url: 'https://wust.itch.io/snowbody',
+    github: 'https://github.com/TobiasWust/snowbodygame',
+  },
 ];
 
 export default projects;
