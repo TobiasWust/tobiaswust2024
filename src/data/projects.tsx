@@ -90,7 +90,7 @@ const projects: Projects = [
   {
     label: 'Game Snowbody',
     id: 'snowbody',
-    screenshot: 'tobiaswust.de/funkhelfer',
+    screenshot: 'tobiaswust.de/snowbody',
     year: 2020,
     description: "Snowbody is a game that I built in Unity. The game is a 2D shooter where you play as a snowman and have to defend yourself against evil Bunnys.",
     skills: ['unity', 'c-sharp'],
