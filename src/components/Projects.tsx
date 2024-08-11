@@ -4,17 +4,18 @@ import style from './Projects.module.scss';
 import projects from "../data/projects";
 import Project from "./Project";
 import { useMemo, useState } from 'react';
+import shuffle from '../utils/shuffle';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
 
   const filteredProjects = useMemo(() => (
-    projects
+    shuffle(projects
       .filter(project =>
         !filter
         || project.label.toLowerCase().includes(filter.toLowerCase())
         || project.skills.some(skill => skill.toLowerCase().includes(filter.toLowerCase()))
-      )
+      ))
   ), [filter]);
 
   return (
