@@ -15,10 +15,7 @@
   &:hover {
     transition: 0s;
     background: #0f0;
-  }
-
-  .blink {
-    background: #f00;
+    animation: fade 5s infinite alternate;
   }
 }
 
@@ -30,4 +27,14 @@
 
 .row:nth-child(even) {
   margin-left: 0;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
 }
