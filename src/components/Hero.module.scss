@@ -48,7 +48,7 @@
 
   a:before,
   a:after {
-    background: linear-gradient(45deg, #f68714, #0e1538, #3dba6a);
+    background: linear-gradient(45deg, var(--wu-orange), #0e1538, var(--wu-green));
   }
 
   a:hover:before {

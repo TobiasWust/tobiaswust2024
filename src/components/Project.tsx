@@ -5,9 +5,9 @@ import Image from 'next/image';
 import skills from '../data/skills';
 import { CldImage } from 'next-cloudinary';
 
-export default function Project({ project }: { project: TProject }) {
+export default function Project({ project, ...rest }: { project: TProject }) {
   return (
-    <div className={style.project}>
+    <div className={style.project} {...rest}>
       <div className={style.description}>
         {project.screenshot ? <CldImage
           src={project.screenshot}

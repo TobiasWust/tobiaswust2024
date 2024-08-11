@@ -14,7 +14,7 @@
 
   &:hover {
     transition: 0s;
-    background: #0f0;
+    background: var(--wu-orange);
     animation: fade 5s infinite alternate;
   }
 }

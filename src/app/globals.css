@@ -9,6 +9,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --skills-bg: #f9cb9c;
+  --wu-orange: #f68714;
+  --wu-green: #3dba6a;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
