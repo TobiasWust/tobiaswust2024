@@ -1,15 +1,16 @@
 'use client';
 
 import style from './Projects.module.scss';
-import projects from "../data/projects";
+import projects, { Project as TProject } from "../data/projects";
 import ProjectThumb from "./ProjectThumb";
 import { useMemo, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
+import Project from './Project';
+import { createPortal } from 'react-dom';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
-
-  // const shuffledProjects = useMemo(() => shuffle(projects), []);
+  const [fullscreenProject, setFullscreenProject] = useState<TProject | null>(null);
 
   const filteredProjects = useMemo(() => (
     projects
@@ -27,36 +28,61 @@ export default function Projects() {
       <Flipper flipKey={filteredProjects.length}
         spring="veryGentle"
       >
-        <div className={style.projectgrid}>
-          {filteredProjects.length > 0 ? filteredProjects
-            .map(project =>
-            (<Flipped key={project.id} flipId={project.id} stagger
-              onAppear={(el, index) => {
-                spring({
-                  onUpdate: val => {
-                    el.style.opacity = `${val}`;
-                  },
-                  delay: index * 50
-                });
-              }}
-              onExit={(el, index, removeElement) => {
-                spring({
-                  config: { overshootClamping: true },
-                  onUpdate: val => {
-                    el.style.transform = `scale(${1 - (val as number)})`;
-                  },
-                  delay: index * 50,
-                  onComplete: removeElement
-                })
-              }
-              }
-            >
-              <ProjectThumb project={project} />
-            </Flipped>)
-            ) : <p className={style.noResult}>No projects found :(</p>
-          }
-        </div>
+        <Flipped>
+          <div className={style.projectgrid}>
+            {filteredProjects.length > 0 ? filteredProjects
+              .map(project =>
+              (
+                <Flipped key={project.id} flipId={project.id} stagger
+                  onAppear={(el, index) => {
+                    spring({
+                      onUpdate: val => {
+                        el.style.opacity = `${val}`;
+                      },
+                      delay: index * 50
+                    });
+                  }}
+                  onExit={(el, index, removeElement) => {
+                    spring({
+                      config: { overshootClamping: true },
+                      onUpdate: val => {
+                        el.style.transform = `scale(${1 - (val as number)})`;
+                      },
+                      delay: index * 50,
+                      onComplete: removeElement
+                    })
+                  }
+                  }
+                >
+                  <Flipper portalKey='projectPortal' flipKey={fullscreenProject?.id}>
+                    {fullscreenProject?.id !== project.id &&
+                      <Flipped flipId={`project-${project.id}`} portalKey='projectPortal'>
+                        <div onClick={() => { setFullscreenProject(project) }}>
+                          <ProjectThumb project={project} />
+                        </div>
+                      </Flipped>
+                    }
+                  </Flipper>
+                </Flipped>
+              )
+
+              ) : <Flipped><p className={style.noResult}>No projects found :(</p></Flipped>
+            }
+          </div>
+        </Flipped>
       </Flipper>
+
+      {
+        createPortal(
+          <Flipper portalKey='projectPortal' flipKey={fullscreenProject}>
+            {fullscreenProject?.id &&
+              <Flipped flipId={`project-${fullscreenProject.id}`} portalKey='projectPortal'>
+                <Project project={fullscreenProject} />
+              </Flipped>
+            }
+          </Flipper>, document.body
+        )
+      }
     </section>
   )
 }
