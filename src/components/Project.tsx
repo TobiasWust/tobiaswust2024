@@ -9,24 +9,23 @@ export default function Project({ project, closeProject, ...rest }: { project: T
   return (
     <div className={style.project} {...rest}>
       <button type='button' onClick={closeProject}>X</button>
-      <div className={style.description}>
-        {project.screenshot ? <CldImage
-          src={project.screenshot}
-          width="500"
-          height="300"
-          alt={project.label}
-          crop={{
-            type: 'auto',
-            source: true
-          }}
-        /> : <Image src="https://picsum.photos/500/300" alt={project.label} width={500} height={300} />}
-        <p>{project.description}</p>
-      </div>
+      {project.screenshot ? <CldImage
+        src={project.screenshot}
+        width="500"
+        height="300"
+        alt={project.label}
+        crop={{
+          type: 'auto',
+          source: true
+        }}
+      /> : <Image src="https://picsum.photos/500/300" alt={project.label} width={500} height={300} />}
       <div className={style.content}>
         <div className={style.header}>
           <h3>{project.label}</h3>
           <span>{project.year}</span>
         </div>
+
+        <p>{project.description}</p>
 
         <ul className={style.skillSet}>
           {
