@@ -3,6 +3,7 @@ import { Project as TProject } from "../data/projects";
 import Image from 'next/image';
 import skills from '../data/skills';
 import { CldImage } from 'next-cloudinary';
+import { Flipped } from 'react-flip-toolkit';
 
 export default function ProjectThumb({ project, ...rest }: { project: TProject }) {
   return (
@@ -20,10 +21,12 @@ export default function ProjectThumb({ project, ...rest }: { project: TProject }
         /> : <Image src="https://picsum.photos/500/300" alt={project.label} width={500} height={300} />}
       </div>
       <div className={style.content}>
-        <div className={style.header}>
-          <h3>{project.label}</h3>
-          <small>{project.shortDescription}</small>
-        </div>
+        <Flipped inverseFlipId={`project-${project.id}`}>
+          <div className={style.header}>
+            <h3>{project.label}</h3>
+            <small>{project.shortDescription}</small>
+          </div>
+        </Flipped>
         <ul className={style.skillSet}>
           {
             project.skills.map(skill => {

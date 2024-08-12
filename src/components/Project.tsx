@@ -8,6 +8,7 @@ import { CldImage } from 'next-cloudinary';
 export default function Project({ project, closeProject, ...rest }: { project: TProject, closeProject: () => void }) {
   return (
     <div className={style.project} {...rest}>
+      <button type='button' onClick={closeProject}>X</button>
       <div className={style.description}>
         {project.screenshot ? <CldImage
           src={project.screenshot}
@@ -26,7 +27,7 @@ export default function Project({ project, closeProject, ...rest }: { project: T
           <h3>{project.label}</h3>
           <span>{project.year}</span>
         </div>
-        <button type='button' onClick={closeProject}>X</button>
+
         <ul className={style.skillSet}>
           {
             project.skills.map(skill => {
