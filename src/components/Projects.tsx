@@ -5,7 +5,6 @@ import projects from "../data/projects";
 import ProjectThumb from "./ProjectThumb";
 import { useMemo, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
-import shuffle from '../utils/shuffle';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
@@ -25,9 +24,11 @@ export default function Projects() {
     <section id='projects'>
       <h2>Built with Passion</h2>
       <div className={style.filter}><input type="text" placeholder="Search" onChange={e => setFilter(e.target.value)} /></div>
-      <Flipper flipKey={filteredProjects.length}>
+      <Flipper flipKey={filteredProjects.length}
+        spring="veryGentle"
+      >
         <div className={style.projectgrid}>
-          {filteredProjects
+          {filteredProjects.length > 0 ? filteredProjects
             .map(project =>
             (<Flipped key={project.id} flipId={project.id} stagger
               onAppear={(el, index) => {
@@ -52,7 +53,8 @@ export default function Projects() {
             >
               <ProjectThumb project={project} />
             </Flipped>)
-            )}
+            ) : <p className={style.noResult}>No projects found :(</p>
+          }
         </div>
       </Flipper>
     </section>

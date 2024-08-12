@@ -4,6 +4,7 @@
   align-items: center;
   margin: 1rem 0;
   gap: 1rem;
+  overflow: hidden;
 
   input {
     padding: 0.5rem;
@@ -35,4 +36,10 @@
   gap: 2rem;
   margin: 4rem 0;
   padding: 0;
+
+  .noResult {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--wu-orange)
+  }
 }

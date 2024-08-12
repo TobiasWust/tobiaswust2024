@@ -6,10 +6,23 @@
   height: 100%;
   overflow: hidden;
   text-decoration: none;
+  box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+    translate: translateY(-5px);
+    rotate: 1deg;
+    scale: 1.02;
+  }
 
   img {
     width: 100%;
     height: auto;
+  }
+
+  .description {
+    display: flex;
   }
 
   .content {
@@ -43,12 +56,6 @@
       img {
         height: 1rem;
       }
-    }
-
-    .description {
-      // max-height: 0;
-      overflow: hidden;
-      transition: height 0.5s cubic-bezier(1, 0.63, 0.25, 1.5)
     }
 
     .links {
