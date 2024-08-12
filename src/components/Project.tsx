@@ -5,7 +5,7 @@ import Image from 'next/image';
 import skills from '../data/skills';
 import { CldImage } from 'next-cloudinary';
 
-export default function Project({ project, ...rest }: { project: TProject }) {
+export default function Project({ project, closeProject, ...rest }: { project: TProject, closeProject: () => void }) {
   return (
     <div className={style.project} {...rest}>
       <div className={style.description}>
@@ -26,6 +26,7 @@ export default function Project({ project, ...rest }: { project: TProject }) {
           <h3>{project.label}</h3>
           <span>{project.year}</span>
         </div>
+        <button type='button' onClick={closeProject}>X</button>
         <ul className={style.skillSet}>
           {
             project.skills.map(skill => {

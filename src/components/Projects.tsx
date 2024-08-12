@@ -77,7 +77,10 @@ export default function Projects() {
           <Flipper portalKey='projectPortal' flipKey={fullscreenProject}>
             {fullscreenProject?.id &&
               <Flipped flipId={`project-${fullscreenProject.id}`} portalKey='projectPortal'>
-                <Project project={fullscreenProject} />
+                <Project
+                  project={fullscreenProject}
+                  closeProject={() => setFullscreenProject(null)}
+                />
               </Flipped>
             }
           </Flipper>, document.body

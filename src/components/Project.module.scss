@@ -5,10 +5,11 @@
   flex-direction: column;
   margin: 4em;
   z-index: 20;
-  overflow: hidden;
+  overflow: scroll;
   position: fixed;
   top: 0;
   text-decoration: none;
+  max-height: 80vh;
 
   img {
     width: 100%;
