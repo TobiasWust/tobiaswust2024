@@ -2,7 +2,7 @@
 
 import style from './Projects.module.scss';
 import projects from "../data/projects";
-import Project from "./Project";
+import ProjectThumb from "./ProjectThumb";
 import { useMemo, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
 import shuffle from '../utils/shuffle';
@@ -10,23 +10,21 @@ import shuffle from '../utils/shuffle';
 export default function Projects() {
   const [filter, setFilter] = useState('');
 
-  const shuffledProjects = useMemo(() => shuffle(projects), []);
+  // const shuffledProjects = useMemo(() => shuffle(projects), []);
 
   const filteredProjects = useMemo(() => (
-    shuffledProjects
+    projects
       .filter(project =>
         !filter
         || project.label.toLowerCase().includes(filter.toLowerCase())
         || project.skills.some(skill => skill.toLowerCase().includes(filter.toLowerCase()))
       )
-  ), [filter, shuffledProjects]);
+  ), [filter]);
 
   return (
     <section id='projects'>
       <h2>Built with Passion</h2>
       <div className={style.filter}><input type="text" placeholder="Search" onChange={e => setFilter(e.target.value)} /></div>
-      {/* <button onClick={() => setFilter(['stripe'])}>stripe</button> */}
-      {/* <button onClick={() => setFilter([])}>all</button> */}
       <Flipper flipKey={filteredProjects.length}>
         <div className={style.projectgrid}>
           {filteredProjects
@@ -52,7 +50,7 @@ export default function Projects() {
               }
               }
             >
-              <Project project={project} />
+              <ProjectThumb project={project} />
             </Flipped>)
             )}
         </div>
