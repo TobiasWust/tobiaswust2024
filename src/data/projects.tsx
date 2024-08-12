@@ -26,7 +26,7 @@ const projects: Projects = [
     url: 'https://summarizeit.io/',
   },
   {
-    label: 'SummarizeIt',
+    label: 'SummarizeIt.io',
     id: 'summarizeit',
     screenshot: 'tobiaswust.de/summarizeIt',
     year: 2022,
@@ -67,7 +67,7 @@ const projects: Projects = [
     url: 'https://divery.io/'
   },
   {
-    label: 'hitcap',
+    label: 'hitcap.gg',
     id: 'hitcap',
     screenshot: 'tobiaswust.de/hitcap',
     year: 2022,
@@ -86,13 +86,24 @@ const projects: Projects = [
     url: 'https://chinyone.itch.io/motherhouseofhorror'
   },
   {
-    label: 'funkhelfer.de',
+    label: 'Funkhelfer.de',
     id: 'funkhelfer',
     screenshot: 'tobiaswust.de/funkhelfer',
     year: 2020,
     shortDescription: 'Radio Frequency Finder',
-    description: 'funkhelfer.de is a simple webapp to find the right frequency for your radio. It was built with plain HTML, CSS, and JavaScript. The website is responsive and works on all devices. It used to be a cordova app, but now it is a webapp.',
+    description: 'funkhelfer.de is a webapp to find the right frequency for your radio. It was built with plain HTML, CSS, and JavaScript. The website is responsive and works on all devices. It used to be a cordova app, but now it is a pure webapp.',
     skills: ['html-5', 'css-3', 'javascript'],
+    url: 'https://funkhelfer.de/',
+    github: 'https://github.com/TobiasWust/Funkhelfer',
+  },
+  {
+    label: 'Serwema Product Search',
+    id: 'serwema',
+    // screenshot: 'tobiaswust.de/serwema',
+    year: 2020,
+    shortDescription: 'Custom Wordpress Plugin',
+    description: 'I helped build a custom wordpress plugin, that allows simple administration of available products for my client and a simple search for their customers.',
+    skills: ['html-5', 'css-3', 'javascript', 'react', 'jquery'],
     url: 'https://funkhelfer.de/',
     github: 'https://github.com/TobiasWust/Funkhelfer',
   },
