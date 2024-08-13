@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Imprint() {
   return (
-    <div>
+    <main>
       <h1>Imprint</h1>
       <hr />
       <p>german § 5 TMG</p>
@@ -17,6 +17,6 @@ export default function Imprint() {
         <b>USt-IdNr.:</b> DE317980584
       </p>
 
-    </div>
+    </main>
   )
 }
