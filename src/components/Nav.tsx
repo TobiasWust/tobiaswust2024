@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./Nav.module.scss";
+import Link from "next/link";
 
 export default function Nav() {
   return (
@@ -7,16 +8,16 @@ export default function Nav() {
       <Image src='/tw.svg' alt='TW logo' width={40} height={40} />
       <ul>
         <li>
-          <a href="#about">About</a>
+          <Link href="/#about">About</Link>
         </li>
         <li>
-          <a href="#skills">Skills</a>
+          <Link href="/#skills">Skills</Link>
         </li>
         <li>
-          <a href="#projects">Projects</a>
+          <Link href="/#projects">Projects</Link>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <Link href="/#contact">Contact</Link>
         </li>
       </ul>
     </nav>
