@@ -3,15 +3,18 @@
 import style from './Projects.module.scss';
 import projects, { Project as TProject } from "../data/projects";
 import ProjectThumb from "./ProjectThumb";
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
 import Project from './Project';
 import { createPortal } from 'react-dom';
-import ClientPortal from './ClientPortal';
+// import ClientPortal from './ClientPortal';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
   const [fullscreenProject, setFullscreenProject] = useState<TProject | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const filteredProjects = useMemo(() => (
     projects
@@ -73,7 +76,7 @@ export default function Projects() {
         </Flipped>
       </Flipper>
 
-      <ClientPortal selector="document.body">
+      {mounted ? createPortal(
         <Flipper portalKey='projectPortal' flipKey={fullscreenProject}>
           {fullscreenProject?.id &&
             <Flipped flipId={`project-${fullscreenProject.id}`} portalKey='projectPortal'>
@@ -83,8 +86,7 @@ export default function Projects() {
               />
             </Flipped>
           }
-        </Flipper>, document.body
-      </ClientPortal>
+        </Flipper>, document.body) : null}
     </section>
   )
 }
