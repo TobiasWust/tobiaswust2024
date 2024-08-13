@@ -23,9 +23,11 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   max-width: 600px;
 
-  img {
+  >img {
     width: 100%;
     height: auto;
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
   >button {
@@ -50,8 +52,9 @@
   .content {
     background: #fef8f8;
     flex: 1;
+    gap: .5em;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr auto auto;
     align-items: start;
 
     .header {
@@ -69,7 +72,8 @@
       gap: 1em;
 
       img {
-        height: 1rem;
+        height: 1em;
+        width: auto;
       }
     }
 

@@ -57,7 +57,6 @@ export default function Project({ project, closeProject, ...rest }: {
             })
           }
         </ul>
-        {/* <p className={style.description}>{project.description}</p> */}
         <div className={style.links}>
           {project.url && <a href={project.url}><VscLinkExternal />Visit Site</a>}
           {project.github && <a href={project.github}><VscGithub />View on GitHub</a>}
