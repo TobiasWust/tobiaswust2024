@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Freelance Fullstack Developer - Tobias Wust",
-  description: "Tobias Wust is a highly experienced freelance fullstack developer from Germany, with over ten years of expertise in React and Node.js.",
+  description: "Tobias Wust is a highly experienced freelance fullstack developer from Germany, with 15+ years of expertise in React and Node.js.",
 };
 
 export default function RootLayout({

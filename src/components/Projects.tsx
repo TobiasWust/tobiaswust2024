@@ -7,11 +7,14 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
 import Project from './Project';
 import { createPortal } from 'react-dom';
+import useConsoleMsg from '../utils/useConsoleMsg';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
   const [fullscreenProject, setFullscreenProject] = useState<TProject | null>(null);
   const [mounted, setMounted] = useState(false);
+
+  useConsoleMsg();
 
   useEffect(() => setMounted(true), []);
   useEffect(() => {
@@ -23,8 +26,6 @@ export default function Projects() {
     window.addEventListener('keydown', close)
     return () => window.removeEventListener('keydown', close)
   }, []);
-
-
 
   const filteredProjects = useMemo(() => (
     projects
