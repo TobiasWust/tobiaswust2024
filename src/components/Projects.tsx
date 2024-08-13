@@ -7,6 +7,7 @@ import { useMemo, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
 import Project from './Project';
 import { createPortal } from 'react-dom';
+import ClientPortal from './ClientPortal';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
@@ -72,20 +73,18 @@ export default function Projects() {
         </Flipped>
       </Flipper>
 
-      {
-        createPortal(
-          <Flipper portalKey='projectPortal' flipKey={fullscreenProject}>
-            {fullscreenProject?.id &&
-              <Flipped flipId={`project-${fullscreenProject.id}`} portalKey='projectPortal'>
-                <Project
-                  project={fullscreenProject}
-                  closeProject={() => setFullscreenProject(null)}
-                />
-              </Flipped>
-            }
-          </Flipper>, document.body
-        )
-      }
+      <ClientPortal selector="document.body">
+        <Flipper portalKey='projectPortal' flipKey={fullscreenProject}>
+          {fullscreenProject?.id &&
+            <Flipped flipId={`project-${fullscreenProject.id}`} portalKey='projectPortal'>
+              <Project
+                project={fullscreenProject}
+                closeProject={() => setFullscreenProject(null)}
+              />
+            </Flipped>
+          }
+        </Flipper>, document.body
+      </ClientPortal>
     </section>
   )
 }
