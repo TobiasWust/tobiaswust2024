@@ -3,11 +3,10 @@
 import style from './Projects.module.scss';
 import projects, { Project as TProject } from "../data/projects";
 import ProjectThumb from "./ProjectThumb";
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
 import Project from './Project';
 import { createPortal } from 'react-dom';
-// import ClientPortal from './ClientPortal';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
@@ -15,6 +14,17 @@ export default function Projects() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const close = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setFullscreenProject(null);
+      }
+    }
+    window.addEventListener('keydown', close)
+    return () => window.removeEventListener('keydown', close)
+  }, []);
+
+
 
   const filteredProjects = useMemo(() => (
     projects
@@ -61,9 +71,11 @@ export default function Projects() {
                   <Flipper portalKey='projectPortal' flipKey={fullscreenProject?.id}>
                     {fullscreenProject?.id !== project.id &&
                       <Flipped flipId={`project-${project.id}`} portalKey='projectPortal'>
-                        <div onClick={() => { setFullscreenProject(project) }}>
+                        <button type='button' onClick={() => {
+                          setFullscreenProject(project)
+                        }}>
                           <ProjectThumb project={project} />
-                        </div>
+                        </button>
                       </Flipped>
                     }
                   </Flipper>

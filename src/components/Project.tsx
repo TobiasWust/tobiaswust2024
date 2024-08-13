@@ -4,11 +4,22 @@ import { Project as TProject } from "../data/projects";
 import Image from 'next/image';
 import skills from '../data/skills';
 import { CldImage } from 'next-cloudinary';
+import { useEffect, useRef } from 'react';
 
-export default function Project({ project, closeProject, ...rest }: { project: TProject, closeProject: () => void }) {
+export default function Project({ project, closeProject, ...rest }: {
+  project: TProject,
+  closeProject: () => void
+}) {
+
+  const closeProjectButton = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    closeProjectButton.current?.focus();
+  }, []);
+
   return (
     <div className={style.project} {...rest}>
-      <button type='button' onClick={closeProject}>X</button>
+      <button ref={closeProjectButton} type='button' onClick={closeProject}>X</button>
       {project.screenshot ? <CldImage
         src={project.screenshot}
         width="500"

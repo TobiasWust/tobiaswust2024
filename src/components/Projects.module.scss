@@ -37,6 +37,17 @@
   margin: 4rem 0;
   padding: 0;
 
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    width: 100%;
+    text-align: start;
+  }
+
   .noResult {
     text-align: center;
     font-size: 1.5rem;
