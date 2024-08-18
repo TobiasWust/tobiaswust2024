@@ -38,8 +38,11 @@ export default function Projects() {
   ), [filter]);
 
   return (
-    <section id='projects'>
+    <section id='projects' className={style.projects}>
       <h2>Built with Passion</h2>
+      <p>
+        Here are some things I built.
+      </p>
       <div className={style.filter}><input type="text" placeholder="Search" onChange={e => setFilter(e.target.value)} /></div>
       <Flipper flipKey={filteredProjects.length}
         spring="veryGentle"

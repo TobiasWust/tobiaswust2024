@@ -1,3 +1,16 @@
+.projects {
+  h2 {
+    font-size: 2rem;
+    display: inline-block;
+  }
+
+  p {
+    display: inline-block;
+    margin-left: 1rem;
+    color: var(--wu-white);
+  }
+}
+
 .filter {
   display: flex;
   justify-content: center;
@@ -6,15 +19,30 @@
   gap: 1rem;
   overflow: hidden;
 
+  // input {
+  //   padding: 0.5rem;
+  //   border: 1px solid #ccc;
+  //   border-radius: 0.25rem;
+  // }
   input {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid var(--wu-orange);
+    background: var(--wu-blue);
+  }
+
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
   }
 
   span {
     color: #111;
-    background: #fef8f8;
+    background: var(--wu-white);
     padding: 0.5rem;
     border-radius: 0.25rem;
   }

@@ -4,7 +4,6 @@ import Marquee from "./Marquee";
 export default function Skills() {
   return (
     <section id="skills">
-      <h2>What I Bring to the Table</h2>
       <Marquee
         shuffleItems={true}
         items={skills} />
@@ -12,6 +11,15 @@ export default function Skills() {
         reverse={true}
         shuffleItems={true}
         items={skills} />
+
+      <div className="visually-hidden">
+        <h3>Skills</h3>
+        <ul>
+          {skills.map((skill, index) => (
+            <li key={index}>{skill.label}</li>
+          ))}
+        </ul>
+      </div>
     </section>
   )
 }
