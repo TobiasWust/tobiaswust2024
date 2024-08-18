@@ -20,24 +20,24 @@ export default function Footer() {
       <p>
         Copyright © 2024 - Made with{" "}
         <GiHearts /> by{" "}
-        <a href="https://www.wust.dev" className="link-hover link">
+        <a className="link" href="https://www.wust.dev">
           Wust
         </a>
       </p>
       <p>
         Sourcecode available on{" "}
         <a
+          className="link"
           href="https://github.com/TobiasWust/tobiaswust2024"
-          className="link-hover link"
         >
           Github
         </a>
       </p>
       <div>
-        <Link href="/imprint">
+        <Link className="link" href="/imprint">
           Imprint
         </Link>
-        <Link href="/privacy">
+        <Link className="link" href="/privacy">
           Privacy
         </Link>
       </div>
