@@ -43,7 +43,7 @@ export default function Projects() {
       <p>
         Here are some things I built.
       </p>
-      <div className={style.filter}><input type="text" placeholder="Search" onChange={e => setFilter(e.target.value)} /></div>
+      <div className={style.filter}><input type="text" placeholder="Search for a project or skill..." onChange={e => setFilter(e.target.value)} /></div>
       <Flipper flipKey={filteredProjects.length}
         spring="veryGentle"
       >

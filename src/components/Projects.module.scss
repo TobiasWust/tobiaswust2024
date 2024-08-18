@@ -29,15 +29,18 @@
     border: none;
     outline: none;
     padding: 10px;
-    margin-bottom: 20px;
     font-weight: bold;
     transition: all 0.2s ease-in-out;
-    border: 2px solid var(--wu-orange);
-    background: var(--wu-blue);
+    border: 1px solid var(--wu-orange);
+    background: var(--wu-black);
   }
 
   input::placeholder {
     color: rgba(255, 255, 255, 0.7);
+  }
+
+  input:focus {
+    background: var(--wu-orange);
   }
 
   span {
@@ -62,7 +65,7 @@
 
 
   gap: 2rem;
-  margin: 4rem 0;
+  margin: 2rem 0;
   padding: 0;
 
   button {
