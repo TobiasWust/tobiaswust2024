@@ -9,12 +9,31 @@
   align-items: center;
   gap: .5em;
 
+  svg {
+    color: var(--wu-orange);
+  }
+
+  .socials {
+    gap: 2em;
+    margin: 2em;
+
+    // svg link hover animation
+    a {
+      transition: transform .2s;
+    }
+
+    a:hover {
+      transform: scale(1.2);
+    }
+
+    svg {
+      height: 3em;
+      width: auto;
+    }
+  }
+
   div {
     display: flex;
     gap: 1em;
-  }
-
-  svg {
-    color: var(--wu-orange);
   }
 }

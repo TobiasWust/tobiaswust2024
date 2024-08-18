@@ -18,12 +18,12 @@ const projects: Projects = [
   {
     label: 'Wust.dev 2024',
     id: 'wustdev2024',
-    screenshot: 'tobiaswust.de/summarizeIt',
+    screenshot: 'tobiaswust.de/tobiaswust2024',
     year: 2024,
     shortDescription: 'Portfolio website',
     description: 'After almost ten years with my old website I wanted to create something fast and modern. This is what I came up with.',
     skills: ['react', 'nextjs', 'nodejs', 'typescript'],
-    url: 'https://summarizeit.io/',
+    url: 'https://wust.dev',
   },
   {
     label: 'SummarizeIt.io',

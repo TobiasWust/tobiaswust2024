@@ -32,6 +32,7 @@ export default function Projects() {
       .filter(project =>
         !filter
         || project.label.toLowerCase().includes(filter.toLowerCase())
+        || project.description.toLowerCase().includes(filter.toLowerCase())
         || project.skills.some(skill => skill.toLowerCase().includes(filter.toLowerCase()))
       )
   ), [filter]);
