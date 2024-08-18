@@ -59,8 +59,12 @@ export default function Project({ project, closeProject, ...rest }: {
           }
         </ul>
         <div className={style.links}>
-          {project.url && <a className="link" href={project.url}><VscLinkExternal />Visit Site</a>}
-          {project.github && <a className="link" href={project.github}><VscGithub />View on GitHub</a>}
+          {project.url && <a className="link" rel="noopener noreferrer" target="_blank" href={project.url}>
+            <VscLinkExternal />Visit Site
+          </a>}
+          {project.github && <a className="link" rel="noopener noreferrer" target="_blank" href={project.github}>
+            <VscGithub />View on GitHub
+          </a>}
         </div>
       </div>
     </div>

@@ -9,6 +9,12 @@
   box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
   cursor: pointer;
 
+  view-timeline-name: --revealing-image;
+  view-timeline-axis: block;
+  animation: linear reveal both;
+  animation-timeline: --revealing-image;
+  animation-range: entry 5% cover 25%;
+
   &:hover {
     box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
     translate: translateY(-5px);
@@ -71,5 +77,18 @@
         gap: 0.5em;
       }
     }
+  }
+}
+
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
   }
 }

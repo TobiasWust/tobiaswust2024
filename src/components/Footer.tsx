@@ -20,7 +20,7 @@ export default function Footer() {
       <p>
         Copyright © 2024 - Made with{" "}
         <GiHearts /> by{" "}
-        <a className="link" href="https://www.wust.dev">
+        <a className="link" rel="noopener noreferrer" target="_blank" href="https://www.wust.dev">
           Wust
         </a>
       </p>
@@ -28,6 +28,7 @@ export default function Footer() {
         Sourcecode available on{" "}
         <a
           className="link"
+          rel="noopener noreferrer" target="_blank"
           href="https://github.com/TobiasWust/tobiaswust2024"
         >
           Github
