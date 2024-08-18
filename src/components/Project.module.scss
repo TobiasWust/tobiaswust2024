@@ -19,7 +19,6 @@
   top:0;
   left:0;
   text-decoration: none;
-  padding: 2em;
   background: var(--wu-white);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   max-width: 600px;
@@ -27,7 +26,7 @@
   >img {
     width: 100%;
     height: auto;
-    border-radius: 40px;
+    border-radius: 40px 0 0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
@@ -57,6 +56,7 @@
     display: grid;
     grid-template-rows: auto 1fr auto auto;
     align-items: start;
+    margin: 0 1em 1em 1em;
 
     .header {
       display: flex;

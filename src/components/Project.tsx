@@ -5,6 +5,7 @@ import Image from 'next/image';
 import skills from '../data/skills';
 import { CldImage } from 'next-cloudinary';
 import { useEffect, useRef } from 'react';
+import { Flipped } from 'react-flip-toolkit';
 
 export default function Project({ project, closeProject, ...rest }: {
   project: TProject,

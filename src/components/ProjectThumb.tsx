@@ -21,7 +21,7 @@ export default function ProjectThumb({ project, ...rest }: { project: TProject }
         /> : <Image src="https://picsum.photos/500/300" alt={project.label} width={500} height={300} />}
       </div>
       <div className={style.content}>
-        <Flipped inverseFlipId={`project-${project.id}`}>
+        <Flipped inverseFlipId={`project-${project.id}`} scale>
           <div className={style.header}>
             <h3>{project.label}</h3>
             <small>{project.shortDescription}</small>
@@ -46,7 +46,7 @@ export default function ProjectThumb({ project, ...rest }: { project: TProject }
             })
           }
         </ul>
-      </div>
-    </div>
+      </div >
+    </div >
   )
 }
