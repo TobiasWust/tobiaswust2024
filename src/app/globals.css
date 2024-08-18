@@ -12,6 +12,8 @@
   --wu-orange: #f68714;
   --wu-green: #3dba6a;
   --wu-white: #fef8f8;
+  --wu-blue: #0e1538;
+  --wu-black: #111;
 }
 
 * {
@@ -44,13 +46,13 @@ section {
   width: 100%;
 }
 
-a {
+a.link {
   color: inherit;
   text-decoration: none;
   position: relative;
 }
 
-a::before {
+a.link::before {
   content: "";
   position: absolute;
   display: block;
@@ -63,7 +65,7 @@ a::before {
   transition: transform 0.3s ease;
 }
 
-a:hover::before {
+a.link:hover::before {
   transform: scaleX(1);
 }
 

@@ -1,0 +1,16 @@
+.about {
+  line-height: 1.5;
+  font-size: 1.5rem;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 40px;
+  border: 1px solid var(--wu-orange);
+
+  p {
+    margin: inherit;
+  }
+
+  .highlight {
+    color: var(--wu-orange);
+  }
+}

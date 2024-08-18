@@ -8,16 +8,16 @@ export default function Nav() {
       <Image src='/tw.svg' alt='TW logo' width={40} height={40} />
       <ul>
         <li>
-          <Link href="/#about">About</Link>
+          <Link className="link" href="/#skills">Skills</Link>
         </li>
         <li>
-          <Link href="/#skills">Skills</Link>
+          <Link className="link" href="/#projects">Projects</Link>
         </li>
         <li>
-          <Link href="/#projects">Projects</Link>
+          <Link className="link" href="/#about">About</Link>
         </li>
         <li>
-          <Link href="/#contact">Contact</Link>
+          <Link className="link" href="/#contact">Contact</Link>
         </li>
       </ul>
     </nav>

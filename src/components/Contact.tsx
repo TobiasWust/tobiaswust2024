@@ -1,7 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
-import style from './Contact.module.css'
+import style from './Contact.module.scss'
 
 export default function Contact() {
   const [status, setStatus] = useState<String | null>(null);
@@ -32,20 +32,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact">
+    <section id="contact" className={style.contact}>
       <h2>GET IN TOUCH</h2>
 
-      <form onSubmit={handleFormSubmit} className={style.form} name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-        <p>Share the details of your project with me, and I&apos;ll get back to you within 48 hours.</p>
+      <form onSubmit={handleFormSubmit} name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+        <h3>Share the details of your project with me, and I&apos;ll get back to you within 48 hours.</h3>
 
         <input type="hidden" name="form-name" value="contact" />
-        <label htmlFor="name">Name</label>
         <input type="text" id="name" name="name" required placeholder='Name' />
 
-        <label htmlFor="email">Email</label>
         <input type="email" id="email" name="email" required placeholder='Email' />
 
-        <label htmlFor="message">Message</label>
         <textarea id="message" name="message" required placeholder='Message'></textarea>
 
         <button type="submit" disabled={status === 'pending'}>Send</button>

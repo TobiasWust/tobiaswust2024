@@ -1,0 +1,82 @@
+.contact {
+  max-width: 600px;
+  margin: 2em;
+  background-color: var(--wu-black);
+  padding: 2em;
+  border-left: 5px solid var(--wu-orange);
+  border-right: 5px solid var(--wu-orange);
+  border-radius: 40px;
+
+  h2 {
+    display: block;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    display: block;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    border-left: 1px solid transparent;
+    background: var(--wu-blue);
+  }
+
+  input:focus {
+    border-left: 5px solid var(--wu-orange);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: var(--wu-blue);
+    font-weight: bold;
+    resize: none;
+    max-height: 150px;
+    margin-bottom: 20px;
+    border-left: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+
+  textarea:focus {
+    border-left: 5px solid var(--wu-orange);
+  }
+
+  button {
+    flex-basis: 70%;
+    background: var(--wu-orange);
+    padding: 10px;
+    color: var(--wu-black);
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+
+  button:hover {
+    background: transparent;
+    border: 1px solid var(--wu-orange);
+    color: var(--wu-orange);
+    cursor: pointer;
+  }
+}

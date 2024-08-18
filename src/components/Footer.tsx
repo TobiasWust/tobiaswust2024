@@ -7,9 +7,15 @@ export default function Footer() {
   return (
     <footer className={style.footer}>
       <div className={style.socials}>
-        <a href="https://github.com/TobiasWust" rel="noopener noreferrer" target="_blank"><SiGithub /></a>
-        <a href="https://www.linkedin.com/in/tobias-wust/" rel="noopener noreferrer" target="_blank"><SiLinkedin /></a>
-        <a href="https://www.instagram.com/tobiaswust" rel="noopener noreferrer" target="_blank"><SiInstagram /></a>
+        <a href="https://github.com/TobiasWust" rel="noopener noreferrer" target="_blank">
+          <SiGithub aria-label='Github' title='Github' />
+        </a>
+        <a href="https://www.linkedin.com/in/tobias-wust/" rel="noopener noreferrer" target="_blank">
+          <SiLinkedin aria-label='LinkedIn' title='LinkedIn' />
+        </a>
+        <a href="https://www.instagram.com/tobiaswust" rel="noopener noreferrer" target="_blank">
+          <SiInstagram aria-label='Instagram' title='Instagram' />
+        </a>
       </div>
       <p>
         Copyright © 2024 - Made with{" "}
