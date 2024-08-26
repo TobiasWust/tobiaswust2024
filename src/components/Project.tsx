@@ -51,7 +51,7 @@ export default function Project({ project, closeProject, ...rest }: {
                     width="20"
                     alt={item.label}
                     title={item.label}
-                    src={`https://cdn.svgporn.com/logos/${item.id}.svg`}
+                    src={item.logoUrl || `https://cdn.svgporn.com/logos/${item.id}.svg`}
                   />
                 </li>
               )

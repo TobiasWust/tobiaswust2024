@@ -39,7 +39,7 @@ export default function ProjectThumb({ project, ...rest }: { project: TProject }
                     width="20"
                     alt={item.label}
                     title={item.label}
-                    src={`https://cdn.svgporn.com/logos/${item.id}.svg`}
+                    src={item.logoUrl || `https://cdn.svgporn.com/logos/${item.id}.svg`}
                   />
                 </li>
               )

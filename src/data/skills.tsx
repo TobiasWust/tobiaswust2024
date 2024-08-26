@@ -1,7 +1,7 @@
 export type Skill = {
   label: string
   id: string
-  logo?: string
+  logoUrl?: string
 }
 
 export type Skills = Skill[]
@@ -46,7 +46,9 @@ const skills: Skills = [
   { id: 'bitbucket', label: 'Bitbucket' },
   { id: 'jira', label: 'Jira' },
   { id: 'figma', label: 'Figma' },
-  { id: 'vue', label: 'Vue.js' }
+  { id: 'vue', label: 'Vue.js' },
+  { id: 'phaser', label: 'Phaser', logoUrl: 'https://cdn.phaser.io/layouts/phaser2024/images/nav-logo.png' }
+
 ];
 
 export default skills;

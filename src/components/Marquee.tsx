@@ -11,8 +11,7 @@ function MarqueeItem({ item }: { item: Skill }) {
         width="100"
         alt={item.label}
         title={item.label}
-        // src={`https://github.com/gilbarbara/logos/raw/main/logos/${item}.svg`}
-        src={`https://cdn.svgporn.com/logos/${item.id}.svg`}
+        src={item.logoUrl || `https://cdn.svgporn.com/logos/${item.id}.svg`}
       />
     </li>
   )
