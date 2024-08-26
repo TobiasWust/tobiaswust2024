@@ -42,6 +42,11 @@ export default function Footer() {
           Privacy Policy
         </Link>
       </div>
+      <div>
+        <Link className="link" href="/achievements">
+          Achievements
+        </Link>
+      </div>
     </footer>
   );
 }

@@ -8,7 +8,7 @@ export default function useAchievement() {
     toast(`added ${item}`);
     localStorage.setItem('achievements', JSON.stringify([...achievements, item]));
   }
-  const getAchievements = (item: string) => {
+  const getAchievements = () => {
     return JSON.parse(localStorage.getItem('achievements') || '');
   }
   return {
