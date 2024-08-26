@@ -42,6 +42,28 @@ section {
   max-width: var(--max-width);
   margin: 0px auto;
   width: 100%;
+  
+  > h2 {
+    position: relative;
+    z-index: 0;
+    rotate: -1deg;
+    display: inline-block;
+
+    &::after {
+      position: absolute;
+      content: "";
+      inset: 0;
+      z-index: -1;
+      background: var(--wu-orange);
+      rotate: 1deg;
+
+      view-timeline-name: --revealing-after;
+      view-timeline-axis: block;
+      animation: linear revealLtr both;
+      animation-timeline: --revealing-after;
+      animation-range: entry 0% cover 30%;
+    }
+  }
 }
 
 a.link {
@@ -61,6 +83,7 @@ a.link::before {
   background-color: var(--wu-orange);
   transform: scaleX(0);
   transition: transform 0.3s ease;
+  rotate: -2deg;
 }
 
 a.link:hover::before {
@@ -81,4 +104,14 @@ a.link:hover::before {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+@keyframes revealLtr {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
 }

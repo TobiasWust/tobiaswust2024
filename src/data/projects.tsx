@@ -117,6 +117,16 @@ const projects: Projects = [
     url: 'https://wust.itch.io/snowbody',
     github: 'https://github.com/TobiasWust/snowbodygame',
   },
+  {
+    label: 'Game Morserunner',
+    id: 'morserunner',
+    screenshot: 'tobiaswust.de/morserunner',
+    year: 2017,
+    shortDescription: 'Educational 2D Runner',
+    description: "Morserunner is a game that teaches you morsecode while playing. It used to be in the google play store with cordova, but now its only available online.",
+    skills: ['javascript', 'phaser'],
+    url: 'https://wust.itch.io/morserunner',
+  },
 ];
 
 export default projects;
