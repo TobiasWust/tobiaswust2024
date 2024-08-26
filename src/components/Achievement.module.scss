@@ -1,4 +1,23 @@
 .achievement {
+  background: var(--wu-black);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  filter: grayscale(1);
+  border-radius: var(--border-radius);
+  padding: .5em;
+
+  &.active {
+    filter: inherit;
+  }
+
+  svg {
+    color: var(--wu-green);
+    height: 2em;
+    width: 2em;
+    flex-shrink: 0;
+  }
+
   h3 {
     color: var(--wu-orange);
   }

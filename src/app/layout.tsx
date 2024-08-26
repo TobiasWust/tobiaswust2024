@@ -5,7 +5,6 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import { GiTrophy } from "react-icons/gi";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -31,11 +30,11 @@ export default function RootLayout({
           position='bottom-right'
           theme='dark'
           autoClose={5000}
+          // autoClose={false}
           closeOnClick
           newestOnTop
           pauseOnFocusLoss
           pauseOnHover
-          icon={<GiTrophy />}
         />
       </body>
     </html>

@@ -40,6 +40,10 @@ body.barrel {
   animation: barrel 3s;
 }
 
+main {
+  background: var(--wu-blue);
+}
+
 section {
   max-width: var(--max-width);
   margin: 0px auto;
@@ -110,16 +114,6 @@ a.link:hover::before {
 
 .wu-toast {
   --toastify-color-progress-dark: var(--wu-orange);
-
-  .Toastify__toast-icon {
-    color: var(--wu-green);
-    width: inherit;
-
-    svg {
-      height: 2em;
-      width: 2em;
-    }
-  }
 }
 
 

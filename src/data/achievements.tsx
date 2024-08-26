@@ -5,6 +5,7 @@ export type Achievement = {
   logo: string
   withProgress?: boolean
   maxProgress?: number
+  secret?: boolean
 }
 
 const achievements = [
@@ -13,6 +14,7 @@ const achievements = [
     id: 'scrollMaster',
     description: 'Scrolled to the bottom.',
     logo: 'string',
+    secret: true,
   },
   {
     label: 'Project Shopper',
@@ -26,12 +28,14 @@ const achievements = [
     id: 'useContactForm',
     description: 'Dropped me a message.',
     logo: 'string',
+    secret: true,
   },
   {
     label: 'Cheater',
     id: 'cheater',
     description: 'Tried Konami Code.',
     logo: 'string',
+    secret: true,
   },
   {
     label: 'Starfox',
@@ -43,12 +47,6 @@ const achievements = [
     label: 'Inspector Gadget',
     id: 'inspectorGadget',
     description: 'Used console function.',
-    logo: 'string',
-  },
-  {
-    label: 'Pixel Perfectionist',
-    id: 'pixelPerfectionist',
-    description: 'Zoomed In.',
     logo: 'string',
   },
   {
@@ -98,17 +96,12 @@ const achievements = [
     id: '404Hunter',
     description: 'Found a 404 Page.',
     logo: 'string',
+    secret: true,
   },
   {
     label: 'Polymath',
     id: 'polymath',
     description: 'I am a number that is twice the sum of my digits. What number am I?',
-    logo: 'string',
-  },
-  {
-    label: 'Pixelhunter',
-    id: 'pixelhunter',
-    description: 'Clicked a single pixel.',
     logo: 'string',
   },
   {
@@ -150,6 +143,7 @@ const achievements = [
     id: 'happyBirthday',
     description: 'Visited site on my Birthday.',
     logo: 'string',
+    secret: true,
   },
   {
     label: 'Fanboy',
@@ -168,12 +162,10 @@ const achievements = [
     maxProgress: 200,
   },
   {
-    label: 'Fanboy',
-    id: 'fanboy',
-    description: 'Visited site 20 times.',
+    label: 'Networker',
+    id: 'networker',
+    description: 'Found a codeword on LinkedInd',
     logo: 'string',
-    withProgress: true,
-    maxProgress: 20,
   },
 ]
 

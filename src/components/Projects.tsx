@@ -42,11 +42,16 @@ export default function Projects() {
   ), [filter]);
 
   useEffect(() => {
+    // cheatcodes
     if (filter.toLowerCase() === 'do a barrel roll') {
       setTimeout(() => {
         addAchievement('starfox');
       }, 3000);
       document.querySelector('body')!.classList.add('barrel');
+    }
+
+    if (filter.toLowerCase() === '18') {
+      addAchievement('polymath');
     }
   }, [filter, addAchievement]);
 

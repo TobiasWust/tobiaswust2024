@@ -2,15 +2,15 @@ import { toast } from 'react-toastify';
 import Achievement from '../components/Achievement';
 
 export default function useAchievement() {
-  const addAchievement = (item: string) => {
+  const addAchievement = (achievementId: string) => {
     const achievements = JSON.parse(localStorage.getItem('achievements') || '[]') as string[];
-    if (achievements.includes(item)) return;
+    if (achievements.includes(achievementId)) return;
 
-    toast(() => Achievement({ achievementId: item }));
-    localStorage.setItem('achievements', JSON.stringify([...achievements, item]));
+    toast(() => Achievement({ achievementId: achievementId, active: true }));
+    localStorage.setItem('achievements', JSON.stringify([...achievements, achievementId]));
   }
   const getAchievements = () => {
-    return JSON.parse(localStorage.getItem('achievements') || '');
+    return JSON.parse(localStorage.getItem('achievements') || '[]') as string[];
   }
   return {
     addAchievement, getAchievements
