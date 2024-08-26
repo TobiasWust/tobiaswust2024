@@ -8,6 +8,8 @@ import { Flipped, Flipper, spring } from 'react-flip-toolkit';
 import Project from './Project';
 import { createPortal } from 'react-dom';
 import useConsoleMsg from '../utils/useConsoleMsg';
+import useAscrollMaster from '../achievements/useAscrollMaster';
+import useAchievement from '../achievements/useAchievement';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
@@ -15,6 +17,8 @@ export default function Projects() {
   const [mounted, setMounted] = useState(false);
 
   useConsoleMsg();
+  useAscrollMaster();
+  const { addAchievement } = useAchievement();
 
   useEffect(() => setMounted(true), []);
   useEffect(() => {
@@ -36,6 +40,13 @@ export default function Projects() {
         || project.skills.some(skill => skill.toLowerCase().includes(filter.toLowerCase()))
       )
   ), [filter]);
+
+  useEffect(() => {
+    if (filter.toLowerCase() === 'do a barrel roll') {
+      addAchievement('starfox');
+      document.querySelector('body')!.classList.add('barrel');
+    }
+  }, [filter, addAchievement]);
 
   return (
     <section id='projects' className={style.projects}>

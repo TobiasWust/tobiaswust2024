@@ -15,12 +15,6 @@ const achievements = [
     logo: 'string',
   },
   {
-    label: 'Use Search',
-    id: 'useSearch',
-    description: 'Typed something into searchbar.',
-    logo: 'string',
-  },
-  {
     label: 'Project Shopper',
     id: 'projectShopper',
     description: 'Viewed every project.',
@@ -156,9 +150,31 @@ const achievements = [
     id: 'happyBirthday',
     description: 'Visited site on my Birthday.',
     logo: 'string',
-  }
-
-
+  },
+  {
+    label: 'Fanboy',
+    id: 'fanboy',
+    description: 'Visited site 20 times.',
+    logo: 'string',
+    withProgress: true,
+    maxProgress: 20,
+  },
+  {
+    label: 'Stalker',
+    id: 'stalker',
+    description: 'Visited site 200 times.',
+    logo: 'string',
+    withProgress: true,
+    maxProgress: 200,
+  },
+  {
+    label: 'Fanboy',
+    id: 'fanboy',
+    description: 'Visited site 20 times.',
+    logo: 'string',
+    withProgress: true,
+    maxProgress: 20,
+  },
 ]
 
 export default achievements;

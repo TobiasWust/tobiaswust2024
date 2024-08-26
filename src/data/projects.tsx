@@ -120,7 +120,7 @@ const projects: Projects = [
   {
     label: 'Game Morserunner',
     id: 'morserunner',
-    screenshot: 'tobiaswust.de/morserunner',
+    screenshot: 'tobiaswust.de/snowbody',
     year: 2017,
     shortDescription: 'Educational 2D Runner',
     description: "Morserunner is a game that teaches you morsecode while playing. It used to be in the google play store with cordova, but now its only available online.",
@@ -130,7 +130,7 @@ const projects: Projects = [
   {
     label: 'tobiaswust.de 2017',
     id: 'tobiaswust2017',
-    screenshot: 'tobiaswust.de/tobiaswust2017',
+    screenshot: 'tobiaswust.de/snowbody',
     year: 2017,
     shortDescription: 'Developer Website',
     description: "My old Website. I personally really liked the design with the huge photo.",

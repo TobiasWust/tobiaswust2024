@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useAchievement from "../achievements/useAchievement";
 
 export default function useConsoleMsg() {
   const { addAchievement } = useAchievement();
+  const [once, setOnce] = useState(false);
 
   useEffect(() => {
+    if (once) return;
     console.log("%cWell hello there. Looks like you're interested in what I do. Feel free to contact me. Just run contact() or do want to see how I built this website? check github()", "background-color: black; color: lime; padding: 5px 50px 5px 20px; font-family: 'Courier New'");
 
     (window as any).contact = function contact() {
@@ -18,5 +20,6 @@ export default function useConsoleMsg() {
       window.location.href = '/#contact'
       addAchievement('inspectorGadget');
     };
-  }, [addAchievement]);
+    setOnce(true);
+  }, [addAchievement, once]);
 }
