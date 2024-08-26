@@ -43,7 +43,9 @@ export default function Projects() {
 
   useEffect(() => {
     if (filter.toLowerCase() === 'do a barrel roll') {
-      addAchievement('starfox');
+      setTimeout(() => {
+        addAchievement('starfox');
+      }, 3000);
       document.querySelector('body')!.classList.add('barrel');
     }
   }, [filter, addAchievement]);

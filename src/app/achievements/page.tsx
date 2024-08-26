@@ -11,7 +11,6 @@ export default function PAchievements() {
       <h1>Achievements</h1>
       <hr />
       {achievements.map((achievementId: string) => (
-        // <p key={achievementId}>{achievementId}</p>
         <Achievement key={achievementId} achievementId={achievementId} />
       ))}
     </main>

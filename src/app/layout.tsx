@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { GiTrophy } from "react-icons/gi";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +26,17 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
-        <ToastContainer />
+        <ToastContainer
+          className="wu-toast"
+          position='bottom-right'
+          theme='dark'
+          autoClose={5000}
+          closeOnClick
+          newestOnTop
+          pauseOnFocusLoss
+          pauseOnHover
+          icon={<GiTrophy />}
+        />
       </body>
     </html>
   );
