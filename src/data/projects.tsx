@@ -127,6 +127,16 @@ const projects: Projects = [
     skills: ['javascript', 'phaser'],
     url: 'https://wust.itch.io/morserunner',
   },
+  {
+    label: 'tobiaswust.de 2017',
+    id: 'tobiaswust2017',
+    screenshot: 'tobiaswust.de/tobiaswust2017',
+    year: 2017,
+    shortDescription: 'Developer Website',
+    description: "My old Website. I personally really liked the design with the huge photo.",
+    skills: ['javascript', 'vue'],
+    url: 'https://tobiaswust2017.wust.io',
+  },
 ];
 
 export default projects;

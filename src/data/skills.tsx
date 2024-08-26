@@ -1,6 +1,7 @@
 export type Skill = {
   label: string
   id: string
+  logo?: string
 }
 
 export type Skills = Skill[]
@@ -44,7 +45,8 @@ const skills: Skills = [
   { id: 'express', label: 'Express' },
   { id: 'bitbucket', label: 'Bitbucket' },
   { id: 'jira', label: 'Jira' },
-  { id: 'figma', label: 'Figma' }
+  { id: 'figma', label: 'Figma' },
+  { id: 'vue', label: 'Vue.js' }
 ];
 
 export default skills;
