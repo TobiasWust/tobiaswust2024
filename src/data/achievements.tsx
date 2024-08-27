@@ -8,7 +8,7 @@ export type Achievement = {
   secret?: boolean
 }
 
-const achievements = [
+const achievements: Achievement[] = [
   {
     label: 'Scroll Master',
     id: 'scrollMaster',
