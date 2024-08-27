@@ -16,11 +16,22 @@ export default function Projects() {
   const [filter, setFilter] = useState('');
   const [fullscreenProject, setFullscreenProject] = useState<TProject | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [projectsOpened, setProjectsOpened] = useState<string[]>([]);
 
   useConsoleMsg();
   useAscrollMaster();
   useAfullscreenFanatic()
   const { addAchievement } = useAchievement();
+
+  const filteredProjects = useMemo(() => (
+    projects
+      .filter(project =>
+        !filter
+        || project.label.toLowerCase().includes(filter.toLowerCase())
+        || project.description.toLowerCase().includes(filter.toLowerCase())
+        || project.skills.some(skill => skill.toLowerCase().includes(filter.toLowerCase()))
+      )
+  ), [filter]);
 
   useEffect(() => setMounted(true), []);
   useEffect(() => {
@@ -33,18 +44,8 @@ export default function Projects() {
     return () => window.removeEventListener('keydown', close)
   }, []);
 
-  const filteredProjects = useMemo(() => (
-    projects
-      .filter(project =>
-        !filter
-        || project.label.toLowerCase().includes(filter.toLowerCase())
-        || project.description.toLowerCase().includes(filter.toLowerCase())
-        || project.skills.some(skill => skill.toLowerCase().includes(filter.toLowerCase()))
-      )
-  ), [filter]);
-
+  // cheatcodes
   useEffect(() => {
-    // cheatcodes
     if (filter.toLowerCase() === 'do a barrel roll') {
       setTimeout(() => {
         addAchievement('starfox');
@@ -56,6 +57,14 @@ export default function Projects() {
       addAchievement('polymath');
     }
   }, [filter, addAchievement]);
+
+  // add achievement projectShopper if viewed all projects
+  useEffect(() => {
+    localStorage.setItem('projectsOpened', `${projectsOpened.length}`);
+    if (projectsOpened.length === projects.length) {
+      addAchievement('projectShopper');
+    }
+  }, [projectsOpened, addAchievement]);
 
   return (
     <section id='projects' className={style.projects}>
@@ -98,6 +107,9 @@ export default function Projects() {
                       <Flipped flipId={`project-${project.id}`} portalKey='projectPortal'>
                         <button type='button' onClick={() => {
                           setFullscreenProject(project)
+                          if (!projectsOpened.includes(project.id)) {
+                            setProjectsOpened([...projectsOpened, project.id])
+                          }
                         }}>
                           <ProjectThumb project={project} />
                         </button>

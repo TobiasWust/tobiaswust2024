@@ -1,3 +1,5 @@
+import projects from "./projects"
+
 export type Achievement = {
   label: string
   id: string
@@ -5,6 +7,8 @@ export type Achievement = {
   logo: string
   withProgress?: boolean
   maxProgress?: number
+  getMaxProgress?: () => void
+  getProgress?: () => void
   secret?: boolean
 }
 
@@ -16,13 +20,15 @@ const achievements: Achievement[] = [
     logo: 'string',
     secret: true,
   },
-  // {
-  //   label: 'Project Shopper',
-  //   id: 'projectShopper',
-  //   description: 'Viewed every project.',
-  //   logo: 'string',
-  //   withProgress: true,
-  // },
+  {
+    label: 'Project Shopper',
+    id: 'projectShopper',
+    description: 'Viewed every project.',
+    logo: 'string',
+    withProgress: true,
+    maxProgress: projects.length,
+    getProgress: () => Number(localStorage.getItem('projectsOpened')) || 0,
+  },
   // {
   //   label: 'Use Contact Form',
   //   id: 'useContactForm',
