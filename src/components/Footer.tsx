@@ -4,13 +4,13 @@ import style from './Footer.module.scss';
 import Link from "next/link";
 import { GiHearts } from "react-icons/gi";
 import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
-import useAchievement from '../achievements/useAchievement';
+import achievementStore from '../achievements/achievementStore';
 import { useEffect, useState } from 'react';
 
 export default function Footer() {
 
   const [socialsClicked, setSocialsClicked] = useState<string[]>([]);
-  const { addAchievement } = useAchievement();
+  const addAchievement = achievementStore((state) => state.addAchievement);
 
   // add achievement socialButterfly if clicked all socials
   useEffect(() => {

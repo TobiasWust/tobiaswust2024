@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
 import Project from './Project';
 import { createPortal } from 'react-dom';
-import useAchievement from '../achievements/useAchievement';
+import achievementStore from '../achievements/achievementStore';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
@@ -15,7 +15,7 @@ export default function Projects() {
   const [mounted, setMounted] = useState(false);
   const [projectsOpened, setProjectsOpened] = useState<string[]>([]);
 
-  const { addAchievement } = useAchievement();
+  const addAchievement = achievementStore((state) => state.addAchievement);
 
   const filteredProjects = useMemo(() => (
     projects

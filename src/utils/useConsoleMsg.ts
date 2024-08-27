@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import useAchievement from "../achievements/useAchievement";
+import achievementStore from "../achievements/achievementStore";
 
 export default function useConsoleMsg() {
-  const { addAchievement } = useAchievement();
+  const addAchievement = achievementStore((state) => state.addAchievement);
   const [once, setOnce] = useState(false);
 
   useEffect(() => {

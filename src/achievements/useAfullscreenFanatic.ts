@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import useAchievement from "./useAchievement";
+import achievementStore from "./achievementStore";
 
 export default function useAfullscreenFanatic() {
-  const { addAchievement } = useAchievement();
+  const addAchievement = achievementStore((state) => state.addAchievement);
 
   useEffect(() => {
     const fullscreenListener = () => {

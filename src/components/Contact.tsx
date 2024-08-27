@@ -2,12 +2,12 @@
 
 import { FormEvent, useState } from 'react';
 import style from './Contact.module.scss'
-import useAchievement from '../achievements/useAchievement';
+import achievementStore from '../achievements/achievementStore';
 
 export default function Contact() {
   const [status, setStatus] = useState<String | null>(null);
   const [error, setError] = useState<String | null>(null);
-  const { addAchievement } = useAchievement();
+  const addAchievement = achievementStore((state) => state.addAchievement);
 
   const handleFormSubmit = async (event: FormEvent) => {
     event.preventDefault();
