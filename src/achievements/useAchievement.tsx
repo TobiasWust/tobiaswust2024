@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import Achievement from '../components/Achievement';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function useAchievement() {
   const [achievements, setAchievements] = useState<string[]>([]);
