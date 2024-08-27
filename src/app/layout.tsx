@@ -29,7 +29,7 @@ export default function RootLayout({
           className="wu-toast"
           position='bottom-right'
           theme='dark'
-          autoClose={5000}
+          autoClose={10000}
           // autoClose={false}
           closeOnClick
           newestOnTop

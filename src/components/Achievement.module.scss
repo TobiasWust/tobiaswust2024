@@ -11,8 +11,12 @@
     filter: inherit;
   }
 
+  >div {
+    width: 100%;
+  }
+
   svg {
-    color: var(--wu-green);
+    color: var(--wu-orange);
     height: 2em;
     width: 2em;
     flex-shrink: 0;

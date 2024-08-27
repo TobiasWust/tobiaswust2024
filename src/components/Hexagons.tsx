@@ -5,10 +5,10 @@ export default function Hexagons() {
     <div className={styles.container}>
       {
         [...Array(8)].map((_, i) => (
-          <div className={styles.row} key={i}>
+          <div className={styles.row} key={i} style={{ '--hexagon-x': i } as React.CSSProperties}>
             {
               [...Array(18)].map((_, j) => (
-                <div className={styles.hexagon} key={j}></div>
+                <div className={styles.hexagon} key={j} style={{ '--hexagon-y': j } as React.CSSProperties}></div>
               ))
             }
           </div>

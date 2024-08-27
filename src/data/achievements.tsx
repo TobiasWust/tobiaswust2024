@@ -125,6 +125,7 @@ const achievements = [
     id: 'fullscreenFanatic',
     description: 'Viewed the website in fullscreen mode.',
     logo: 'string',
+    secret: true,
   },
   {
     label: 'Secret Love',
@@ -164,7 +165,7 @@ const achievements = [
   {
     label: 'Networker',
     id: 'networker',
-    description: 'Found a codeword on LinkedInd',
+    description: 'Found a codeword on LinkedIn',
     logo: 'string',
   },
 ]

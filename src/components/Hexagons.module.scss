@@ -11,10 +11,11 @@
   height: 110px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   transition: 2s;
+  animation: show .5s calc((var(--hexagon-y) + var(--hexagon-x)) * .2s + 1s);
 
   &:hover {
-    transition: 0s;
     background: var(--wu-orange);
+    transition: 0s;
     animation: fade 5s infinite alternate;
   }
 }
@@ -36,5 +37,15 @@
 
   100% {
     opacity: 0.1;
+  }
+}
+
+@keyframes show {
+  0% {
+    background: none;
+  }
+
+  100% {
+    background: var(--wu-orange);
   }
 }

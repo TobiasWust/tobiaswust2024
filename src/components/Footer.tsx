@@ -35,16 +35,16 @@ export default function Footer() {
         </a>
       </p>
       <div>
+        <Link className="link" href="/achievements">
+          Achievements
+        </Link>
+      </div>
+      <div>
         <Link className="link" href="/imprint">
           Imprint
         </Link>
         <Link className="link" href="/privacy">
           Privacy Policy
-        </Link>
-      </div>
-      <div>
-        <Link className="link" href="/achievements">
-          Achievements
         </Link>
       </div>
     </footer>

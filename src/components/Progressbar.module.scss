@@ -1,0 +1,43 @@
+.progressbar {
+  display: grid;
+  min-height: 1em;
+  border: 1px solid var(--wu-gray);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  div {
+    grid-area: 1/1;
+  }
+
+  .valuebar {
+    background: var(--wu-orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-wrap: nowrap;
+    animation: showbar 1s .5s forwards;
+    translate: -100%
+  }
+
+  .maxbar {
+    background: var(--wu-black);
+  }
+
+  .label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-wrap: nowrap;
+    font-weight: 800;
+  }
+}
+
+@keyframes showbar {
+  from {
+    translate: -100%
+  }
+
+  to {
+    translate: 0%
+  }
+}

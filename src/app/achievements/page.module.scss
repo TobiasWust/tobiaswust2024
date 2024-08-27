@@ -1,6 +1,19 @@
-.achievementGrid {
-  padding: 1em;
-  display: grid;
-  gap: .5em;
-  max-width: 500px;
+.achievements {
+  section {
+    padding-block: 2em;
+
+    >h2 {
+      font-size: 2rem;
+    }
+
+    >p {
+      margin-block: 1em;
+    }
+  }
+
+  .achievementGrid {
+    display: grid;
+    gap: .5em;
+    margin-block: 2em;
+  }
 }
