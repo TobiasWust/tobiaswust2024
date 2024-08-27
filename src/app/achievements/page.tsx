@@ -1,4 +1,5 @@
 'use client';
+
 import useAchievement from "../../achievements/useAchievement";
 import Achievement from "../../components/Achievement";
 import Progressbar from "../../components/Progressbar";
