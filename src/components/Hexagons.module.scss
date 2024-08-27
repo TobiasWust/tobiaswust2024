@@ -16,7 +16,6 @@
   &:hover {
     background: var(--wu-orange);
     transition: 0s;
-    animation: fade 5s infinite alternate;
   }
 }
 
@@ -28,16 +27,6 @@
 
 .row:nth-child(even) {
   margin-left: 0;
-}
-
-@keyframes fade {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.1;
-  }
 }
 
 @keyframes show {

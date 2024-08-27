@@ -6,7 +6,7 @@ export default function useAchievement() {
     const achievements = JSON.parse(localStorage.getItem('achievements') || '[]') as string[];
     if (achievements.includes(achievementId)) return;
 
-    toast(() => Achievement({ achievementId: achievementId, active: true }));
+    toast(() => Achievement({ achievementId: achievementId, active: true, hideProgressbar: true }));
     localStorage.setItem('achievements', JSON.stringify([...achievements, achievementId]));
   }
   const getAchievements = () => {

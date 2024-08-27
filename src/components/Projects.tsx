@@ -10,6 +10,7 @@ import { createPortal } from 'react-dom';
 import useConsoleMsg from '../utils/useConsoleMsg';
 import useAscrollMaster from '../achievements/useAscrollMaster';
 import useAchievement from '../achievements/useAchievement';
+import useAfullscreenFanatic from '../achievements/useAfullscreenFanatic';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
@@ -18,6 +19,7 @@ export default function Projects() {
 
   useConsoleMsg();
   useAscrollMaster();
+  useAfullscreenFanatic()
   const { addAchievement } = useAchievement();
 
   useEffect(() => setMounted(true), []);
