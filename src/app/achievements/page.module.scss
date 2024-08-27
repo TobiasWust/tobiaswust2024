@@ -16,4 +16,22 @@
     gap: .5em;
     margin-block: 2em;
   }
+
+  button {
+    flex-basis: 70%;
+    background: var(--wu-orange);
+    padding: 10px;
+    color: var(--wu-black);
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+
+  button:hover {
+    background: transparent;
+    border: 1px solid var(--wu-orange);
+    color: var(--wu-orange);
+    cursor: pointer;
+  }
 }

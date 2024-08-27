@@ -4,7 +4,7 @@ export type Achievement = {
   label: string
   id: string
   description: string
-  logo: string
+  logo?: string
   withProgress?: boolean
   maxProgress?: number
   getMaxProgress?: () => void
@@ -55,24 +55,24 @@ const achievements: Achievement[] = [
     description: 'Used console function.',
     logo: 'string',
   },
-  // {
-  //   label: 'Night Owl',
-  //   id: 'nightOwl',
-  //   description: 'Visited the site between midnight and 4 AM.',
-  //   logo: 'string',
-  // },
-  // {
-  //   label: 'Stay Awhile',
-  //   id: 'stayAwhile',
-  //   description: 'Stayed on the Site for more than 10 minutes.',
-  //   logo: 'string',
-  // },
-  // {
-  //   label: 'Social Butterfly',
-  //   id: 'socialButterfly',
-  //   description: 'Checked all Socials.',
-  //   logo: 'string',
-  // },
+  {
+    label: 'Night Owl',
+    id: 'nightOwl',
+    description: 'Visited the site between midnight and 4 AM.',
+    logo: 'string',
+  },
+  {
+    label: 'Stay Awhile',
+    id: 'stayAwhile',
+    description: 'Stayed on the Site for more than 10 minutes.',
+    logo: 'string',
+  },
+  {
+    label: 'Social Butterfly',
+    id: 'socialButterfly',
+    description: 'Checked all Socials.',
+    secret: true
+  },
   // {
   //   label: 'Hexagon love',
   //   id: 'hexagonLove',
@@ -133,32 +133,32 @@ const achievements: Achievement[] = [
     logo: 'string',
     secret: true,
   },
-  // {
-  //   label: 'Secret Love',
-  //   id: 'secretLove',
-  //   description: 'Found love.',
-  //   logo: 'string',
-  // },
-  // {
-  //   label: 'Santa Claus',
-  //   id: 'santaClaus',
-  //   description: 'Visited site on christmas.',
-  //   logo: 'string',
-  // },
-  // {
-  //   label: 'Happy Birthday',
-  //   id: 'happyBirthday',
-  //   description: 'Visited site on my Birthday.',
-  //   logo: 'string',
-  //   secret: true,
-  // },
+  {
+    label: 'Secret Love',
+    id: 'secretLove',
+    description: 'Found love.',
+    logo: 'string',
+  },
+  {
+    label: 'Santa Claus',
+    id: 'santaClaus',
+    description: 'Visited site on christmas.',
+    logo: 'string',
+  },
+  {
+    label: 'Happy Birthday',
+    id: 'happyBirthday',
+    description: 'Visited site on my Birthday.',
+    logo: 'string',
+    secret: true,
+  },
   // {
   //   label: 'Fanboy',
   //   id: 'fanboy',
   //   description: 'Visited site 20 times.',
   //   logo: 'string',
   //   withProgress: true,
-  //   maxProgress: 20,
+  //   maxProgress: 5,
   // },
   // {
   //   label: 'Stalker',
@@ -166,13 +166,20 @@ const achievements: Achievement[] = [
   //   description: 'Visited site 200 times.',
   //   logo: 'string',
   //   withProgress: true,
-  //   maxProgress: 200,
+  //   maxProgress: 20,
   // },
+  {
+    label: 'Networker',
+    id: 'networker',
+    description: 'Found a codeword on LinkedIn.',
+    logo: 'string',
+  },
   // {
-  //   label: 'Networker',
-  //   id: 'networker',
-  //   description: 'Found a codeword on LinkedIn',
+  //   label: 'To reset or not to reset',
+  //   id: 'reset',
+  //   description: 'Used reset button but said no.',
   //   logo: 'string',
+  //   secret: true
   // },
 ]
 

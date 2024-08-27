@@ -7,8 +7,7 @@ import achievements from "../../data/achievements";
 import style from './page.module.scss';
 
 export default function PAchievements() {
-  const { getAchievements } = useAchievement();
-  const activeAachievements = getAchievements();
+  const { achievements: activeAachievements } = useAchievement();
 
   return (
     <main className={style.achievements}>
@@ -25,6 +24,7 @@ export default function PAchievements() {
             />
           ))}
         </div>
+        {/* <button type="button">Reset All Achievements</button> */}
       </section>
     </main>
   )

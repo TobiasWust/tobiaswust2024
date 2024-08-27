@@ -7,10 +7,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
 import Project from './Project';
 import { createPortal } from 'react-dom';
-import useConsoleMsg from '../utils/useConsoleMsg';
-import useAscrollMaster from '../achievements/useAscrollMaster';
 import useAchievement from '../achievements/useAchievement';
-import useAfullscreenFanatic from '../achievements/useAfullscreenFanatic';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
@@ -18,9 +15,6 @@ export default function Projects() {
   const [mounted, setMounted] = useState(false);
   const [projectsOpened, setProjectsOpened] = useState<string[]>([]);
 
-  useConsoleMsg();
-  useAscrollMaster();
-  useAfullscreenFanatic()
   const { addAchievement } = useAchievement();
 
   const filteredProjects = useMemo(() => (
@@ -55,6 +49,10 @@ export default function Projects() {
 
     if (filter.toLowerCase() === '18') {
       addAchievement('polymath');
+    }
+
+    if (filter.toLowerCase() === 'goodtimes') {
+      addAchievement('networker');
     }
   }, [filter, addAchievement]);
 
