@@ -60,7 +60,8 @@ export default function Projects() {
 
   // add achievement projectShopper if viewed all projects
   useEffect(() => {
-    localStorage.setItem('projectsOpened', `${projectsOpened.length}`);
+    const max = Math.max(Number(localStorage.getItem('projectsOpened')), projectsOpened.length);
+    localStorage.setItem('projectsOpened', `${max}`);
     if (projectsOpened.length === projects.length) {
       addAchievement('projectShopper');
     }

@@ -4,10 +4,9 @@ import { GiTrophy } from "react-icons/gi";
 import Progressbar from './Progressbar';
 import { useEffect, useState } from 'react';
 
-export default function Achievement({ achievementId, active, hideProgressbar }: {
+export default function Achievement({ achievementId, active }: {
   achievementId: string
   active: boolean
-  hideProgressbar?: boolean
 }) {
   const achievement = achievements.find(e => e.id === achievementId);
   const [progress, setProgress] = useState(0);
@@ -28,7 +27,7 @@ export default function Achievement({ achievementId, active, hideProgressbar }: 
         <p>
           {(achievement.secret && !active) ? '??????????' : achievement.description}
         </p>
-        {(!hideProgressbar && achievement.withProgress) &&
+        {achievement.withProgress &&
           <Progressbar
             value={progress}
             max={maxProgress} />}

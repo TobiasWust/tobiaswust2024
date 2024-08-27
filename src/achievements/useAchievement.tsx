@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
-import Achievement from '../components/Achievement';
 import { useEffect, useState } from 'react';
+import AchievementToast from '../components/AchievementToast';
 
 export default function useAchievement() {
   const [achievements, setAchievements] = useState<string[]>([]);
@@ -9,7 +9,7 @@ export default function useAchievement() {
     const achievements = JSON.parse(localStorage.getItem('achievements') || '[]') as string[];
     if (achievements.includes(achievementId)) return;
 
-    toast(() => Achievement({ achievementId: achievementId, active: true, hideProgressbar: true }));
+    toast(() => AchievementToast({ achievementId: achievementId }));
     localStorage.setItem('achievements', JSON.stringify([...achievements, achievementId]));
   }
 

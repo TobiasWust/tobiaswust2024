@@ -73,9 +73,12 @@ section {
   }
 }
 
-a.link {
+a {
   color: inherit;
   text-decoration: none;
+}
+
+a.link {
   position: relative;
 }
 
