@@ -7,7 +7,6 @@ export default function useAscrollMaster() {
   useEffect(() => {
     const scrollListener = () => {
       if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
-        console.log('sack');
         addAchievement('scrollMaster');
       }
     };

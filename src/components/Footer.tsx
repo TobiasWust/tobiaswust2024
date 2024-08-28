@@ -11,15 +11,17 @@ export default function Footer() {
 
   const [socialsClicked, setSocialsClicked] = useState<string[]>([]);
   const addAchievement = achievementStore((state) => state.addAchievement);
+  const counters = achievementStore((state) => state.counters);
+  const setCounter = achievementStore((state) => state.setCounter);
 
   // add achievement socialButterfly if clicked all socials
   useEffect(() => {
-    const max = Math.max(Number(localStorage.getItem('socialsClicked')), socialsClicked.length);
-    localStorage.setItem('socialsClicked', `${max}`);
+    const max = Math.max(counters.socialsClicked, socialsClicked.length);
+    setCounter('socialsClicked', max);
     if (socialsClicked.length === 3) {
       addAchievement('socialButterfly');
     }
-  }, [socialsClicked, addAchievement]);
+  }, [socialsClicked, addAchievement, counters.socialsClicked, setCounter]);
 
   return (
     <footer className={style.footer}>

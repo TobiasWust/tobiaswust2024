@@ -10,18 +10,20 @@ type AchievementStore = {
     [counterName: string]: number
   },
   addAchievement: (achievementId: string) => void;
+  setCounter: (counterName: string, value: number) => void;
+  increaseCounter: (counterName: string) => void;
 };
 
 const achievementStore = create(
   persist<AchievementStore>((set, get) => ({
     achievementIds: [],
     counters: {},
-    addAchievement: (achievementId: string) => {
+    addAchievement: (achievementId) => {
       if (get().achievementIds.includes(achievementId)) return;
       toast(() => AchievementToast({ achievementId }));
       set({ achievementIds: [...get().achievementIds, achievementId] })
     },
-    setCounter: (counterName: string, value: number) => {
+    setCounter: (counterName, value) => {
       if (get().counters[counterName] && get().counters[counterName] > value) return;
       set({
         counters: {
@@ -29,7 +31,7 @@ const achievementStore = create(
         }
       })
     },
-    increaseCounter: (counterName: string) => {
+    increaseCounter: (counterName) => {
       const value = get().counters[counterName] || 0;
       set({
         counters: {

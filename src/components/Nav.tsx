@@ -7,12 +7,14 @@ import useConsoleMsg from '../utils/useConsoleMsg';
 import useAscrollMaster from '../achievements/useAscrollMaster';
 import useAfullscreenFanatic from '../achievements/useAfullscreenFanatic';
 import useADates from '../achievements/useADates';
+import useAVisits from "../achievements/useAVisits";
 
 export default function Nav() {
   useConsoleMsg();
   useAscrollMaster();
   useAfullscreenFanatic();
   useADates();
+  useAVisits();
 
   return (
     <nav className={styles.nav}>

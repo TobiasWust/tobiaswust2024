@@ -10,9 +10,9 @@ export default function Hexagons() {
   const counters = achievementStore((state) => state.counters);
 
   useEffect(() => {
-    if (counters?.hexagonsHovered > 500) addAchievement('hexagonLove')
-    if (counters?.hexagonsHovered > 5000) addAchievement('hexagonFanatic')
-  }, [counters, addAchievement])
+    if (counters?.hexagonsHovered > 500) addAchievement('hexagonHunter')
+    if (counters?.hexagonsHovered > 5000) addAchievement('hexagonHero')
+  }, [counters.hexagonsHovered, addAchievement])
 
   return (
     <div className={styles.container}>

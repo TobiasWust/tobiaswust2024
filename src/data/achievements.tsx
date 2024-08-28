@@ -9,6 +9,7 @@ export type Achievement = {
   maxProgress?: number
   getMaxProgress?: () => void
   getProgress?: () => void
+  counterName?: string
   secret?: boolean
 }
 
@@ -71,32 +72,29 @@ const achievements: Achievement[] = [
     label: 'Social Butterfly',
     id: 'socialButterfly',
     description: 'Checked all Socials.',
-    secret: true
+    secret: true,
+    maxProgress: 3,
+    withProgress: true,
+    counterName: 'socialsClicked'
   },
   {
-    label: 'Hexagon love',
-    id: 'hexagonLove',
+    label: 'Hexagon Hunter',
+    id: 'hexagonHunter',
     description: 'Hovered 500 Hexagons.',
     logo: 'string',
     withProgress: true,
     maxProgress: 500,
+    counterName: 'hexagonsHovered'
   },
   {
-    label: 'Hexagon fanatic',
-    id: 'hexagonFanatic',
+    label: 'Hexagon Hero',
+    id: 'hexagonHero',
     description: 'Hovered 5000 Hexagons.',
     secret: true,
     withProgress: true,
     maxProgress: 5000,
+    counterName: 'hexagonsHovered'
   },
-  // {
-  //   label: 'Code Connoisseur',
-  //   id: 'codeConnoisseur',
-  //   description: 'Found a secret in the source code.',
-  //   logo: 'string',
-  //   withProgress: true,
-  //   maxProgress: 2000,
-  // },
   // {
   //   label: '404 Hunter',
   //   id: '404Hunter',
@@ -110,22 +108,6 @@ const achievements: Achievement[] = [
     description: 'I am a number that is twice the sum of my digits. What number am I?',
     logo: 'string',
   },
-  // {
-  //   label: 'Clicker',
-  //   id: 'clicker',
-  //   description: 'Clicked 20 times.',
-  //   logo: 'string',
-  //   withProgress: true,
-  //   maxProgress: 20,
-  // },
-  // {
-  //   label: 'Master Clicker',
-  //   id: 'masterClicker',
-  //   description: 'Clicked 500 times.',
-  //   logo: 'string',
-  //   withProgress: true,
-  //   maxProgress: 500,
-  // },
   {
     label: 'Fullscreen Fanatic',
     id: 'fullscreenFanatic',
