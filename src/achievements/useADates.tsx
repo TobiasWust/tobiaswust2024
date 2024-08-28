@@ -5,8 +5,6 @@ export default function useADates() {
   const addAchievement = achievementStore((state) => state.addAchievement);
 
   useEffect(() => {
-    addAchievement('scrollMaster');
-
     const date = new Date();
 
     const isChristmas = (date.getDate() === 24) && (date.getMonth() === 11);

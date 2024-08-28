@@ -6,16 +6,36 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 
 type AchievementStore = {
   achievementIds: string[]
+  counters: {
+    [counterName: string]: number
+  },
   addAchievement: (achievementId: string) => void;
 };
 
 const achievementStore = create(
   persist<AchievementStore>((set, get) => ({
     achievementIds: [],
+    counters: {},
     addAchievement: (achievementId: string) => {
       if (get().achievementIds.includes(achievementId)) return;
       toast(() => AchievementToast({ achievementId }));
       set({ achievementIds: [...get().achievementIds, achievementId] })
+    },
+    setCounter: (counterName: string, value: number) => {
+      if (get().counters[counterName] && get().counters[counterName] > value) return;
+      set({
+        counters: {
+          [counterName]: value
+        }
+      })
+    },
+    increaseCounter: (counterName: string) => {
+      const value = get().counters[counterName] || 0;
+      set({
+        counters: {
+          [counterName]: value + 1
+        }
+      })
     }
   }), {
     name: 'achievementStore',
@@ -24,38 +44,3 @@ const achievementStore = create(
 );
 
 export default achievementStore;
-
-
-// if (state.achievementIds.includes(achievementId)) return state.achievementIds;
-
-// return (
-//   {
-//     ...state,
-//     achievementIds: [...state.achievementIds, achievementId]
-//   }
-// )
-// })
-
-// export default function useAchievement() {
-//   const [achievements, setAchievements] = useState<string[]>([]);
-
-//   const addAchievement = (achievementId: string) => {
-//     if (achievements.includes(achievementId)) return;
-
-//     toast(() => AchievementToast({ achievementId: achievementId }));
-//     setAchievements([...achievements, achievementId])
-//   }
-
-//   useEffect(() => {
-//     setAchievements(JSON.parse(localStorage.getItem('achievements') || '[]') as string[]);
-//   }, []);
-
-//   useEffect(() => {
-//     localStorage.setItem('achievements', JSON.stringify(achievements));
-//   }, [achievements]);
-
-//   return {
-//     addAchievement, achievements
-//   }
-// }
-
