@@ -17,7 +17,6 @@ export default function useConsoleMsg() {
 
     (window as any).github = function github() {
       console.log("%cThank you for being interested in my code. Check it out on github https://github.com/TobiasWust/tobiaswust2024", "background-color: black; color: lime; padding: 5px 50px 5px 20px; font-family: 'Courier New'");
-      window.location.href = '/#contact'
       addAchievement('inspectorGadget');
     };
     setOnce(true);

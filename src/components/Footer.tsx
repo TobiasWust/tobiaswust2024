@@ -16,7 +16,7 @@ export default function Footer() {
 
   // add achievement socialButterfly if clicked all socials
   useEffect(() => {
-    const max = Math.max(counters.socialsClicked, socialsClicked.length);
+    const max = Math.max(counters?.socialsClicked || 0, socialsClicked.length);
     setCounter('socialsClicked', max);
     if (socialsClicked.length === 3) {
       addAchievement('socialButterfly');

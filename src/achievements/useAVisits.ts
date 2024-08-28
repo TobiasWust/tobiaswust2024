@@ -7,10 +7,12 @@ export default function useAVisits() {
   const counters = achievementStore((state) => state.counters);
 
   useEffect(() => {
+    console.log('hi');
     increaseCounter('visits');
   }, [increaseCounter]);
 
   useEffect(() => {
-    if (counters.visits > 2) addAchievement('fanboy');
+    if (counters.visits >= 5) addAchievement('fanboy');
+    if (counters.visits >= 30) addAchievement('stalker');
   }, [addAchievement, counters.visits]);
 }

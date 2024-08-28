@@ -134,22 +134,24 @@ const achievements: Achievement[] = [
     logo: 'string',
     secret: true,
   },
-  // {
-  //   label: 'Fanboy',
-  //   id: 'fanboy',
-  //   description: 'Visited site 20 times.',
-  //   logo: 'string',
-  //   withProgress: true,
-  //   maxProgress: 5,
-  // },
-  // {
-  //   label: 'Stalker',
-  //   id: 'stalker',
-  //   description: 'Visited site 200 times.',
-  //   logo: 'string',
-  //   withProgress: true,
-  //   maxProgress: 20,
-  // },
+  {
+    label: 'Fanboy',
+    id: 'fanboy',
+    description: 'Visited site 5 times.',
+    logo: 'string',
+    withProgress: true,
+    maxProgress: 5,
+    counterName: 'visits'
+  },
+  {
+    label: 'Stalker',
+    id: 'stalker',
+    description: 'Visited site 30 times.',
+    logo: 'string',
+    withProgress: true,
+    maxProgress: 30,
+    counterName: 'visits'
+  },
   {
     label: 'Networker',
     id: 'networker',
