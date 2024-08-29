@@ -58,11 +58,11 @@
   display: grid;
   grid-template-columns: 1fr;
 
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: 500px) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 800px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
