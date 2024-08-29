@@ -97,6 +97,7 @@ a.link::before {
   left: 0;
   background-color: var(--wu-orange);
   // transform: scaleX(0.3);
+  transform: scaleX(0);
   transition: transform 0.3s ease;
   rotate: -2deg;
 }
