@@ -7,7 +7,6 @@ export default function useAVisits() {
   const counters = achievementStore((state) => state.counters);
 
   useEffect(() => {
-    console.log('hi');
     increaseCounter('visits');
   }, [increaseCounter]);
 

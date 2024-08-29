@@ -12,6 +12,7 @@ type AchievementStore = {
   addAchievement: (achievementId: string) => void;
   setCounter: (counterName: string, value: number) => void;
   increaseCounter: (counterName: string) => void;
+  resetAchievements: () => void;
 };
 
 const achievementStore = create(
@@ -43,6 +44,12 @@ const achievementStore = create(
           [counterName]: value + 1
         }
       })
+    },
+    resetAchievements: () => {
+      set({
+        achievementIds: [],
+        counters: {}
+      });
     }
   }), {
     name: 'achievementStore',

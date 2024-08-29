@@ -1,6 +1,6 @@
 .achievements {
   section {
-    padding-block: 2em;
+    padding: 2em 1em;
 
     >h2 {
       font-size: 2rem;
@@ -18,7 +18,6 @@
   }
 
   button {
-    flex-basis: 70%;
     background: var(--wu-orange);
     padding: 10px;
     color: var(--wu-black);
@@ -26,12 +25,30 @@
     font-weight: bold;
     border: 1px solid transparent;
     transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: transparent;
+      border: 1px solid var(--wu-orange);
+      color: var(--wu-orange);
+      cursor: pointer;
+    }
+
+    &.inverted {
+      background: transparent;
+      border: 1px solid var(--wu-orange);
+      color: var(--wu-orange);
+
+      &:hover {
+        background: var(--wu-orange);
+        color: var(--wu-black);
+        border: 1px solid transparent;
+      }
+    }
   }
 
-  button:hover {
-    background: transparent;
-    border: 1px solid var(--wu-orange);
-    color: var(--wu-orange);
-    cursor: pointer;
+  .confirmWrapper {
+    display: flex;
+    gap: 1em;
+    align-items: center;
   }
 }
