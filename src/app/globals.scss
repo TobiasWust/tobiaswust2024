@@ -83,6 +83,10 @@ a.link {
   position: relative;
 }
 
+a.link:active::before {
+  rotate: 2deg;
+}
+
 a.link::before {
   content: "";
   position: absolute;
