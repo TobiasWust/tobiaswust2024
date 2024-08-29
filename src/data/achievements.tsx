@@ -93,6 +93,11 @@ const achievements: Achievement[] = [
     description: 'I am a number that is twice the sum of my digits. What number am I?',
   },
   {
+    label: 'Tunic',
+    id: 'tunic',
+    description: 'Followed the orange path.',
+  },
+  {
     label: 'Fullscreen Fanatic',
     id: 'fullscreenFanatic',
     description: 'Viewed the website in fullscreen mode.',

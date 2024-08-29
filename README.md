@@ -10,10 +10,8 @@ this website runs on next js. have your typical node setup locally, run npm inst
 
 ## todos:
 - i18n
-- easter eggs
-- achievements
+- more achievements
 - style imprint
 - style privacy
 - seo
-- think about which url actually to use
-- where to put resume?
+- add CV somewhere

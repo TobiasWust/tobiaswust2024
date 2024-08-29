@@ -5,6 +5,10 @@
   margin: 1rem;
   border-radius: 40px;
   border: 1px solid var(--wu-orange);
+  background-image: url("/path.svg");
+  background-size: contain;
+  background-repeat: repeat-y;
+  background-position-x: center;
 
   p {
     margin: inherit;
