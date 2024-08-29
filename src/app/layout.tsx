@@ -5,6 +5,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -36,6 +37,7 @@ export default function RootLayout({
           pauseOnFocusLoss
           pauseOnHover
         />
+        <GoogleAnalytics gaId="G-C4JPK514R9" />
       </body>
     </html>
   );
