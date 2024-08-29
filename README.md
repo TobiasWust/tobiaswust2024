@@ -15,3 +15,4 @@ this website runs on next js. have your typical node setup locally, run npm inst
 - style privacy
 - seo?
 - add CV somewhere
+- remove google font /make local
