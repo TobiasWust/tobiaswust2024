@@ -21,7 +21,7 @@ const projects: Projects = [
     screenshot: 'tobiaswust.de/tobiaswust2024',
     year: 2024,
     shortDescription: 'Portfolio website',
-    description: 'After almost ten years with my old website I wanted to create something fast and modern. This is what I came up with.',
+    description: 'After almost ten years with my old website I wanted to create something fast and modern. Full with animations and achievements.',
     skills: ['react', 'nextjs', 'nodejs', 'typescript'],
     url: 'https://wust.dev',
   },
@@ -120,7 +120,7 @@ const projects: Projects = [
   {
     label: 'Game Morserunner',
     id: 'morserunner',
-    screenshot: 'tobiaswust.de/snowbody',
+    screenshot: 'tobiaswust.de/morserunner',
     year: 2017,
     shortDescription: 'Educational 2D Runner',
     description: "Morserunner is a game that teaches you morsecode while playing. It used to be in the google play store with cordova, but now its only available online.",

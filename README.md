@@ -13,5 +13,5 @@ this website runs on next js. have your typical node setup locally, run npm inst
 - more achievements
 - style imprint
 - style privacy
-- seo
+- seo?
 - add CV somewhere

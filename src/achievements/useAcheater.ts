@@ -14,7 +14,6 @@ export default function useAcheater() {
     const cheaterEvent = (e: KeyboardEvent) => {
       if (e.key === sequence[index]) {
         index++
-        console.log('index:', index);
       } else index = 0;
 
       if (index === sequence.length) {
