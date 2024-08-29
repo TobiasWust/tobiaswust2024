@@ -16,6 +16,8 @@ export default function Projects() {
   const [projectsOpened, setProjectsOpened] = useState<string[]>([]);
 
   const addAchievement = achievementStore((state) => state.addAchievement);
+  const setCounter = achievementStore((state) => state.setCounter);
+  const counters = achievementStore((state) => state.counters);
 
   const filteredProjects = useMemo(() => (
     projects
@@ -58,12 +60,12 @@ export default function Projects() {
 
   // add achievement projectShopper if viewed all projects
   useEffect(() => {
-    const max = Math.max(Number(localStorage.getItem('projectsOpened')), projectsOpened.length);
-    localStorage.setItem('projectsOpened', `${max}`);
+    const max = Math.max(counters.projectsOpened || 0, projectsOpened.length);
+    setCounter('projectsOpened', max);
     if (projectsOpened.length === projects.length) {
       addAchievement('projectShopper');
     }
-  }, [projectsOpened, addAchievement]);
+  }, [projectsOpened, addAchievement, setCounter, counters.projectsOpened]);
 
   return (
     <section id='projects' className={style.projects}>
