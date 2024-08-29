@@ -1,14 +1,16 @@
 .about {
-  line-height: 1.5;
-  font-size: 1.5rem;
-  padding: 2rem;
-  margin: 1rem;
-  border-radius: 40px;
-  border: 1px solid var(--wu-orange);
-  background-image: url("/path.svg");
-  background-size: contain;
-  background-repeat: repeat-y;
-  background-position-x: center;
+  >div {
+    line-height: 1.3;
+    font-size: 1.3rem;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 40px;
+    border: 1px solid var(--wu-orange);
+    background-image: url("/path.svg");
+    background-size: contain;
+    background-repeat: repeat-y;
+    background-position-x: center;
+  }
 
   p {
     margin: inherit;

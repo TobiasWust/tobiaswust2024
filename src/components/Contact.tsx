@@ -36,31 +36,32 @@ export default function Contact() {
 
   return (
     <section id="contact" className={style.contact}>
-      <h2>GET IN TOUCH</h2>
+      <div>
+        <h2>GET IN TOUCH</h2>
 
-      <form onSubmit={handleFormSubmit} name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-        <h3>Share the details of your project with me, and I&apos;ll get back to you within 48 hours.</h3>
+        <form onSubmit={handleFormSubmit} name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+          <h3>Share the details of your project with me, and I&apos;ll get back to you within 48 hours.</h3>
 
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="text" id="name" name="name" required placeholder='Name' />
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="text" id="name" name="name" required placeholder='Name' />
 
-        <input type="email" id="email" name="email" required placeholder='Email' />
+          <input type="email" id="email" name="email" required placeholder='Email' />
 
-        <textarea id="message" name="message" required placeholder='Message'></textarea>
+          <textarea id="message" name="message" required placeholder='Message'></textarea>
 
-        <button type="submit" disabled={status === 'pending'}>Send</button>
-        {status === 'ok' && (
-          <p>
-            Thank you for reaching out :)
-          </p>
-        )}
-        {status === 'error' && (
-          <p>
-            Error: {error}
-          </p>
-        )}
-      </form>
-
+          <button type="submit" disabled={status === 'pending'}>Send</button>
+          {status === 'ok' && (
+            <p>
+              Thank you for reaching out :)
+            </p>
+          )}
+          {status === 'error' && (
+            <p>
+              Error: {error}
+            </p>
+          )}
+        </form>
+      </div>
     </section>
   )
 }
