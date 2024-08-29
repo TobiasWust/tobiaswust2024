@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import achievementStore from "../../achievements/achievementStore";
 import Achievement from "../../components/Achievement";
 import Progressbar from "../../components/Progressbar";
@@ -13,6 +13,13 @@ export default function PAchievements() {
   const resetAchievements = achievementStore((state) => state.resetAchievements);
   const addAchievement = achievementStore((state) => state.addAchievement);
   const [clickedReset, setClickedReset] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const mountedActiveAchievements = useMemo(() => mounted ? activeAchievements : [], [mounted, activeAchievements])
 
   const handleReset = () => {
     setClickedReset(true);
@@ -35,14 +42,14 @@ export default function PAchievements() {
       <section>
         <h2>Achievements</h2>
         <p>This website is filled with secrets. Can you find them all?</p>
-        <Progressbar value={activeAchievements.length} max={achievements.length} />
+        <Progressbar value={mountedActiveAchievements.length} max={achievements.length} />
         <p><small>Sorry, some of them are not available on mobile or not a11y friendly :(</small></p>
         <div className={style.achievementGrid}>
           {achievements.map((achievement) => (
             <Achievement
               key={achievement.id}
               achievementId={achievement.id}
-              active={activeAchievements.includes(achievement.id)}
+              active={mountedActiveAchievements.includes(achievement.id)}
             />
           ))}
         </div>

@@ -80,13 +80,12 @@ const achievements: Achievement[] = [
     maxProgress: 5000,
     counterName: 'hexagonsHovered'
   },
-  // {
-  //   label: '404 Hunter',
-  //   id: '404Hunter',
-  //   description: 'Found a 404 Page.',
-  //   logo: 'string',
-  //   secret: true,
-  // },
+  {
+    label: 'How did I get here?',
+    id: '404',
+    description: 'Found a 404 Page.',
+    secret: true,
+  },
   {
     label: 'Polymath',
     id: 'polymath',
