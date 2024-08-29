@@ -35,9 +35,6 @@ const achievementStore = create(
     },
     increaseCounter: (counterName) => {
       const value = get().counters[counterName] || 0;
-      console.log('value:', value);
-      console.log('counterName:', counterName);
-      console.log('value2:', get().counters[counterName]);
       set({
         counters: {
           ...get().counters,

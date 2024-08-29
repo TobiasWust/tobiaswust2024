@@ -8,12 +8,14 @@ import useAscrollMaster from '../achievements/useAscrollMaster';
 import useAfullscreenFanatic from '../achievements/useAfullscreenFanatic';
 import useADates from '../achievements/useADates';
 import useAVisits from "../achievements/useAVisits";
+import useAtunic from "../achievements/useAtunic";
 
 export default function Nav() {
   useConsoleMsg();
   useAscrollMaster();
   useAfullscreenFanatic();
   useADates();
+  useAtunic();
   useAVisits();
 
   return (
