@@ -56,6 +56,10 @@ export default function Projects() {
     if (filter.toLowerCase() === 'goodtimes') {
       addAchievement('networker');
     }
+
+    if (filter.toLowerCase() === 'easy') {
+      addAchievement('morserunner');
+    }
   }, [filter, addAchievement]);
 
   // add achievement projectShopper if viewed all projects

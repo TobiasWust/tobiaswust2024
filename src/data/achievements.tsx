@@ -104,6 +104,11 @@ const achievements: Achievement[] = [
     description: 'Followed the orange path.',
   },
   {
+    label: 'Morserunner',
+    id: 'morserunner',
+    description: 'Played Morserunner Lvl 7.',
+  },
+  {
     label: 'Fullscreen Fanatic',
     id: 'fullscreenFanatic',
     description: 'Viewed the website in fullscreen mode.',
