@@ -118,6 +118,9 @@ a.link:hover::before {
 
 .wu-toast {
   --toastify-color-progress-dark: var(--wu-orange);
+  --toastify-color-success: var(--wu-green);
+  --toastify-icon-color-success: var(--wu-green);
+  --toastify-color-progress-success: var(--wu-green);
 }
 
 
