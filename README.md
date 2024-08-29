@@ -16,3 +16,5 @@ this website runs on next js. have your typical node setup locally, run npm inst
 - seo?
 - add CV somewhere
 - remove google font /make local
+- google analytis in privacy
+- cookie banner?

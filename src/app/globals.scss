@@ -92,7 +92,7 @@ a.link::before {
   bottom: -2px;
   left: 0;
   background-color: var(--wu-orange);
-  transform: scaleX(0);
+  transform: scaleX(0.3);
   transition: transform 0.3s ease;
   rotate: -2deg;
 }

@@ -11,6 +11,7 @@ export default function About() {
         <p>My commitment to staying up-to-date with the latest technologies ensures that I deliver high-quality, modern solutions tailored to my clients&apos; needs.</p>
         <p>Beyond coding, I&apos;m also a <span className={style.highlight}>professional paragliding pilot</span>, bringing the same passion and precision to the skies as I do to my work.</p>
         <p>If you&apos;re looking for a dedicated developer who can bring your web project to life, I&apos;d love to connect and explore how we can work together!</p>
+        <p className={style.cv}><a className="link" rel="noopener noreferrer" target="_blank" href="https://cv.wust.dev">Check out my CV</a></p>
       </div>
     </section>
   )
