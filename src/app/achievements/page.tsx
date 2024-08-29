@@ -36,6 +36,7 @@ export default function PAchievements() {
         <h2>Achievements</h2>
         <p>This website is filled with secrets. Can you find them all?</p>
         <Progressbar value={activeAchievements.length} max={achievements.length} />
+        <p><small>Sorry, some of them are not available on mobile or not a11y friendly :(</small></p>
         <div className={style.achievementGrid}>
           {achievements.map((achievement) => (
             <Achievement

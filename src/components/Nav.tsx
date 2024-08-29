@@ -9,6 +9,7 @@ import useAfullscreenFanatic from '../achievements/useAfullscreenFanatic';
 import useADates from '../achievements/useADates';
 import useAVisits from "../achievements/useAVisits";
 import useAtunic from "../achievements/useAtunic";
+import useAcheater from "../achievements/useAcheater";
 
 export default function Nav() {
   useConsoleMsg();
@@ -16,6 +17,7 @@ export default function Nav() {
   useAfullscreenFanatic();
   useADates();
   useAtunic();
+  useAcheater();
   useAVisits();
 
   return (

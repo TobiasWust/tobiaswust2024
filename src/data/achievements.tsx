@@ -93,7 +93,13 @@ const achievements: Achievement[] = [
     description: 'I am a number that is twice the sum of my digits. What number am I?',
   },
   {
-    label: 'Tunic',
+    label: 'Cheater',
+    id: 'cheater',
+    description: 'Entered Konami Code.',
+    secret: true
+  },
+  {
+    label: 'The Orange Path',
     id: 'tunic',
     description: 'Followed the orange path.',
   },

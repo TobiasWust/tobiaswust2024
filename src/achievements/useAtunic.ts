@@ -32,28 +32,24 @@ export default function useAtunic() {
     const tunicEvent = (e: KeyboardEvent) => {
       if (e.key === indexTrackker.normal.sequence[indexTrackker.normal.index]) {
         indexTrackker.normal.index++;
-        console.log('indexTrackker.normal.index++;:', indexTrackker.normal.index);
       } else {
         indexTrackker.normal.index = 0;
       }
 
       if (e.key === indexTrackker.mirrored.sequence[indexTrackker.mirrored.index]) {
         indexTrackker.mirrored.index++;
-        console.log('indexTrackker.mirrored.index++;:', indexTrackker.mirrored.index);
       } else {
         indexTrackker.mirrored.index = 0;
       }
 
       if (e.key === indexTrackker.reversed.sequence[indexTrackker.reversed.index]) {
         indexTrackker.reversed.index++;
-        console.log('indexTrackker.reversed.index++;:', indexTrackker.reversed.index);
       } else {
         indexTrackker.reversed.index = 0
       }
 
       if (e.key === indexTrackker.mirroredReversed.sequence[indexTrackker.mirroredReversed.index]) {
         indexTrackker.mirroredReversed.index++;
-        console.log('indexTrackker.mirroredReversed.index++;:', indexTrackker.mirroredReversed.index);
       } else {
         indexTrackker.mirroredReversed.index = 0;
       }
@@ -63,7 +59,6 @@ export default function useAtunic() {
         indexTrackker.reversed.index === indexTrackker.reversed.sequence.length ||
         indexTrackker.mirroredReversed.index === indexTrackker.mirroredReversed.sequence.length
       ) {
-        console.log('Tunic of Time');
         addAchievement('tunic');
       }
 
