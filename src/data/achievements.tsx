@@ -64,12 +64,21 @@ const achievements: Achievement[] = [
     counterName: 'socialsClicked'
   },
   {
+    label: 'Hexagon Hoverer',
+    id: 'hexagonHoverer',
+    description: 'Hovered 30 Hexagons.',
+    withProgress: true,
+    maxProgress: 30,
+    counterName: 'hexagonsHovered'
+  },
+  {
     label: 'Hexagon Hunter',
     id: 'hexagonHunter',
     description: 'Hovered 500 Hexagons.',
     withProgress: true,
     maxProgress: 500,
-    counterName: 'hexagonsHovered'
+    counterName: 'hexagonsHovered',
+    secret: true
   },
   {
     label: 'Hexagon Hero',
