@@ -3,6 +3,7 @@ export default function Privacy() {
     <main>
       <div className="legal">
         <h1>Datenschutzerklärung</h1>
+        <hr />
         <h2>Verantwortliche Stelle</h2>
         <p>Wir freuen uns über Ihren Besuch auf unserer Website. Zunächst möchten wir uns Ihnen als verantwortliche Stelle im Sinne
           des Datenschutzrechts vorstellen:</p>

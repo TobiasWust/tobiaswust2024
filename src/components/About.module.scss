@@ -21,6 +21,17 @@
   }
 
   .cv {
-    text-align: right;
+    display: flex;
+    justify-content: end;
+
+    a {
+      display: flex;
+      align-items: center;
+      color: var(--wu-orange);
+      text-decoration: none;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      gap: .5em;
+    }
   }
 }

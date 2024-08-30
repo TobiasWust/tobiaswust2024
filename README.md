@@ -11,8 +11,5 @@ this website runs on next js. have your typical node setup locally, run npm inst
 ## todos:
 - i18n
 - more achievements
-- style imprint
-- style privacy
 - seo?
-- google analytis in privacy
 - cookie banner?
