@@ -55,15 +55,15 @@ export default function PAchievements() {
         </div>
         {!clickedReset ?
           (<div className={style.confirmWrapper}>
-            <button type="button" onClick={handleReset}>
+            <button className="btn" type="button" onClick={handleReset}>
               Reset All Achievements
             </button>
           </div>)
           :
           (<div className={style.confirmWrapper}>
             <span>Really Reset All Achievements?</span>
-            <button type="button" onClick={handleConfirm} className={style.inverted}>Confirm</button>
-            <button type="button" onClick={handleCancel}>Cancel</button>
+            <button type="button" onClick={handleConfirm} className="btn inverted">Confirm</button>
+            <button type="button" onClick={handleCancel} className="btn">Cancel</button>
           </div>)
         }
       </section>

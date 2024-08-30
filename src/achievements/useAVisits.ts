@@ -11,6 +11,7 @@ export default function useAVisits() {
   }, [increaseCounter]);
 
   useEffect(() => {
+    if (counters.visits >= 2) addAchievement('returningVisitor');
     if (counters.visits >= 5) addAchievement('fanboy');
     if (counters.visits >= 30) addAchievement('stalker');
   }, [addAchievement, counters.visits]);

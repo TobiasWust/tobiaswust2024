@@ -69,6 +69,9 @@ export default function Projects() {
   useEffect(() => {
     const max = Math.max(counters.projectsOpened || 0, projectsOpened.length);
     setCounter('projectsOpened', max);
+    if (projectsOpened.length === 3) {
+      addAchievement('projectProspect');
+    }
     if (projectsOpened.length === projects.length) {
       addAchievement('projectShopper');
     }
@@ -135,7 +138,7 @@ export default function Projects() {
 
       {(filteredProjects.length >= 9) &&
         <div className={style.expand}>
-          <button type="button" onClick={() => setIsExpanded((s) => !s)}>{isExpanded ?
+          <button className="btn" type="button" onClick={() => setIsExpanded((s) => !s)}>{isExpanded ?
             (<><FaChevronUp />Show less<FaChevronUp /></>) :
             (<><FaChevronDown />Show more<FaChevronDown /></>)}
           </button>

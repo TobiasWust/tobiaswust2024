@@ -20,13 +20,20 @@ const achievements: Achievement[] = [
     secret: true,
   },
   {
+    label: 'Project Prospect',
+    id: 'projectProspect',
+    description: 'Viewed 3 projects.',
+    withProgress: true,
+    maxProgress: 3,
+    counterName: 'projectsOpened'
+  },
+  {
     label: 'Project Shopper',
     id: 'projectShopper',
     description: 'Viewed every project.',
     withProgress: true,
     maxProgress: projects.length,
     counterName: 'projectsOpened'
-
   },
   {
     label: 'Use Contact Form',
@@ -139,7 +146,15 @@ const achievements: Achievement[] = [
     secret: true,
   },
   {
-    label: 'Fanboy',
+    label: 'Returning Visitor',
+    id: 'returningVisitor',
+    description: 'Visited site 2 times.',
+    withProgress: true,
+    maxProgress: 2,
+    counterName: 'visits'
+  },
+  {
+    label: 'Fan',
     id: 'fanboy',
     description: 'Visited site 5 times.',
     withProgress: true,
