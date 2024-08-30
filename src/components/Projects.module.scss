@@ -83,9 +83,22 @@
     height: 100%;
   }
 
+
   .noResult {
     text-align: center;
     font-size: 1.5rem;
     color: var(--wu-orange)
+  }
+
+}
+
+.expand {
+  display: flex;
+  justify-content: center;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 1em;
   }
 }

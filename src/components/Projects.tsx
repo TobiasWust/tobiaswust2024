@@ -3,23 +3,25 @@
 import style from './Projects.module.scss';
 import projects, { Project as TProject } from "../data/projects";
 import ProjectThumb from "./ProjectThumb";
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
 import Project from './Project';
 import { createPortal } from 'react-dom';
 import achievementStore from '../achievements/achievementStore';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
   const [fullscreenProject, setFullscreenProject] = useState<TProject | null>(null);
   const [mounted, setMounted] = useState(false);
   const [projectsOpened, setProjectsOpened] = useState<string[]>([]);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const addAchievement = achievementStore((state) => state.addAchievement);
   const setCounter = achievementStore((state) => state.setCounter);
   const counters = achievementStore((state) => state.counters);
 
-  const filteredProjects = useMemo(() => (
+  const filteredProjects: TProject[] = useMemo(() => (
     projects
       .filter(project =>
         !filter
@@ -27,7 +29,8 @@ export default function Projects() {
         || project.description.toLowerCase().includes(filter.toLowerCase())
         || project.skills.some(skill => skill.toLowerCase().includes(filter.toLowerCase()))
       )
-  ), [filter]);
+      .slice(0, isExpanded ? undefined : 9)
+  ), [filter, isExpanded]);
 
   useEffect(() => setMounted(true), []);
   useEffect(() => {
@@ -81,7 +84,7 @@ export default function Projects() {
       <Flipper flipKey={filteredProjects.length}
         spring="veryGentle"
       >
-        <Flipped>
+        <Flipped stagger>
           <div className={style.projectgrid}>
             {filteredProjects.length > 0 ? filteredProjects
               .map(project =>
@@ -129,6 +132,15 @@ export default function Projects() {
           </div>
         </Flipped>
       </Flipper>
+
+      {(filteredProjects.length >= 9) &&
+        <div className={style.expand}>
+          <button type="button" onClick={() => setIsExpanded((s) => !s)}>{isExpanded ?
+            (<><FaChevronUp />Show less<FaChevronUp /></>) :
+            (<><FaChevronDown />Show more<FaChevronDown /></>)}
+          </button>
+        </div>
+      }
 
       {mounted ? createPortal(
         <Flipper portalKey='projectPortal' flipKey={fullscreenProject}>
