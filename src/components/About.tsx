@@ -1,7 +1,12 @@
+'use client';
+
 import { VscLinkExternal } from 'react-icons/vsc';
 import style from './About.module.scss';
+import achievementStore from '../achievements/achievementStore';
 
 export default function About() {
+  const addAchievement = achievementStore((state) => state.addAchievement);
+
   return (
     <section id='about' className={style.about}>
       <div>
@@ -12,7 +17,9 @@ export default function About() {
         <p>My commitment to staying up-to-date with the latest technologies ensures that I deliver high-quality, modern solutions tailored to my clients&apos; needs.</p>
         <p>Beyond coding, I&apos;m also a <span className={style.highlight}>professional paragliding pilot</span>, bringing the same passion and precision to the skies as I do to my work.</p>
         <p>If you&apos;re looking for a dedicated developer who can bring your web project to life, I&apos;d love to connect and explore how we can work together!</p>
-        <p className={style.cv}><a className="link" rel="noopener noreferrer" target="_blank" href="https://cv.wust.dev"><VscLinkExternal />Check out my CV</a></p>
+        <p className={style.cv}><a className="link"
+          onClick={() => addAchievement('potentialClient')}
+          rel="noopener noreferrer" target="_blank" href="https://cv.wust.dev"><VscLinkExternal />Check out my CV</a></p>
       </div>
     </section>
   )

@@ -36,6 +36,12 @@ const achievements: Achievement[] = [
     counterName: 'projectsOpened'
   },
   {
+    label: 'Potential Client',
+    id: 'potentialClient',
+    description: 'Checked out CV.',
+    secret: true,
+  },
+  {
     label: 'Use Contact Form',
     id: 'useContactForm',
     description: 'Dropped me a message.',
