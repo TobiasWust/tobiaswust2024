@@ -1,6 +1,17 @@
 .notfound {
   display: grid;
   place-content: center;
-  min-height: 60vh;
+  min-height: 80vh;
   text-align: center;
+
+  >div {
+    display: grid;
+    place-content: center;
+  }
+
+  img {
+    border-radius: var(--border-radius);
+    border: 2px solid var(--wu-orange);
+    margin-block: 1rem;
+  }
 }

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import style from './not-found.module.scss'
 import achievementStore from '../achievements/achievementStore';
 import { useEffect, useState } from 'react';
+import { CldImage } from 'next-cloudinary';
 
 export default function NotFound() {
 
@@ -23,7 +24,15 @@ export default function NotFound() {
       <div>
         <h2>Not Found</h2>
         <p>Could not find requested resource</p>
-        <Link className="link" href="/">Return Home</Link>
+        <CldImage
+          src='tobiaswust.de/404puppy'
+          width={400}
+          height={400}
+          alt='Sad 404 Puppy'
+        />
+        <p>
+          <Link className="link" href="/">Return Home</Link>
+        </p>
       </div>
     </div>
   )
