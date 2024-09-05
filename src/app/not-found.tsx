@@ -25,7 +25,7 @@ export default function NotFound() {
         <h2>Not Found</h2>
         <p>Could not find requested resource</p>
         <CldImage
-          src='tobiaswust.de/404puppy'
+          src='tobiaswust.de/sadpuppy'
           width={400}
           height={400}
           alt='Sad 404 Puppy'
