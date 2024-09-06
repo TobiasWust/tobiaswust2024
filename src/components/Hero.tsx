@@ -12,7 +12,7 @@ export default function Hero() {
       <ul>
         <li>15+ years of experience</li>
         <li>React - Node.js - TypeScript</li>
-        <li>Remote work</li>
+        <li>Remote work from Germany</li>
       </ul>
     </div>
   )
