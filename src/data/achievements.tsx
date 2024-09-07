@@ -20,6 +20,12 @@ const achievements: Achievement[] = [
     secret: true,
   },
   {
+    label: 'Adventure Time',
+    id: 'adventureTime',
+    description: 'Looked at adventure.',
+    secret: true,
+  },
+  {
     label: 'Project Prospect',
     id: 'projectProspect',
     description: 'Viewed 3 projects.',

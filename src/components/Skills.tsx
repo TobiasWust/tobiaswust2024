@@ -1,9 +1,10 @@
 import skills from "../data/skills";
 import Marquee from "./Marquee";
+import style from "./Skills.module.css";
 
 export default function Skills() {
   return (
-    <section id="skills">
+    <section id="skills" className={style.skills}>
       <Marquee
         shuffleItems={true}
         items={skills} />

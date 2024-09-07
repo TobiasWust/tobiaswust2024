@@ -9,6 +9,19 @@
   overflow: hidden;
   padding: 3em;
 
+  &.adventure {
+    background-image: url("https://res.cloudinary.com/tobiaswust/image/upload/c_scale,f_auto,q_auto:good,w_1440/v1527682422/tobiaswust.de/IMG_1080.jpg");
+    background-repeat: no-repeat;
+    background-position: 60% 0;
+    background-size: cover;
+
+    h2,
+    h3,
+    ul {
+      background-color: #11111177;
+    }
+  }
+
   h2 {
     margin: 0px;
     font-size: clamp(30px, 7vw, 70px);
@@ -21,8 +34,8 @@
 
   h3 {
     z-index: 1;
-    pointer-events: none;
     margin-top: 5px;
+    pointer-events: none;
     font-size: clamp(20px, 5vw, 50px);
 
     letter-spacing: .01em;
@@ -30,6 +43,11 @@
 
     line-height: 0.9;
     margin: 0px;
+
+    >span {
+      pointer-events: all;
+      cursor: pointer;
+    }
   }
 
   ul {

@@ -109,15 +109,18 @@ a {
   text-decoration: none;
 }
 
-a.link {
+.link {
   position: relative;
+  pointer-events: inherit;
+  display: inline-block;
+  cursor: pointer;
 }
 
 // a.link:active::before {
 //   rotate: 2deg;
 // }
 
-a.link::before {
+.link::before {
   content: "";
   position: absolute;
   display: block;
@@ -132,7 +135,7 @@ a.link::before {
   rotate: -2deg;
 }
 
-a.link:hover::before {
+.link:hover::before {
   transform: scaleX(1);
 }
 

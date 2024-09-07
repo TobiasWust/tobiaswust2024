@@ -4,7 +4,7 @@ export type Project = {
   label: string
   id: string
   year: number
-  screenshot?: string
+  screenshot: string
   description: string
   shortDescription: string
   skills: string[]

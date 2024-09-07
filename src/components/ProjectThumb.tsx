@@ -9,16 +9,17 @@ export default function ProjectThumb({ project, ...rest }: { project: TProject }
   return (
     <div className={style.project} {...rest}>
       <div className={style.description}>
-        {project.screenshot ? <CldImage
+        <CldImage
           src={project.screenshot}
           width="500"
           height="300"
           alt={project.label}
+          draggable={false}
           crop={{
             type: 'auto',
             source: true
           }}
-        /> : <Image src="https://picsum.photos/500/300" alt={project.label} width={500} height={300} />}
+        />
       </div>
       <div className={style.content}>
         <Flipped inverseFlipId={`project-${project.id}`} scale>
@@ -40,6 +41,7 @@ export default function ProjectThumb({ project, ...rest }: { project: TProject }
                     alt={item.label}
                     title={item.label}
                     src={item.logoUrl || `https://cdn.svgporn.com/logos/${item.id}.svg`}
+                    draggable={false}
                   />
                 </li>
               )
