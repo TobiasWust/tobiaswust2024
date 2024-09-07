@@ -10,6 +10,7 @@ import useADates from '../achievements/useADates';
 import useAVisits from "../achievements/useAVisits";
 import useAtunic from "../achievements/useAtunic";
 import useAcheater from "../achievements/useAcheater";
+import HireMe from "./HireMe";
 
 export default function Nav() {
   useConsoleMsg();
@@ -27,18 +28,13 @@ export default function Nav() {
       </Link>
       <ul>
         <li>
-          <Link className="link" href="/#skills">Skills</Link>
-        </li>
-        <li>
           <Link className="link" href="/#projects">Projects</Link>
         </li>
         <li>
           <Link className="link" href="/#about">About</Link>
         </li>
-        <li>
-          <Link className="link" href="/#contact">Contact</Link>
-        </li>
       </ul>
+      <HireMe small />
     </nav>
   );
 }
