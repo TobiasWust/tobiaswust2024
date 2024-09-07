@@ -7,9 +7,10 @@
 /* Hexagon using clip-path */
 .hexagon {
   position: relative;
-  // width: 100px;
-  width: calc(100vw / 18);
-  height: calc(100vw / 18 * 1.1);
+  width: 100px;
+  // width: calc(100vw / 18);
+  height: 110px;
+  // height: calc(100vw / 18 * 1.1);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   transition: 2s;
   animation: show .5s calc((var(--hexagon-y) + var(--hexagon-x)) * .2s + 1s);
@@ -22,10 +23,10 @@
 
 .row {
   display: inline-flex;
-  // margin-top: -32px;
-  margin-top: calc(-100vw / 36 * (32/50));
-  // margin-left: -50px;
-  margin-left: calc(-100vw / 36);
+  margin-top: -32px;
+  // margin-top: calc(-100vw / 36 * (32/50));
+  margin-left: -50px;
+  // margin-left: calc(-100vw / 36);
 }
 
 .row:nth-child(even) {
