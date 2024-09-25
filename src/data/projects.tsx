@@ -16,6 +16,16 @@ export type Projects = Project[]
 
 const projects: Projects = [
   {
+    label: 'Gleitschirmjobs',
+    id: 'gleitschirmjobs',
+    screenshot: 'tobiaswust.de/gleitschirmjobs',
+    year: 2024,
+    shortDescription: 'Jobboard for Paragliding',
+    description: 'As a paragliding pilot, I wanted to create a job board for the german paragliding community. The website is built with Next.js and uses the Supabase database to store the jobs.',
+    skills: ['react', 'nextjs', 'nodejs', 'typescript', 'tailwindcss', 'supabase'],
+    url: 'https://www.gleitschirmjobs.de',
+  },
+  {
     label: 'Wust.dev 2024',
     id: 'wustdev2024',
     screenshot: 'tobiaswust.de/tobiaswust2024',
