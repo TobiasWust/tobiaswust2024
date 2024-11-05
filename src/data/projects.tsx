@@ -16,6 +16,16 @@ export type Projects = Project[]
 
 const projects: Projects = [
   {
+    label: 'HostHopper',
+    id: 'hosthopper',
+    screenshot: 'tobiaswust.de/hosthopper',
+    year: 2024,
+    shortDescription: 'Chrome Extension for Developers',
+    description: 'I built a Chrome Extension that helps developers to quickly switch between different hosts. The extension is built with React and uses the Chrome Extension API to store the hosts.',
+    skills: ['react', 'vitejs', 'typescript'],
+    github: 'https://github.com/TobiasWust/hostHopper',
+  },
+  {
     label: 'Gleitschirmjobs',
     id: 'gleitschirmjobs',
     screenshot: 'tobiaswust.de/gleitschirmjobs',
