@@ -1,4 +1,3 @@
-import { Skills } from "./skills"
 
 export type Project = {
   label: string
@@ -15,6 +14,17 @@ export type Project = {
 export type Projects = Project[]
 
 const projects: Projects = [
+  {
+    label: 'CartBlocker',
+    id: 'cartblocker',
+    screenshot: 'tobiaswust.de/cartblocker',
+    year: 2024,
+    shortDescription: 'Chrome Extension for Intentional Spending',
+    description: 'CartBlocker helps you stay in control of your purchases by blocking "buy," "cart," and "purchase" buttons on websites. Whether you’re browsing out of boredom or feeling tempted by promotions, CartBlocker removes the impulse triggers, helping you save money and focus on what you truly need. With customizable modes, CartBlocker makes it easy to pause or activate at any time. Start making more intentional spending choices today!',
+    skills: ['react', 'vitejs', 'typescript'],
+    github: 'https://github.com/TobiasWust/cartBlocker',
+    url: 'https://chromewebstore.google.com/detail/cartblocker/dhpfplaaijookojpeaeefbhcidblnmec'
+  },
   {
     label: 'HostHopper',
     id: 'hosthopper',
