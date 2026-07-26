@@ -14,6 +14,17 @@ export type Projects = Project[];
 
 const projects: Projects = [
   {
+    label: 'KataKeeper',
+    id: 'katakeeper',
+    screenshot: 'tobiaswust.de/katakeeper',
+    year: 2026,
+    shortDescription: 'Spaced repetition training for kata and movement',
+    description:
+      'As a martial artist I kept forgetting kata I hadn\'t drilled in a while, and Anki-style flashcards don\'t fit physical movement. KataKeeper is a local-first, installable PWA that treats each kata, form, or flow like a spaced-repetition card, but instead of just asking "when should I see this again?" it also asks "how much do I need to physically train today?" — capping sessions by time or count, and rating recall qualitatively instead of easy/hard. Everything works fully offline in IndexedDB, with an optional relay for syncing between devices without any accounts.',
+    skills: ['react', 'typescript', 'vite', 'supabase', 'pwa'],
+    url: 'https://katakeeper.com',
+  },
+  {
     label: 'TriggerMate',
     id: 'triggermate',
     screenshot: 'tobiaswust.de/triggermate',
@@ -34,7 +45,7 @@ const projects: Projects = [
     shortDescription: 'Chrome Extension for Intentional Spending',
     description:
       'CartBlocker helps you stay in control of your purchases by blocking "buy," "cart," and "purchase" buttons on websites. Whether you’re browsing out of boredom or feeling tempted by promotions, CartBlocker removes the impulse triggers, helping you save money and focus on what you truly need. With customizable modes, CartBlocker makes it easy to pause or activate at any time. Start making more intentional spending choices today!',
-    skills: ['react', 'vitejs', 'typescript'],
+    skills: ['react', 'vite', 'typescript'],
     github: 'https://github.com/TobiasWust/cartBlocker',
     url: 'https://chromewebstore.google.com/detail/cartblocker/dhpfplaaijookojpeaeefbhcidblnmec',
   },
@@ -46,7 +57,7 @@ const projects: Projects = [
     shortDescription: 'Chrome Extension for Developers',
     description:
       'I built a Chrome Extension that helps developers to quickly switch between different hosts. The extension is built with React and uses the Chrome Extension API to store the hosts.',
-    skills: ['react', 'vitejs', 'typescript'],
+    skills: ['react', 'vite', 'typescript'],
     github: 'https://github.com/TobiasWust/hostHopper',
     url: 'https://chromewebstore.google.com/detail/hosthopper/jhjeecgkolbcgkecjhbdiecdmbicpdjl',
   },

@@ -58,6 +58,11 @@ const skills: Skills = [
     label: 'Phaser',
     logoUrl: 'https://cdn.phaser.io/layouts/phaser2024/images/nav-logo.png',
   },
+  {
+    id: 'pwa',
+    label: 'Progressive Web App',
+    logoUrl: 'https://simpleicons.org/icons/pwa.svg',
+  },
 ] as const;
 
 export default skills;
