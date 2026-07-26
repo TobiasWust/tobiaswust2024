@@ -6,9 +6,15 @@ export type Skill = {
 
 export type Skills = Skill[];
 
+export const SVG_LIBRARY_BASE_URL = 'https://cdn.svgporn.com/logos';
+
+export function getSkillLogoUrl(skill: Skill) {
+  return skill.logoUrl || `${SVG_LIBRARY_BASE_URL}/${skill.id}.svg`;
+}
+
 const skills: Skills = [
   { id: 'react', label: 'React' },
-  { id: 'nextjs', label: 'Next.js' },
+  { id: 'nex tjs', label: 'Next.js' },
   { id: 'javascript', label: 'JavaScript' },
   { id: 'typescript', label: 'TypeScript' },
   { id: 'docker', label: 'Docker' },
@@ -18,7 +24,7 @@ const skills: Skills = [
   { id: 'nodejs', label: 'Node.js' },
   { id: 'gulp', label: 'gulp.js' },
   { id: 'webpack', label: 'webpack' },
-  { id: 'vitejs', label: 'Vite' },
+  { id: 'vite', label: 'Vite' },
   { id: 'handlebars', label: 'Handlebars' },
   { id: 'stripe', label: 'Stripe' },
   { id: 'openai', label: 'OpenAi' },

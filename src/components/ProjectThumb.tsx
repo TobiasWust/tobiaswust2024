@@ -1,23 +1,28 @@
-import style from './ProjectThumb.module.scss';
-import { Project as TProject } from "../data/projects";
-import Image from 'next/image';
-import skills from '../data/skills';
 import { CldImage } from 'next-cloudinary';
+import Image from 'next/image';
 import { Flipped } from 'react-flip-toolkit';
+import { Project as TProject } from '../data/projects';
+import skills, { getSkillLogoUrl } from '../data/skills';
+import style from './ProjectThumb.module.scss';
 
-export default function ProjectThumb({ project, ...rest }: { project: TProject }) {
+export default function ProjectThumb({
+  project,
+  ...rest
+}: {
+  project: TProject;
+}) {
   return (
     <div className={style.project} {...rest}>
       <div className={style.description}>
         <CldImage
           src={project.screenshot}
-          width="500"
-          height="300"
+          width='500'
+          height='300'
           alt={project.label}
           draggable={false}
           crop={{
             type: 'auto',
-            source: true
+            source: true,
           }}
         />
       </div>
@@ -29,26 +34,24 @@ export default function ProjectThumb({ project, ...rest }: { project: TProject }
           </div>
         </Flipped>
         <ul className={style.skillSet}>
-          {
-            project.skills.map(skill => {
-              const item = skills.find(s => s.id === skill);
-              if (!item) return null
-              return (
-                <li key={skill}>
-                  <Image
-                    height="20"
-                    width="20"
-                    alt={item.label}
-                    title={item.label}
-                    src={item.logoUrl || `https://cdn.svgporn.com/logos/${item.id}.svg`}
-                    draggable={false}
-                  />
-                </li>
-              )
-            })
-          }
+          {project.skills.map((skill) => {
+            const item = skills.find((s) => s.id === skill);
+            if (!item) return null;
+            return (
+              <li key={skill}>
+                <Image
+                  height='20'
+                  width='20'
+                  alt={item.label}
+                  title={item.label}
+                  src={getSkillLogoUrl(item)}
+                  draggable={false}
+                />
+              </li>
+            );
+          })}
         </ul>
-      </div >
-    </div >
-  )
+      </div>
+    </div>
+  );
 }
