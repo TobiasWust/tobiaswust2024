@@ -53,6 +53,7 @@ const skills: Skills = [
   { id: 'jira', label: 'Jira' },
   { id: 'figma', label: 'Figma' },
   { id: 'vue', label: 'Vue.js' },
+  { id: 'godot', label: 'Godot' },
   {
     id: 'phaser',
     label: 'Phaser',

@@ -14,17 +14,27 @@ export default function ProjectThumb({
   return (
     <div className={style.project} {...rest}>
       <div className={style.description}>
-        <CldImage
-          src={project.screenshot}
-          width='500'
-          height='300'
-          alt={project.label}
-          draggable={false}
-          crop={{
-            type: 'auto',
-            source: true,
-          }}
-        />
+        {project.screenshot ? (
+          <CldImage
+            src={project.screenshot}
+            width='500'
+            height='300'
+            alt={project.label}
+            draggable={false}
+            crop={{
+              type: 'auto',
+              source: true,
+            }}
+          />
+        ) : (
+          <Image
+            src='https://picsum.photos/500/300'
+            alt={project.label}
+            width={500}
+            height={300}
+            draggable={false}
+          />
+        )}
       </div>
       <div className={style.content}>
         <Flipped inverseFlipId={`project-${project.id}`} scale>
