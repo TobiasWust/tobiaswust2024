@@ -5,6 +5,7 @@ import Hexagons from './Hexagons'
 import HireMe from './HireMe'
 import achievementStore from '../achievements/achievementStore';
 import projects from '../data/projects';
+import Availability from './Availability';
 
 export default function Hero() {
   const [adventure, setAdventure] = useState(false);
@@ -23,6 +24,7 @@ export default function Hero() {
   return (
     <section className={`${styles.hero} ${adventure ? styles.adventure : ''}`}>
       <Hexagons />
+      <Availability />
       <p className={styles.eyebrow}>Senior Fullstack Engineer · AI-assisted development</p>
       <h1>Tobias Wust</h1>
       <p className={styles.tagline}>

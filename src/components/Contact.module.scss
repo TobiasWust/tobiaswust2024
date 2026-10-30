@@ -17,6 +17,10 @@
       margin-bottom: var(--space-m);
     }
 
+    >p:first-of-type {
+      margin-bottom: var(--space-m);
+    }
+
     p {
       margin-bottom: var(--space-s);
     }
@@ -24,6 +28,14 @@
 
   .highlight {
     color: var(--wu-orange);
+  }
+
+  .booking {
+    display: inline-flex;
+    align-items: center;
+    gap: .5em;
+    margin-top: var(--space-s);
+    padding: 12px 20px;
   }
 
   .direct {

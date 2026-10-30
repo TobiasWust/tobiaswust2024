@@ -5,6 +5,10 @@ import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { VscLinkExternal } from 'react-icons/vsc';
 import style from './Contact.module.scss'
 import achievementStore from '../achievements/achievementStore';
+import { FaCalendarAlt, FaEnvelope } from 'react-icons/fa';
+import { BOOKING_URL } from '../data/contact';
+import Availability from './Availability';
+import EmailLink from './EmailLink';
 
 export default function Contact() {
   const [status, setStatus] = useState<String | null>(null);
@@ -41,9 +45,18 @@ export default function Contact() {
     <section id="contact" className={style.contact}>
       <div className={style.pitch}>
         <h2>Get in touch</h2>
+        <Availability />
         <p>Have a project in mind, need an extra pair of hands on your team, or want a second opinion on your frontend architecture?</p>
         <p>Share the details and I&apos;ll get back to you <span className={style.highlight}>within 48 hours</span>.</p>
+        {BOOKING_URL && (
+          <a className={`btn ${style.booking}`} href={BOOKING_URL} rel="noopener noreferrer" target="_blank">
+            <FaCalendarAlt /> Book a free 30-min intro call
+          </a>
+        )}
         <ul className={style.direct}>
+          <li>
+            <EmailLink className="link"><FaEnvelope /> </EmailLink>
+          </li>
           <li>
             <a className="link" href="https://www.linkedin.com/in/tobias-wust/" rel="noopener noreferrer" target="_blank">
               <SiLinkedin /> Connect on LinkedIn
