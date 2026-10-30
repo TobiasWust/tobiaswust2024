@@ -25,7 +25,7 @@ export default function Hero() {
     <section className={`${styles.hero} ${adventure ? styles.adventure : ''}`}>
       <Hexagons />
       <Availability />
-      <p className={styles.eyebrow}>Senior Fullstack Engineer · AI-assisted development</p>
+      <p className={styles.eyebrow}>Senior Fullstack Engineer</p>
       <h1>Tobias Wust</h1>
       <p className={styles.tagline}>
         AI writes code. I make sure it&apos;s the right code: I turn your business goals into products that ship, faster with AI and with the judgment AI doesn&apos;t have.
