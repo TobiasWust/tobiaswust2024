@@ -55,7 +55,7 @@ export default function Footer() {
         </a>
       </div>
       <p>
-        Copyright © 2024 - Made with{" "}
+        Copyright © {new Date().getFullYear()} - Made with{" "}
         <GiHearts onClick={() => {
           addAchievement('secretLove');
         }} /> by{" "}

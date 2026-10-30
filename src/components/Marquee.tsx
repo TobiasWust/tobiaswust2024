@@ -32,7 +32,7 @@ export default function Marquee({
   return (
     <div className={styles.marquee}>
       <ul
-        className={`${styles.marquee__content} ${reverse ?? styles.marquee__content_reverse}`}
+        className={`${styles.marquee__content} ${reverse ? styles.marquee__content_reverse : ''}`}
       >
         {items.map((item) => (
           <MarqueeItem key={item.id} item={item} />
@@ -41,7 +41,7 @@ export default function Marquee({
 
       <ul
         aria-hidden='true'
-        className={`${styles.marquee__content} ${reverse ?? styles.marquee__content_reverse}`}
+        className={`${styles.marquee__content} ${reverse ? styles.marquee__content_reverse : ''}`}
       >
         {items.map((item) => (
           <MarqueeItem key={item.id} item={item} />

@@ -1,88 +1,110 @@
 .contact {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  gap: var(--space-l);
+  padding: var(--space-xl) var(--space-m);
+  align-items: start;
 
-  >div {
-    max-width: 600px;
-    margin: 1em;
+  @media screen and (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pitch {
+    font-size: var(--step-1);
+    line-height: 1.5;
+
+    h2 {
+      font-size: var(--step-3);
+      margin-bottom: var(--space-m);
+    }
+
+    p {
+      margin-bottom: var(--space-s);
+    }
+  }
+
+  .highlight {
+    color: var(--wu-orange);
+  }
+
+  .direct {
+    list-style: none;
+    display: grid;
+    gap: var(--space-xs);
+    margin-top: var(--space-m);
+    font-size: var(--step-0);
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: .5em;
+
+      svg {
+        color: var(--wu-orange);
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
     background-color: var(--wu-black);
-    padding: 2em;
+    padding: var(--space-l);
+    border: 1px solid var(--card-border);
     border-left: 5px solid var(--wu-orange);
-    border-right: 5px solid var(--wu-orange);
-    border-radius: 40px;
+    border-radius: var(--card-radius);
   }
 
-  h2 {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-  }
-
-  h3 {
-    display: block;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-  }
-
-  input {
+  input,
+  textarea {
     width: 100%;
     border: none;
     outline: none;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 12px;
+    font: inherit;
     font-size: 1rem;
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
-    border-left: 1px solid transparent;
+    color: var(--wu-white);
     background: var(--wu-blue);
-  }
+    border-left: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
 
-  input:focus {
-    border-left: 5px solid var(--wu-orange);
-  }
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
 
-  input::placeholder,
-  textarea::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    &:focus-visible {
+      border-left: 5px solid var(--wu-orange);
+    }
   }
 
   textarea {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    font-size: 1rem;
-    outline: none;
-    background: var(--wu-blue);
-    font-weight: bold;
+    min-height: 140px;
     resize: vertical;
-    max-height: 150px;
-    margin-bottom: 20px;
-    border-left: 1px solid transparent;
-    transition: all 0.2s ease-in-out;
-  }
-
-  textarea:focus {
-    border-left: 5px solid var(--wu-orange);
   }
 
   button {
-    flex-basis: 70%;
     background: var(--wu-orange);
-    padding: 10px;
+    padding: 12px;
     color: var(--wu-black);
-    text-align: center;
+    font: inherit;
     font-weight: bold;
     border: 1px solid transparent;
     transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: transparent;
+      border: 1px solid var(--wu-orange);
+      color: var(--wu-orange);
+    }
+
+    &:disabled {
+      opacity: .6;
+      cursor: progress;
+    }
   }
 
-  button:hover {
-    background: transparent;
-    border: 1px solid var(--wu-orange);
-    color: var(--wu-orange);
-    cursor: pointer;
+  .status:empty {
+    display: none;
   }
 }

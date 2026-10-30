@@ -22,7 +22,7 @@ const projects: Projects = [
     description:
       'I contributed as a Senior Frontend Developer to opti.node, node.energy’s platform for renewable energy operations. I developed React interfaces across energy and revenue monitoring, generator and operator management, direct-marketing workflows, and customer onboarding. The work included data verification and reporting tools, translating complex operational and regulatory requirements into clear, practical user experiences.',
     skills: ['react', 'typescript', 'react-query'],
-    url: 'https://cdn.prod.website-files.com/657847b8f5e7a27736280413/68a44e377f3463b01cf05555_Section%20Ero%CC%88smonitoring_z1_2508x2.avif',
+    url: 'https://www.node.energy',
   },
   {
     label: 'KataKeeper',

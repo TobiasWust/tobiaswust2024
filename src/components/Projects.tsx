@@ -83,7 +83,7 @@ export default function Projects() {
       <p>
         Here are some things I built.
       </p>
-      <div className={style.filter}><input type="text" placeholder="Search for a project or skill..." onChange={e => setFilter(e.target.value)} /></div>
+      <div className={style.filter}><input type="search" aria-label="Search projects" placeholder="Search for a project or skill..." value={filter} onChange={e => setFilter(e.target.value)} /></div>
       <Flipper flipKey={filteredProjects.length}
         spring="veryGentle"
       >
@@ -138,7 +138,10 @@ export default function Projects() {
 
       {(filteredProjects.length >= 9) &&
         <div className={style.expand}>
-          <button className="btn" type="button" onClick={() => setIsExpanded((s) => !s)}>{isExpanded ?
+          <button className="btn" type="button" onClick={() => {
+            if (isExpanded) document.getElementById('projects')?.scrollIntoView();
+            setIsExpanded((s) => !s);
+          }}>{isExpanded ?
             (<><FaChevronUp />Show less<FaChevronUp /></>) :
             (<><FaChevronDown />Show more<FaChevronDown /></>)}
           </button>

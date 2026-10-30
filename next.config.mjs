@@ -21,12 +21,6 @@ const nextConfig = {
         pathname: '/*',
       },
     ],
-    domains: ['picsum.photos', '*.picsum.photos', 'cdn.phaser.io'],
-  },
-  i18n: {
-    locales: ['en', 'de'],
-    defaultLocale: 'en',
-    localeDetection: false,
   },
 };
 
