@@ -18,22 +18,18 @@
     }
   }
 
-  ul {
+  >ul {
     list-style: none;
     display: grid;
     gap: var(--space-s);
     margin-top: var(--space-l);
 
-    @media screen and (min-width: 600px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media screen and (min-width: 1000px) {
+    @media screen and (min-width: 800px) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  li {
+  >ul>li {
     display: flex;
     gap: var(--space-s);
     padding: var(--space-m);
@@ -53,5 +49,45 @@
     color: var(--wu-orange);
     font-size: 1.5rem;
     margin-top: .2rem;
+  }
+
+  // the concrete AI example: one highlighted box instead of a whole section
+  .practice {
+    margin-top: var(--space-m);
+    padding: var(--space-l) var(--space-m);
+    border-left: 5px solid var(--wu-orange);
+    border-radius: var(--card-radius);
+    background: rgba(246, 135, 20, .08);
+
+    h3 {
+      font-size: var(--step-2);
+      margin-bottom: var(--space-xs);
+    }
+
+    >p {
+      max-width: 65ch;
+      opacity: .9;
+    }
+  }
+
+  .split {
+    display: grid;
+    gap: var(--space-m);
+    margin-top: var(--space-m);
+
+    @media screen and (min-width: 600px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    h4 {
+      color: var(--wu-orange);
+      margin-bottom: .25rem;
+    }
+
+    ul {
+      padding-left: 1.2em;
+      display: grid;
+      gap: .2rem;
+    }
   }
 }

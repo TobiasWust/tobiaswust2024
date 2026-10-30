@@ -10,6 +10,13 @@ import { BOOKING_URL } from '../data/contact';
 import Availability from './Availability';
 import EmailLink from './EmailLink';
 
+const engagements = [
+  { title: 'Project-based', text: 'A clearly defined scope, delivered end-to-end.' },
+  { title: 'Team extension', text: 'I join your team as a senior developer.' },
+  { title: 'Fractional tech lead', text: 'Part-time technical direction, architecture and reviews.' },
+  { title: 'AI workshop / audit', text: 'Adopting AI-assisted development or planning AI features.' },
+];
+
 export default function Contact() {
   const [status, setStatus] = useState<String | null>(null);
   const [error, setError] = useState<String | null>(null);
@@ -48,6 +55,14 @@ export default function Contact() {
         <Availability />
         <p>Have a project in mind, need an extra pair of hands on your team, or want a second opinion on your frontend architecture?</p>
         <p>Share the details and I&apos;ll get back to you <span className={style.highlight}>within 48 hours</span>.</p>
+        <div className={style.ways}>
+          <h3>Ways to work together</h3>
+          <ul>
+            {engagements.map((engagement) => (
+              <li key={engagement.title} title={engagement.text}>{engagement.title}</li>
+            ))}
+          </ul>
+        </div>
         {BOOKING_URL && (
           <a className={`btn ${style.booking}`} href={BOOKING_URL} rel="noopener noreferrer" target="_blank">
             <FaCalendarAlt /> Book a free 30-min intro call

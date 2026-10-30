@@ -30,6 +30,33 @@
     color: var(--wu-orange);
   }
 
+  .ways {
+    margin: var(--space-m) 0;
+
+    h3 {
+      font-size: var(--step-0);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--wu-orange);
+      margin-bottom: var(--space-xs);
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    li {
+      padding: .3em .9em;
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      background: var(--card-bg);
+      font-size: .95rem;
+    }
+  }
+
   .booking {
     display: inline-flex;
     align-items: center;
