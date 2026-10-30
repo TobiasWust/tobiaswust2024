@@ -57,15 +57,19 @@
   font: inherit;
   text-align: start;
 
-  // light tile so dark logos (Next.js, Copilot, AWS) stay visible on the dark cards
-  img {
+  .icon {
     flex-shrink: 0;
-    width: 26px;
-    height: 26px;
-    padding: 3px;
-    border-radius: 6px;
-    background: var(--wu-white);
-    object-fit: contain;
+    width: 22px;
+    height: 22px;
+    color: var(--wu-white);
+    opacity: .75;
+    transition: color .2s ease, opacity .2s ease;
+  }
+
+  &:hover .icon,
+  &:focus-visible .icon {
+    color: var(--brand);
+    opacity: 1;
   }
 
   span {
