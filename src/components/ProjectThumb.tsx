@@ -7,6 +7,26 @@ import style from './ProjectThumb.module.scss';
 import ProjectPlaceholder from './ProjectPlaceholder';
 import ProjectKind from './ProjectKind';
 
+// max tilt in degrees when the cursor is at a card's edge
+const TILT = 6;
+
+// tilt toward the cursor and move the light spot with it (CSS reads the variables)
+function tilt(e: React.MouseEvent<HTMLDivElement>) {
+  const el = e.currentTarget;
+  const r = el.getBoundingClientRect();
+  const x = (e.clientX - r.left) / r.width;
+  const y = (e.clientY - r.top) / r.height;
+  el.style.setProperty('--tilt-x', `${(x - 0.5) * TILT * 2}deg`);
+  el.style.setProperty('--tilt-y', `${(0.5 - y) * TILT * 2}deg`);
+  el.style.setProperty('--shine-x', `${x * 100}%`);
+  el.style.setProperty('--shine-y', `${y * 100}%`);
+}
+
+function untilt(e: React.MouseEvent<HTMLDivElement>) {
+  e.currentTarget.style.removeProperty('--tilt-x');
+  e.currentTarget.style.removeProperty('--tilt-y');
+}
+
 export default function ProjectThumb({
   project,
   ...rest
@@ -14,7 +34,7 @@ export default function ProjectThumb({
   project: TProject;
 }) {
   return (
-    <div className={style.project} {...rest}>
+    <div className={style.project} onMouseMove={tilt} onMouseLeave={untilt} {...rest}>
       <div className={style.description}>
         {project.screenshot ? (
           <CldImage

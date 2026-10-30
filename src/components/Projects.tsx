@@ -143,7 +143,7 @@ export default function Projects() {
                 </Flipped>
               )
 
-              ) : <Flipped><p className={style.noResult}>No projects found :(</p></Flipped>
+              ) : <Flipped><p className={style.noResult}>No projects found. Maybe I should build that one?</p></Flipped>
             }
           </div>
         </Flipped>

@@ -47,6 +47,24 @@
   }
 }
 
+// a click (or an idle gust) sends a wave out from a point; the delay grows with distance.
+// it needs its own keyframes: the browser only restarts an animation when its name changes
+.rippling .hexagon::before {
+  animation: ripple 1.4s ease-in-out backwards;
+  animation-delay: var(--ripple-delay);
+}
+
+@keyframes ripple {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 0.9;
+  }
+}
+
 @keyframes wave {
   0%,
   100% {

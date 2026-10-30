@@ -6,6 +6,8 @@ import HireMe from './HireMe'
 import achievementStore from '../achievements/achievementStore';
 import projects from '../data/projects';
 import Availability from './Availability';
+import Paraglider from './Paraglider';
+import CountUp from './CountUp';
 
 export default function Hero() {
   const [adventure, setAdventure] = useState(false);
@@ -23,7 +25,10 @@ export default function Hero() {
 
   return (
     <section className={`${styles.hero} ${adventure ? styles.adventure : ''}`}>
-      <Hexagons />
+      <div className={styles.background}>
+        <Hexagons />
+        <Paraglider />
+      </div>
       <Availability />
       <p className={styles.eyebrow}>Senior Fullstack Engineer</p>
       <h1>Tobias Wust</h1>
@@ -39,8 +44,8 @@ export default function Hero() {
         <a className="btn inverted" href="/#projects">See my work</a>
       </div>
       <ul className={styles.stats}>
-        <li><strong>15+</strong> years of experience</li>
-        <li><strong>{projects.length}+</strong> shipped projects</li>
+        <li><strong><CountUp to={15} suffix='+' /></strong> years of experience</li>
+        <li><strong><CountUp to={projects.length} suffix='+' /></strong> shipped projects</li>
         <li><strong>Remote</strong> from Germany</li>
       </ul>
     </section>

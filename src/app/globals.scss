@@ -91,6 +91,11 @@ h3 {
   }
 }
 
+::selection {
+  background: var(--wu-orange);
+  color: var(--wu-black);
+}
+
 section {
   max-width: var(--max-width);
   margin: 0px auto;
@@ -102,6 +107,11 @@ section {
     z-index: 0;
     rotate: -1deg;
     display: inline-block;
+
+    // like a label stuck on with tape that you just nudged
+    &:hover {
+      animation: wiggle .5s ease-in-out;
+    }
 
     &::after {
       position: absolute;
@@ -259,6 +269,26 @@ a {
 
   to {
     width: 100%;
+  }
+}
+
+@keyframes wiggle {
+
+  0%,
+  100% {
+    rotate: -1deg;
+  }
+
+  25% {
+    rotate: 1.5deg;
+  }
+
+  50% {
+    rotate: -2.5deg;
+  }
+
+  75% {
+    rotate: 0deg;
   }
 }
 
