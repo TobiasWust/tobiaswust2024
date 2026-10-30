@@ -19,7 +19,7 @@ const skills: Skills = [
   { id: 'typescript', label: 'TypeScript' },
   { id: 'docker', label: 'Docker' },
   { id: 'redux', label: 'Redux' },
-  { id: 'supabase', label: 'supabase' },
+  { id: 'supabase', label: 'Supabase' },
   { id: 'react-query', label: 'TanStack Query' },
   { id: 'nodejs', label: 'Node.js' },
   { id: 'gulp', label: 'gulp.js' },
@@ -33,16 +33,16 @@ const skills: Skills = [
   { id: 'tailwindcss', label: 'Tailwind CSS' },
   { id: 'mobx', label: 'MobX' },
   { id: 'mongodb', label: 'MongoDB' },
-  { id: 'php', label: 'php' },
+  { id: 'php', label: 'PHP' },
   { id: 'jquery', label: 'jQuery' },
   { id: 'couchdb', label: 'CouchDB' },
   { id: 'wordpress', label: 'WordPress' },
   { id: 'microsoft-azure', label: 'Azure' },
-  { id: 'aws', label: 'aws' },
+  { id: 'aws', label: 'AWS' },
   { id: 'html-5', label: 'HTML' },
   { id: 'css-3', label: 'CSS' },
-  { id: 'unity', label: 'unity' },
-  { id: 'c-sharp', label: 'c-sharp' },
+  { id: 'unity', label: 'Unity' },
+  { id: 'c-sharp', label: 'C#' },
   { id: 'bootstrap', label: 'Bootstrap' },
   { id: 'git', label: 'Git' },
   { id: 'npm', label: 'npm' },
@@ -69,3 +69,7 @@ const skills: Skills = [
 ] as const;
 
 export default skills;
+
+export function findSkillByLabel(label: string) {
+  return skills.find((skill) => skill.label.toLowerCase() === label.trim().toLowerCase());
+}

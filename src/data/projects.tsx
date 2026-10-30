@@ -268,7 +268,7 @@ const projects: Projects = [
     shortDescription: 'NES Emulator',
     description:
       'A NES Emulator but any time you press a button something stupid happens.',
-    skills: ['javascript', 'html'],
+    skills: ['javascript', 'html-5'],
     url: 'https://stupidnes.wust.io',
     github: 'https://github.com/TobiasWust/stupidnes',
   },

@@ -1,6 +1,6 @@
 import styles from "./page.module.scss";
 import Contact from "../components/Contact";
-import Skills from "../components/Skills";
+import Toolbox from "../components/Toolbox";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import About from "../components/About";
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Hero />
-      <Skills />
+      <Toolbox />
       <Services />
       <WhyMe />
       <AiInPractice />

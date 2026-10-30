@@ -10,6 +10,7 @@ import { createPortal } from 'react-dom';
 import achievementStore from '../achievements/achievementStore';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { PROJECT_FILTER_EVENT } from './Services';
+import { findSkillByLabel } from '../data/skills';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
@@ -22,17 +23,21 @@ export default function Projects() {
   const setCounter = achievementStore((state) => state.setCounter);
   const counters = achievementStore((state) => state.counters);
 
-  const filteredProjects: TProject[] = useMemo(() => (
-    projects
-      .filter(project =>
-        !filter
-        || project.label.toLowerCase().includes(filter.toLowerCase())
-        || project.description.toLowerCase().includes(filter.toLowerCase())
-        || project.shortDescription.toLowerCase().includes(filter.toLowerCase())
-        || project.skills.some(skill => skill.toLowerCase().includes(filter.toLowerCase()))
-      )
-      .slice(0, isExpanded ? undefined : 9)
-  ), [filter, isExpanded]);
+  const filteredProjects: TProject[] = useMemo(() => {
+    // an exact skill name (e.g. from the Toolbox) matches that skill only, so counts and results agree
+    const skill = findSkillByLabel(filter);
+    const text = filter.toLowerCase();
+    return projects
+      .filter(project => {
+        if (!filter) return true;
+        if (skill) return project.skills.includes(skill.id);
+        return project.label.toLowerCase().includes(text)
+          || project.description.toLowerCase().includes(text)
+          || project.shortDescription.toLowerCase().includes(text)
+          || project.skills.some(s => s.toLowerCase().includes(text));
+      })
+      .slice(0, isExpanded ? undefined : 9);
+  }, [filter, isExpanded]);
 
   useEffect(() => setMounted(true), []);
   useEffect(() => {
