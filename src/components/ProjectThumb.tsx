@@ -4,6 +4,8 @@ import { Flipped } from 'react-flip-toolkit';
 import { Project as TProject } from '../data/projects';
 import skills, { getSkillLogoUrl } from '../data/skills';
 import style from './ProjectThumb.module.scss';
+import ProjectPlaceholder from './ProjectPlaceholder';
+import ProjectKind from './ProjectKind';
 
 export default function ProjectThumb({
   project,
@@ -27,18 +29,13 @@ export default function ProjectThumb({
             }}
           />
         ) : (
-          <Image
-            src='https://picsum.photos/500/300'
-            alt={project.label}
-            width={500}
-            height={300}
-            draggable={false}
-          />
+          <ProjectPlaceholder label={project.label} />
         )}
       </div>
       <div className={style.content}>
         <Flipped inverseFlipId={`project-${project.id}`} scale>
           <div className={style.header}>
+            <ProjectKind kind={project.kind} />
             <h3>{project.label}</h3>
             <small>{project.shortDescription}</small>
           </div>

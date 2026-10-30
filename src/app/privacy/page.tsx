@@ -103,14 +103,16 @@ export default function Privacy() {
           <a href="http://www.google.de/intl/de/policies/privacy/">www.google.de/intl/de/policies/privacy/</a> entnehmen. Zudem verweisen wir für den generellen Umgang mit und die Deaktivierung
           von Cookies auf unsere allgemeine Darstellung in dieser Datenschutzerklärung.</p> */}
         <h2>Google Analytics</h2>
-        <p>Wir verwenden im Rahmen unseres berechtigten Interesses an einem technisch einwandfreien Online Angebot und seiner wirtschaftlich-effizienten
-          Gestaltung und Optimierung gem. Art.6 Abs. 1 lit.f DSGVO das Tool Google Analytics von Google Inc., 1600 Amphitheatre
-          Parkway, Mountain View, CA 94.043 USA. Damit kann die Nutzung von Webseiten analysiert werden, dabei können aus den
+        <p>Sofern Sie hierzu Ihre Einwilligung erteilt haben, verwenden wir auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und
+          § 25 Abs. 1 TDDDG das Tool Google Analytics der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland
+          („Google“). Ohne Ihre Einwilligung wird Google Analytics nicht geladen. Sie können Ihre Einwilligung jederzeit mit
+          Wirkung für die Zukunft widerrufen, indem Sie im Footer dieser Seite auf „Privacy settings“ klicken. Damit kann die Nutzung von Webseiten analysiert werden, dabei können aus den
           Daten pseudonyme Profile der Nutzer erstellt werden. Dazu werden von Google verschiedene Techniken angewandt, unter
           anderem auch Cookies auf Ihrem Computer gespeichert. Diese speichern Informationen über die Nutzung unserer Seite,
           die wir zur Verbesserung unseres Angebotes einsetzen.</p>
-        <p>Die von Google erhobenen Daten werden von Google in Staaten außerhalb der EU, insbesondere die USA, übermittelt. Google
-          hat sich dem Privacy Shield Framework unterworfen, nähere Informationen zu Ihren Rechten daraus finden Sie unter</p>
+        <p>Die von Google erhobenen Daten können in Staaten außerhalb der EU, insbesondere die USA, übermittelt werden. Google
+          ist unter dem EU-US Data Privacy Framework zertifiziert, auf dessen Grundlage ein Angemessenheitsbeschluss der
+          EU-Kommission besteht. Nähere Informationen zu Ihren Rechten finden Sie unter</p>
         <p>
           <a href="http://ec.europa.eu/justice/data-protection/document/citizens-guide_en.pdf">http://ec.europa.eu/justice/data-protection/document/citizens-guide_en.pdf</a>
         </p>
