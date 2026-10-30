@@ -6,6 +6,8 @@ import { GiHearts } from "react-icons/gi";
 import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
 import achievementStore from '../achievements/achievementStore';
 import { useEffect, useState } from 'react';
+import EmailLink from './EmailLink';
+import { OPEN_CONSENT_EVENT } from './CookieConsent';
 
 export default function Footer() {
 
@@ -27,6 +29,9 @@ export default function Footer() {
     <footer className={style.footer}>
       <p className={style.cta}>
         Got a project in mind? <a className="link" href="/#contact">Let&apos;s talk</a>
+      </p>
+      <p>
+        <EmailLink className="link" />
       </p>
       <div className={style.socials}>
         <a href="https://github.com/TobiasWust" rel="noopener noreferrer" target="_blank"
@@ -88,6 +93,10 @@ export default function Footer() {
         <Link className="link" href="/privacy">
           Privacy Policy
         </Link>
+        <button type="button" className={`link ${style.consentButton}`}
+          onClick={() => window.dispatchEvent(new Event(OPEN_CONSENT_EVENT))}>
+          Privacy settings
+        </button>
       </div>
     </footer>
   );

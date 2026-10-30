@@ -5,20 +5,20 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import CookieConsent from '../components/CookieConsent';
 
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
 
 const title = "Freelance Fullstack Developer - Tobias Wust";
-const description = "Tobias Wust is a highly experienced freelance fullstack developer from Germany, with 15+ years of expertise in React and Node.js.";
+const description = "Senior fullstack engineer from Germany with 15+ years of experience. React, Node.js and AI-assisted development; from business goal to shipped product.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wust.dev"),
   title,
   description,
-  keywords: ["freelance developer", "fullstack developer", "React", "TypeScript", "Node.js", "Germany", "remote"],
+  keywords: ["freelance developer", "fullstack developer", "React", "TypeScript", "Node.js", "AI-assisted development", "LLM integration", "Technical leadership", "Germany", "remote"],
   authors: [{ name: "Tobias Wust", url: "https://wust.dev" }],
   alternates: { canonical: "/" },
   openGraph: {
@@ -47,7 +47,7 @@ const personJsonLd = {
     "https://github.com/TobiasWust",
     "https://www.linkedin.com/in/tobias-wust/",
   ],
-  knowsAbout: ["React", "TypeScript", "Node.js", "Next.js", "Web development"],
+  knowsAbout: ["React", "TypeScript", "Node.js", "Next.js", "Web development", "AI-assisted development", "LLM integration", "Technical leadership"],
 };
 
 export default function RootLayout({
@@ -76,7 +76,7 @@ export default function RootLayout({
           pauseOnFocusLoss
           pauseOnHover
         />
-        <GoogleAnalytics gaId="G-C4JPK514R9" />
+        <CookieConsent />
       </body>
     </html>
   );

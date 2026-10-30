@@ -1,46 +1,59 @@
+// geometry comes from Hexagons.tsx as --hex-w, --hex-h, --hex-gap and --row-step
 .container {
   position: absolute;
   inset: 0;
   overflow: hidden;
 }
 
-/* Hexagon using clip-path */
-.hexagon {
-  position: relative;
-  width: 100px;
-  // width: calc(100vw / 18);
-  height: 110px;
-  // height: calc(100vw / 18 * 1.1);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  transition: 2s;
-  // cap the intro wave so big grids don't take ages to sweep
-  animation: show .5s calc(min(var(--hexagon-y) + var(--hexagon-x), 24) * .2s + 1s);
-
-  &:hover,
-  &.lit {
-    background: var(--wu-orange);
-    transition: 0s;
-  }
-}
-
 .row {
   display: flex;
-  margin-top: -32px;
-  // margin-top: calc(-100vw / 36 * (32/50));
-  margin-left: -50px;
-  // margin-left: calc(-100vw / 36);
+  gap: var(--hex-gap);
+  // rows interlock: each one tucks into the points of the row above
+  margin-top: calc(var(--row-step) - var(--hex-h));
 }
 
-.row:nth-child(even) {
-  margin-left: 0;
+// offset every other row by half a hexagon so the honeycomb tiles
+.row:nth-child(odd) {
+  margin-left: calc((var(--hex-w) + var(--hex-gap)) / -2);
 }
 
-@keyframes show {
-  0% {
-    background: none;
+/* regular pointy-top hexagon using clip-path */
+.hexagon {
+  position: relative;
+  flex-shrink: 0;
+  width: var(--hex-w);
+  height: var(--hex-h);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: rgba(254, 248, 248, 0.025);
+
+  // the orange fill lives on its own layer so only opacity animates (smooth, GPU friendly)
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--wu-orange);
+    opacity: 0;
+    transition: opacity 2s ease-out;
+    // intro wave: sweeps left to right, slightly diagonal, then fades out again
+    // "backwards" only holds the start frame during the delay; "both" would pin opacity: 0 afterwards and kill hover
+    animation: wave 1.6s ease-in-out backwards;
+    animation-delay: calc((var(--col) + var(--row) * 0.5) * 60ms + 600ms);
   }
 
+  &:hover::before,
+  &.lit::before {
+    opacity: 1;
+    transition: opacity 0s;
+  }
+}
+
+@keyframes wave {
+  0%,
   100% {
-    background: var(--wu-orange);
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 0.9;
   }
 }

@@ -64,6 +64,12 @@
       align-items: center;
     }
 
+    .result {
+      padding: .75em 1em;
+      border-left: 4px solid var(--wu-orange);
+      background: rgba(246, 135, 20, .1);
+    }
+
     .skillSet {
       margin: 1em 0;
       list-style: none;

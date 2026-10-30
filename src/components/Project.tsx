@@ -5,6 +5,8 @@ import { VscGithub, VscLinkExternal } from 'react-icons/vsc';
 import { Project as TProject } from '../data/projects';
 import skills, { getSkillLogoUrl } from '../data/skills';
 import style from './Project.module.scss';
+import ProjectPlaceholder from './ProjectPlaceholder';
+import ProjectKind from './ProjectKind';
 
 export default function Project({
   project,
@@ -48,20 +50,21 @@ export default function Project({
           }}
         />
       ) : (
-        <Image
-          src='https://picsum.photos/500/300'
-          alt={project.label}
-          width={500}
-          height={300}
-        />
+        <ProjectPlaceholder label={project.label} />
       )}
       <div className={style.content}>
         <div className={style.header}>
           <h3 id={`project-title-${project.id}`}>{project.label}</h3>
           <span>{project.year}</span>
+          <ProjectKind kind={project.kind} />
         </div>
 
         <p>{project.description}</p>
+        {project.result && (
+          <p className={style.result}>
+            <strong>Result:</strong> {project.result}
+          </p>
+        )}
 
         <ul className={style.skillSet}>
           {project.skills.map((skill) => {

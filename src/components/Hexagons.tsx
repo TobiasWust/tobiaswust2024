@@ -4,10 +4,19 @@ import { useEffect, useRef, useState } from 'react';
 import achievementStore from '../achievements/achievementStore';
 import styles from './Hexagons.module.scss'
 
-// must match the hexagon size and row overlap in Hexagons.module.scss
+// regular pointy-top hexagon geometry, handed to Hexagons.module.scss as CSS variables
 const HEX_WIDTH = 100;
-const HEX_HEIGHT = 110;
-const ROW_STEP = HEX_HEIGHT - 32;
+const HEX_GAP = 4;
+const HEX_HEIGHT = HEX_WIDTH * 2 / Math.sqrt(3);
+const COL_STEP = HEX_WIDTH + HEX_GAP;
+const ROW_STEP = COL_STEP * Math.sqrt(3) / 2;
+
+const geometry = {
+  '--hex-w': `${HEX_WIDTH}px`,
+  '--hex-h': `${HEX_HEIGHT}px`,
+  '--hex-gap': `${HEX_GAP}px`,
+  '--row-step': `${ROW_STEP}px`,
+} as React.CSSProperties;
 
 export default function Hexagons() {
   const increaseCounter = achievementStore((state) => state.increaseCounter);
@@ -31,7 +40,7 @@ export default function Hexagons() {
     const observer = new ResizeObserver(([entry]) => {
       const { width, height } = entry.contentRect;
       const rows = Math.ceil(height / ROW_STEP) + 1;
-      const cols = Math.ceil(width / HEX_WIDTH) + 1;
+      const cols = Math.ceil(width / COL_STEP) + 1;
       setGrid((g) => (g.rows === rows && g.cols === cols ? g : { rows, cols }));
     });
     observer.observe(el);
@@ -54,15 +63,15 @@ export default function Hexagons() {
   };
 
   return (
-    <div ref={container} className={styles.container} onTouchMove={handleTouchMove} aria-hidden='true'>
+    <div ref={container} className={styles.container} style={geometry} onTouchMove={handleTouchMove} aria-hidden='true'>
       {
         [...Array(grid.rows)].map((_, i) => (
-          <div className={styles.row} key={i} style={{ '--hexagon-x': i } as React.CSSProperties}>
+          <div className={styles.row} key={i} style={{ '--row': i } as React.CSSProperties}>
             {
               [...Array(grid.cols)].map((_, j) => (
                 <div
                   onMouseEnter={() => increaseCounter('hexagonsHovered')}
-                  className={styles.hexagon} key={j} style={{ '--hexagon-y': j } as React.CSSProperties}></div>
+                  className={styles.hexagon} key={j} style={{ '--col': j } as React.CSSProperties}></div>
               ))
             }
           </div>

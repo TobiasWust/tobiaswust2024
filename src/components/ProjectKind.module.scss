@@ -1,0 +1,17 @@
+.kind {
+  justify-self: start;
+  display: inline-block;
+  padding: .15em .6em;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: #555;
+  background: #e8e2e2;
+
+  &.client {
+    color: var(--wu-black);
+    background: var(--wu-orange);
+  }
+}

@@ -1,0 +1,31 @@
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: .6em;
+  padding: .35em .9em;
+  border: 1px solid rgba(61, 186, 106, .5);
+  border-radius: 999px;
+  background: rgba(61, 186, 106, .12);
+  font-size: .9rem;
+  font-weight: 500;
+
+  &::before {
+    content: "";
+    width: .55em;
+    height: .55em;
+    border-radius: 50%;
+    background: var(--wu-green);
+    box-shadow: 0 0 0 0 rgba(61, 186, 106, .6);
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 .5em rgba(61, 186, 106, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(61, 186, 106, 0);
+  }
+}
