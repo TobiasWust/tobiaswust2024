@@ -13,7 +13,7 @@
   gap: var(--space-s);
 
   &.adventure {
-    background-image: url("https://res.cloudinary.com/tobiaswust/image/upload/c_scale,f_auto,q_auto:good,w_1440/v1527682422/tobiaswust.de/IMG_1080.jpg");
+    background-image: url('https://res.cloudinary.com/tobiaswust/image/upload/c_scale,f_auto,q_auto:good,w_1440/v1527682422/tobiaswust.de/IMG_1080.jpg');
     background-repeat: no-repeat;
     background-position: 60% 0;
     background-size: cover;
@@ -25,7 +25,7 @@
     }
   }
 
-  >*:not(:first-child) {
+  > *:not(:first-child) {
     position: relative;
     z-index: 1;
     pointer-events: none;
@@ -35,7 +35,7 @@
     color: var(--wu-orange);
     font-size: var(--step-0);
     font-weight: 600;
-    letter-spacing: .15em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
   }
 
@@ -56,14 +56,11 @@
 
   .adventureLine {
     font-size: var(--step-0);
-    opacity: .8;
+    opacity: 0.8;
 
-    >span {
+    > span {
       pointer-events: all;
       cursor: pointer;
-      color: var(--wu-orange);
-      text-decoration: underline dotted;
-      text-underline-offset: 4px;
     }
   }
 
