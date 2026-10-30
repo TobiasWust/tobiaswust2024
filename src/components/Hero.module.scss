@@ -1,13 +1,16 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 80vh;
+  max-width: none;
+  min-height: calc(100svh - 50px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   overflow: hidden;
-  padding: 3em;
+  padding: var(--space-xl) var(--space-m);
+  gap: var(--space-s);
 
   &.adventure {
     background-image: url("https://res.cloudinary.com/tobiaswust/image/upload/c_scale,f_auto,q_auto:good,w_1440/v1527682422/tobiaswust.de/IMG_1080.jpg");
@@ -15,53 +18,87 @@
     background-position: 60% 0;
     background-size: cover;
 
-    h2,
-    h3,
+    h1,
+    p,
     ul {
       background-color: #11111177;
     }
   }
 
-  h2 {
-    margin: 0px;
-    font-size: clamp(30px, 7vw, 70px);
-    font-weight: 600;
-    line-height: 1.1;
+  >*:not(:first-child) {
     z-index: 1;
     pointer-events: none;
+  }
+
+  .eyebrow {
+    color: var(--wu-orange);
+    font-size: var(--step-0);
+    font-weight: 600;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: var(--step-4);
+    font-weight: 700;
+    line-height: 1;
     rotate: -1deg;
   }
 
-  h3 {
-    z-index: 1;
-    margin-top: 5px;
-    pointer-events: none;
-    font-size: clamp(20px, 5vw, 50px);
-
-    letter-spacing: .01em;
+  .tagline {
+    max-width: 40ch;
+    font-size: var(--step-2);
     font-weight: 300;
+    line-height: 1.3;
+  }
 
-    line-height: 0.9;
-    margin: 0px;
+  .adventureLine {
+    font-size: var(--step-0);
+    opacity: .8;
 
     >span {
       pointer-events: all;
       cursor: pointer;
+      color: var(--wu-orange);
+      text-decoration: underline dotted;
+      text-underline-offset: 4px;
     }
   }
 
-  ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-s);
+    pointer-events: all;
 
-    @media screen and (min-width: 350px) {
-      grid-template-columns: 1fr 1fr 1fr;
+    :global(.btn) {
+      display: inline-flex;
+      align-items: center;
+      height: 60px;
+      padding: 0 var(--space-m);
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
+  }
 
-    gap: 3em;
-    font-weight: 200;
-    z-index: 1;
-    pointer-events: none;
+  .stats {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-s) var(--space-l);
+    margin-top: var(--space-m);
+    font-weight: 300;
+
+    strong {
+      display: block;
+      font-family: var(--font-display), sans-serif;
+      font-size: var(--step-2);
+      font-weight: 700;
+      color: var(--wu-orange);
+    }
   }
 }

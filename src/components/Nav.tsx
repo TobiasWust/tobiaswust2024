@@ -28,10 +28,16 @@ export default function Nav() {
       </Link>
       <ul>
         <li>
+          <Link className="link" href="/#services">Services</Link>
+        </li>
+        <li>
           <Link className="link" href="/#projects">Projects</Link>
         </li>
         <li>
           <Link className="link" href="/#about">About</Link>
+        </li>
+        <li>
+          <Link className="link" href="/#contact">Contact</Link>
         </li>
       </ul>
       <HireMe small />

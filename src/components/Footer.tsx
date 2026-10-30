@@ -25,6 +25,9 @@ export default function Footer() {
 
   return (
     <footer className={style.footer}>
+      <p className={style.cta}>
+        Got a project in mind? <a className="link" href="/#contact">Let&apos;s talk</a>
+      </p>
       <div className={style.socials}>
         <a href="https://github.com/TobiasWust" rel="noopener noreferrer" target="_blank"
           onClick={() => {

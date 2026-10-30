@@ -1,0 +1,51 @@
+.services {
+  padding: var(--space-xl) var(--space-m) 0;
+
+  h2 {
+    font-size: var(--step-3);
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    gap: var(--space-m);
+    margin-top: var(--space-l);
+
+    @media screen and (min-width: 800px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    padding: var(--space-l) var(--space-m);
+
+    h3 {
+      font-size: var(--step-2);
+    }
+
+    p {
+      flex: 1;
+      opacity: .85;
+    }
+
+    a {
+      align-self: flex-start;
+      color: var(--wu-orange);
+      font-weight: 600;
+    }
+  }
+
+  .icon {
+    display: inline-grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 12px;
+    background: var(--wu-orange);
+    color: var(--wu-black);
+    font-size: 1.4rem;
+  }
+}

@@ -4,6 +4,7 @@ import styles from './Hero.module.scss'
 import Hexagons from './Hexagons'
 import HireMe from './HireMe'
 import achievementStore from '../achievements/achievementStore';
+import projects from '../data/projects';
 
 export default function Hero() {
   const [adventure, setAdventure] = useState(false);
@@ -19,22 +20,27 @@ export default function Hero() {
     if (window.innerWidth >= 768) setAdventure(false)
   }
 
-
-
   return (
-    <div className={`${styles.hero} ${adventure ? styles.adventure : ''}`}>
+    <section className={`${styles.hero} ${adventure ? styles.adventure : ''}`}>
       <Hexagons />
-      <h2>Tobias Wust</h2>
-      <h3>Fullstack expertise with a passion for <span
+      <p className={styles.eyebrow}>Freelance Fullstack Developer</p>
+      <h1>Tobias Wust</h1>
+      <p className={styles.tagline}>
+        I build fast, maintainable React &amp; Node.js products, from first prototype to production.
+      </p>
+      <p className={styles.adventureLine}>Fullstack expertise with a passion for <span
         onMouseDown={handleAdventureDown}
         onMouseUp={handleAdventureUp}
-      >adventure</span>.</h3>
-      <HireMe />
-      <ul>
-        <li>15+ years of experience</li>
-        <li>React - Node.js - TypeScript</li>
-        <li>Remote work from Germany</li>
+      >adventure</span>.</p>
+      <div className={styles.ctas}>
+        <HireMe />
+        <a className="btn inverted" href="/#projects">See my work</a>
+      </div>
+      <ul className={styles.stats}>
+        <li><strong>15+</strong> years of experience</li>
+        <li><strong>{projects.length}+</strong> shipped projects</li>
+        <li><strong>Remote</strong> from Germany</li>
       </ul>
-    </div>
+    </section>
   )
 }
