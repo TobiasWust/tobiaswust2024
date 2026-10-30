@@ -1,0 +1,42 @@
+.engagements {
+  padding: var(--space-xl) var(--space-m) 0;
+
+  h2 {
+    font-size: var(--step-3);
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    gap: var(--space-s);
+    margin-top: var(--space-l);
+
+    @media screen and (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 1000px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-m);
+
+    h3 {
+      font-size: var(--step-1);
+    }
+
+    p {
+      opacity: .85;
+    }
+  }
+
+  .icon {
+    color: var(--wu-orange);
+    font-size: 1.5rem;
+  }
+}
