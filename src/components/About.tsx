@@ -13,9 +13,11 @@ export default function About() {
       <div>
         <h2>My Story</h2>
         <p><span className={style.highlight}>Hi, I&apos;m Tobias!</span></p>
-        <p>I&apos;m a <span className={style.highlight}>freelance fullstack developer</span> who helps teams ship web products that are fast, maintainable and pleasant to use. My focus is <span className={style.highlight}>React, TypeScript and Node.js</span>, from small business websites to large-scale platforms for renewable energy.</p>
-        <p>I&apos;ve been writing software since I was 11. After a B.Sc. in Business Information Systems and four years of SAP/ABAP in the public sector, I moved to the web and never looked back. That background means I&apos;m comfortable translating business and regulatory requirements into clear, working software.</p>
-        <p>Beyond coding, I&apos;m a <span className={style.highlight}>professional paragliding pilot</span>. Same passion, same precision, more altitude.</p>
+        <p>I&apos;ve been passionate about software development since I was 11, and I&apos;ve kept honing my skills and staying at the cutting edge of technology ever since. After earning a Bachelor of Science in Business Information Systems, I started my career in the public sector, where I spent four valuable years working with SAP/ABAP.</p>
+        <p>Today, I&apos;m a <span className={style.highlight}>freelance developer</span> specializing in <span className={style.highlight}>web development</span>, particularly with <span className={style.highlight}>React, TypeScript, and Node.js</span>. I&apos;ve worked on a wide range of projects, from small business websites to large-scale applications, and I&apos;m always eager to take on new challenges and learn new technologies.</p>
+        <p>My commitment to keeping up with the latest technologies means I deliver high-quality, modern solutions tailored to my clients&apos; needs.</p>
+        <p>Beyond coding, I&apos;m also a <span className={style.highlight}>professional paragliding pilot</span>, and I bring the same passion and precision to the skies as I do to my work.</p>
+        <p>If you&apos;re looking for a dedicated developer to bring your web project to life, I&apos;d love to connect and explore how we can work together!</p>
         <p className={style.cv}><a className="link"
           onClick={() => addAchievement('potentialClient')}
           rel="noopener noreferrer" target="_blank" href="https://cv.wust.dev"><VscLinkExternal />Check out my CV</a>
