@@ -14,7 +14,7 @@ export function getSkillLogoUrl(skill: Skill) {
 
 const skills: Skills = [
   { id: 'react', label: 'React' },
-  { id: 'nex tjs', label: 'Next.js' },
+  { id: 'nextjs', label: 'Next.js' },
   { id: 'javascript', label: 'JavaScript' },
   { id: 'typescript', label: 'TypeScript' },
   { id: 'docker', label: 'Docker' },
@@ -27,7 +27,9 @@ const skills: Skills = [
   { id: 'vite', label: 'Vite' },
   { id: 'handlebars', label: 'Handlebars' },
   { id: 'stripe', label: 'Stripe' },
-  { id: 'openai', label: 'OpenAi' },
+  { id: 'openai', label: 'OpenAI' },
+  { id: 'claude-icon', label: 'Claude' },
+  { id: 'github-copilot', label: 'GitHub Copilot' },
   { id: 'tailwindcss', label: 'Tailwind CSS' },
   { id: 'mobx', label: 'MobX' },
   { id: 'mongodb', label: 'MongoDB' },
