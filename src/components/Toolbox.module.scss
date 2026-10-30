@@ -1,0 +1,111 @@
+.toolbox {
+  padding: var(--space-xl) var(--space-m) 0;
+
+  h2 {
+    font-size: var(--step-3);
+  }
+
+  .intro {
+    margin-top: var(--space-s);
+    opacity: .85;
+  }
+}
+
+.groups {
+  display: grid;
+  gap: var(--space-s);
+  margin-top: var(--space-l);
+
+  @media screen and (min-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.group {
+  padding: var(--space-m);
+
+  // the group cards are containers, not links: no lift on hover
+  &:hover {
+    translate: none;
+    box-shadow: none;
+  }
+
+  h3 {
+    font-size: var(--step-1);
+    color: var(--wu-orange);
+    margin-bottom: var(--space-s);
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: .35rem;
+  }
+}
+
+.skill {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .45rem .6rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+
+  // light tile so dark logos (Next.js, Copilot, AWS) stay visible on the dark cards
+  img {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    padding: 3px;
+    border-radius: 6px;
+    background: var(--wu-white);
+    object-fit: contain;
+  }
+
+  span {
+    flex: 1;
+  }
+
+  small {
+    padding: .1em .55em;
+    border-radius: 999px;
+    background: rgba(254, 248, 248, .08);
+    font-size: .75rem;
+    white-space: nowrap;
+    opacity: .85;
+  }
+}
+
+button.skill {
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(246, 135, 20, .12);
+    border-color: rgba(246, 135, 20, .5);
+
+    small {
+      background: var(--wu-orange);
+      color: var(--wu-black);
+      opacity: 1;
+    }
+  }
+}
+
+.also {
+  margin-top: var(--space-m);
+  font-size: .9rem;
+  opacity: .7;
+  line-height: 1.7;
+
+  span {
+    font-weight: 600;
+  }
+}
