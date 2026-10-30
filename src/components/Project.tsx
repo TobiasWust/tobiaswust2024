@@ -21,8 +21,19 @@ export default function Project({
   }, []);
 
   return (
-    <div className={style.project} {...rest}>
-      <button ref={closeProjectButton} type='button' onClick={closeProject}>
+    <div
+      className={style.project}
+      role='dialog'
+      aria-modal='true'
+      aria-labelledby={`project-title-${project.id}`}
+      {...rest}
+    >
+      <button
+        ref={closeProjectButton}
+        type='button'
+        aria-label='Close project'
+        onClick={closeProject}
+      >
         X
       </button>
       {project.screenshot ? (
@@ -46,7 +57,7 @@ export default function Project({
       )}
       <div className={style.content}>
         <div className={style.header}>
-          <h3>{project.label}</h3>
+          <h3 id={`project-title-${project.id}`}>{project.label}</h3>
           <span>{project.year}</span>
         </div>
 

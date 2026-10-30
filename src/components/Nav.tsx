@@ -24,14 +24,20 @@ export default function Nav() {
   return (
     <nav className={styles.nav}>
       <Link href="/">
-        <Image src='/tw.svg' alt='TW logo' width={40} height={40} />
+        <Image src='/tw.svg' alt='Tobias Wust - home' width={56} height={26} priority />
       </Link>
       <ul>
+        <li>
+          <Link className="link" href="/#services">Services</Link>
+        </li>
         <li>
           <Link className="link" href="/#projects">Projects</Link>
         </li>
         <li>
           <Link className="link" href="/#about">About</Link>
+        </li>
+        <li>
+          <Link className="link" href="/#contact">Contact</Link>
         </li>
       </ul>
       <HireMe small />

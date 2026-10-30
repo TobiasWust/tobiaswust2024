@@ -6,27 +6,21 @@ const nextConfig = {
         protocol: 'https',
         hostname: '*.picsum.photos',
         port: '',
-        pathname: '/*',
+        pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'picsum.photos',
         port: '',
-        pathname: '/*',
+        pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'cdn.phaser.io',
         port: '',
-        pathname: '/*',
+        pathname: '/**',
       },
     ],
-    domains: ['picsum.photos', '*.picsum.photos', 'cdn.phaser.io'],
-  },
-  i18n: {
-    locales: ['en', 'de'],
-    defaultLocale: 'en',
-    localeDetection: false,
   },
 };
 

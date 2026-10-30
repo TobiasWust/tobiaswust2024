@@ -9,6 +9,7 @@ import Project from './Project';
 import { createPortal } from 'react-dom';
 import achievementStore from '../achievements/achievementStore';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { PROJECT_FILTER_EVENT } from './Services';
 
 export default function Projects() {
   const [filter, setFilter] = useState('');
@@ -27,6 +28,7 @@ export default function Projects() {
         !filter
         || project.label.toLowerCase().includes(filter.toLowerCase())
         || project.description.toLowerCase().includes(filter.toLowerCase())
+        || project.shortDescription.toLowerCase().includes(filter.toLowerCase())
         || project.skills.some(skill => skill.toLowerCase().includes(filter.toLowerCase()))
       )
       .slice(0, isExpanded ? undefined : 9)
@@ -41,6 +43,12 @@ export default function Projects() {
     }
     window.addEventListener('keydown', close)
     return () => window.removeEventListener('keydown', close)
+  }, []);
+
+  useEffect(() => {
+    const applyFilter = (e: Event) => setFilter((e as CustomEvent<string>).detail);
+    window.addEventListener(PROJECT_FILTER_EVENT, applyFilter);
+    return () => window.removeEventListener(PROJECT_FILTER_EVENT, applyFilter);
   }, []);
 
   // cheatcodes
@@ -81,9 +89,9 @@ export default function Projects() {
     <section id='projects' className={style.projects}>
       <h2>Built with Passion</h2>
       <p>
-        Here are some things I built.
+        Client work and side projects I built. Click one for details.
       </p>
-      <div className={style.filter}><input type="text" placeholder="Search for a project or skill..." onChange={e => setFilter(e.target.value)} /></div>
+      <div className={style.filter}><input type="search" aria-label="Search projects" placeholder="Search for a project or skill..." value={filter} onChange={e => setFilter(e.target.value)} /></div>
       <Flipper flipKey={filteredProjects.length}
         spring="veryGentle"
       >
@@ -138,7 +146,10 @@ export default function Projects() {
 
       {(filteredProjects.length >= 9) &&
         <div className={style.expand}>
-          <button className="btn" type="button" onClick={() => setIsExpanded((s) => !s)}>{isExpanded ?
+          <button className="btn" type="button" onClick={() => {
+            if (isExpanded) document.getElementById('projects')?.scrollIntoView();
+            setIsExpanded((s) => !s);
+          }}>{isExpanded ?
             (<><FaChevronUp />Show less<FaChevronUp /></>) :
             (<><FaChevronDown />Show more<FaChevronDown /></>)}
           </button>

@@ -15,6 +15,25 @@
   --wu-blue: #0e1538;
   --wu-black: #111;
   --wu-gray: #444;
+
+  // fluid type scale
+  --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --step-1: clamp(1.125rem, 1.05rem + 0.4vw, 1.35rem);
+  --step-2: clamp(1.35rem, 1.2rem + 0.75vw, 1.8rem);
+  --step-3: clamp(1.7rem, 1.4rem + 1.5vw, 2.6rem);
+  --step-4: clamp(2.4rem, 1.6rem + 4vw, 5rem);
+
+  // spacing
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.5rem;
+  --space-xl: clamp(3rem, 2rem + 4vw, 6rem);
+
+  // cards
+  --card-radius: 24px;
+  --card-border: rgba(254, 248, 248, 0.12);
+  --card-bg: rgba(254, 248, 248, 0.04);
 }
 
 * {
@@ -33,6 +52,8 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-size: var(--step-0);
+  line-height: 1.5;
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
@@ -44,6 +65,31 @@ body.barrel {
 
 main {
   background: var(--wu-blue);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  line-height: 1.15;
+}
+
+:focus-visible {
+  outline: 2px solid var(--wu-orange);
+  outline-offset: 3px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  transition: translate .2s ease, border-color .2s ease, box-shadow .2s ease;
+
+  &:hover {
+    translate: 0 -4px;
+    border-color: var(--wu-orange);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  }
 }
 
 section {
@@ -75,7 +121,7 @@ section {
   }
 }
 
-button.btn {
+.btn {
   background: var(--wu-orange);
   padding: 10px;
   color: var(--wu-black);
@@ -191,6 +237,21 @@ a {
   }
 }
 
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
 @keyframes revealLtr {
   from {

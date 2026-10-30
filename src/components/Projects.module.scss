@@ -1,16 +1,15 @@
 .projects {
-  margin-top: 2rem;
-  padding: 1em;
+  padding: var(--space-xl) var(--space-m) 0;
 
   h2 {
-    font-size: 2rem;
+    font-size: var(--step-3);
     display: inline-block;
   }
 
-  p {
-    display: inline-block;
-    margin-left: 1rem;
+  >p {
+    margin-top: var(--space-s);
     color: var(--wu-white);
+    opacity: .85;
   }
 }
 
@@ -32,10 +31,12 @@
     border: none;
     outline: none;
     padding: 10px;
-    font-size: 1rem;
+    font: inherit;
     font-weight: bold;
+    color: var(--wu-white);
     transition: all 0.2s ease-in-out;
     border: 1px solid var(--wu-orange);
+    border-radius: 12px;
     background: var(--wu-black);
   }
 
@@ -43,8 +44,9 @@
     color: rgba(255, 255, 255, 0.7);
   }
 
-  input:focus {
-    background: var(--wu-orange);
+  input:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(246, 135, 20, .4);
   }
 
   span {
