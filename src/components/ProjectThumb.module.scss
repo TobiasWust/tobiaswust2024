@@ -8,6 +8,24 @@
   text-decoration: none;
   box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
   cursor: pointer;
+  position: relative;
+  transform: perspective(900px) rotateX(var(--tilt-y, 0deg)) rotateY(var(--tilt-x, 0deg));
+  transition: transform .2s ease-out, box-shadow .2s ease;
+
+  // soft light that follows the cursor
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--shine-x, 50%) var(--shine-y, 0%), rgba(255, 255, 255, .35), transparent 45%);
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
 
   view-timeline-name: --revealing-image;
   view-timeline-axis: block;
@@ -17,7 +35,6 @@
 
   &:hover {
     box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
-    rotate: 1deg;
     scale: 1.02;
   }
 

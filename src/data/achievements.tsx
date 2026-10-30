@@ -187,6 +187,12 @@ const achievements: Achievement[] = [
     description: 'Found a codeword on LinkedIn.',
   },
   {
+    label: 'Thermal Hunter',
+    id: 'thermalHunter',
+    description: 'Caught the paraglider in the hero.',
+    secret: true,
+  },
+  {
     label: 'To reset or not to reset',
     id: 'reset',
     description: 'Used reset button but said no.',

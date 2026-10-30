@@ -25,6 +25,12 @@
     }
   }
 
+  // hexagons and paraglider live behind the text
+  .background {
+    position: absolute;
+    inset: 0;
+  }
+
   > *:not(:first-child) {
     position: relative;
     z-index: 1;

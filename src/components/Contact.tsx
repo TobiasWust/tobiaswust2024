@@ -5,7 +5,7 @@ import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { VscLinkExternal } from 'react-icons/vsc';
 import style from './Contact.module.scss'
 import achievementStore from '../achievements/achievementStore';
-import { FaCalendarAlt, FaEnvelope } from 'react-icons/fa';
+import { FaCalendarAlt, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 import { BOOKING_URL } from '../data/contact';
 import Availability from './Availability';
 import EmailLink from './EmailLink';
@@ -107,7 +107,12 @@ export default function Contact() {
           {status === 'pending' ? 'Sending…' : 'Send message'}
         </button>
         <p role="status" className={style.status}>
-          {status === 'ok' && 'Thank you for reaching out :)'}
+          {status === 'ok' && (
+            <>
+              <FaPaperPlane aria-hidden className={style.plane} />
+              Thank you for reaching out :)
+            </>
+          )}
           {status === 'error' && `Error: ${error}`}
         </p>
       </form>
