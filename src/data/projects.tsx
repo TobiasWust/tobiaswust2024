@@ -8,6 +8,10 @@ export type Project = {
   skills: string[];
   github?: string;
   url?: string;
+  // client work or my own product / side project
+  kind: 'client' | 'side';
+  // outcome shown in the project details; only facts, no invented numbers
+  result?: string;
 };
 
 export type Projects = Project[];
@@ -16,6 +20,8 @@ const projects: Projects = [
   {
     label: 'node.energy — opti.node',
     id: 'node-energy-opti-node',
+    kind: 'client',
+    result: 'Live in production: the interfaces I built are used for energy and revenue monitoring, generator and operator management, and customer onboarding.',
     year: 2026,
     screenshot: 'tobiaswust.de/optinode',
     shortDescription: 'Frontend development for renewable energy operations',
@@ -27,6 +33,8 @@ const projects: Projects = [
   {
     label: 'KataKeeper',
     id: 'katakeeper',
+    kind: 'side',
+    result: 'Live at katakeeper.com as an installable PWA that works fully offline.',
     screenshot: 'tobiaswust.de/katakeeper',
     year: 2026,
     shortDescription: 'Spaced repetition training for kata and movement',
@@ -38,12 +46,14 @@ const projects: Projects = [
   {
     label: 'TriggerMate',
     id: 'triggermate',
+    kind: 'side',
+    result: 'Published on the Visual Studio Marketplace.',
     screenshot: 'tobiaswust.de/triggermate',
     year: 2025,
     shortDescription:
       'VSCode Extension that Automates tasks based on file updates',
     description:
-      'TriggerMate is a VSCode extension that automates tasks based on file updates. It watches important files like package.json or poetry.lock and notifies you when they change, allowing you to run predefined commands with a single click. This helps developers stay on top of dependency updates and streamline their workflow effortlessly. 🚀',
+      'TriggerMate is a VSCode extension that automates tasks based on file updates. It watches important files like package.json or poetry.lock and notifies you when they change, allowing you to run predefined commands with a single click. This helps developers stay on top of dependency updates and streamline their workflow effortlessly.',
     skills: ['microsoft-azure', 'typescript'],
     github: 'https://github.com/TobiasWust/triggerMate',
     url: 'https://marketplace.visualstudio.com/items?itemName=TobiasWust.triggerMate',
@@ -51,11 +61,13 @@ const projects: Projects = [
   {
     label: 'CartBlocker',
     id: 'cartblocker',
+    kind: 'side',
+    result: 'Published on the Chrome Web Store.',
     screenshot: 'tobiaswust.de/cartblocker',
     year: 2024,
     shortDescription: 'Chrome Extension for Intentional Spending',
     description:
-      'CartBlocker helps you stay in control of your purchases by blocking "buy," "cart," and "purchase" buttons on websites. Whether you’re browsing out of boredom or feeling tempted by promotions, CartBlocker removes the impulse triggers, helping you save money and focus on what you truly need. With customizable modes, CartBlocker makes it easy to pause or activate at any time. Start making more intentional spending choices today!',
+      'CartBlocker helps you stay in control of your purchases by blocking "buy," "cart," and "purchase" buttons on websites. Whether you’re browsing out of boredom or feeling tempted by promotions, CartBlocker removes the impulse triggers, helping you save money and focus on what you truly need. With customizable modes, CartBlocker makes it easy to pause or activate at any time.',
     skills: ['react', 'vite', 'typescript'],
     github: 'https://github.com/TobiasWust/cartBlocker',
     url: 'https://chromewebstore.google.com/detail/cartblocker/dhpfplaaijookojpeaeefbhcidblnmec',
@@ -63,6 +75,8 @@ const projects: Projects = [
   {
     label: 'HostHopper',
     id: 'hosthopper',
+    kind: 'side',
+    result: 'Published on the Chrome Web Store.',
     screenshot: 'tobiaswust.de/hosthopper',
     year: 2024,
     shortDescription: 'Chrome Extension for Developers',
@@ -75,6 +89,8 @@ const projects: Projects = [
   {
     label: 'Gleitschirmjobs',
     id: 'gleitschirmjobs',
+    kind: 'side',
+    result: 'Live at gleitschirmjobs.de, serving the German paragliding community.',
     screenshot: 'tobiaswust.de/gleitschirmjobs',
     year: 2024,
     shortDescription: 'Jobboard for Paragliding',
@@ -93,6 +109,7 @@ const projects: Projects = [
   {
     label: 'Wust.dev 2024',
     id: 'wustdev2024',
+    kind: 'side',
     screenshot: 'tobiaswust.de/tobiaswust2024',
     year: 2024,
     shortDescription: 'Portfolio website',
@@ -104,6 +121,8 @@ const projects: Projects = [
   {
     label: 'Governmental Statistics',
     id: 'ktzhStats',
+    kind: 'client',
+    result: 'Live on zh.ch as the official, accessible statistics search of the Canton of Zurich.',
     screenshot: 'tobiaswust.de/ktzhStats',
     year: 2023,
     shortDescription: 'Accessible Search',
@@ -123,6 +142,7 @@ const projects: Projects = [
   {
     label: 'GamesWeAllOwn',
     id: 'gamesweallown',
+    kind: 'side',
     screenshot: 'tobiaswust.de/gamesweallown',
     year: 2023,
     shortDescription: 'Steam API integration',
@@ -135,6 +155,8 @@ const projects: Projects = [
   {
     label: 'SummarizeIt.io',
     id: 'summarizeit',
+    kind: 'client',
+    result: 'Shipped user management, payment processing and the AI summarization product itself as Lead Developer.',
     screenshot: 'tobiaswust.de/summarizeIt',
     year: 2022,
     shortDescription: 'AI powered video summarization',
@@ -152,11 +174,12 @@ const projects: Projects = [
       'stripe',
       'typescript',
     ],
-    url: 'https://summarizeit.io/',
   },
   {
     label: 'hitcap.gg',
     id: 'hitcap',
+    kind: 'client',
+    result: 'Delivered two platforms, a social network for gamers and a coaching platform, true to the designers\' vision.',
     screenshot: 'tobiaswust.de/hitcap',
     year: 2022,
     shortDescription: 'Social Media Platform',
@@ -175,6 +198,8 @@ const projects: Projects = [
   {
     label: 'Divery.io',
     id: 'divery',
+    kind: 'client',
+    result: 'Migrated the platform from jQuery to React as the team grew.',
     screenshot: 'tobiaswust.de/divery',
     year: 2020,
     shortDescription: 'Divecenter ERP',
@@ -186,6 +211,7 @@ const projects: Projects = [
   {
     label: 'Mother',
     id: 'mother',
+    kind: 'side',
     screenshot: 'tobiaswust.de/mother',
     year: 2021,
     shortDescription: 'Horror Game',
@@ -197,6 +223,7 @@ const projects: Projects = [
   {
     label: 'Funkhelfer.de',
     id: 'funkhelfer',
+    kind: 'side',
     screenshot: 'tobiaswust.de/funkhelfer',
     year: 2020,
     shortDescription: 'Radio Frequency Finder',
@@ -209,6 +236,8 @@ const projects: Projects = [
   {
     label: 'Serwema Product Search',
     id: 'serwema',
+    kind: 'client',
+    result: 'Live on serwema.de: the client manages its products in WordPress, and customers can search them.',
     screenshot: 'tobiaswust.de/serwema',
     year: 2020,
     shortDescription: 'Custom Wordpress Plugin',
@@ -220,6 +249,7 @@ const projects: Projects = [
   {
     label: 'Game Snowbody',
     id: 'snowbody',
+    kind: 'side',
     screenshot: 'tobiaswust.de/snowbody',
     year: 2020,
     shortDescription: '2D Shooter',
@@ -232,6 +262,7 @@ const projects: Projects = [
   {
     label: 'Stupidnes',
     id: 'stupidnes',
+    kind: 'side',
     screenshot: 'tobiaswust.de/stupidnes',
     year: 2019,
     shortDescription: 'NES Emulator',
@@ -244,6 +275,7 @@ const projects: Projects = [
   {
     label: 'Thermalcenter',
     id: 'thermalcenter',
+    kind: 'side',
     screenshot: 'tobiaswust.de/thermalcenter',
     year: 2018,
     shortDescription: '2D Flight Simulator',
@@ -256,6 +288,7 @@ const projects: Projects = [
   {
     label: 'Game Morserunner',
     id: 'morserunner',
+    kind: 'side',
     screenshot: 'tobiaswust.de/morserunner',
     year: 2017,
     shortDescription: 'Educational 2D Runner',
@@ -267,6 +300,7 @@ const projects: Projects = [
   {
     label: 'tobiaswust.de 2017',
     id: 'tobiaswust2017',
+    kind: 'side',
     screenshot: 'tobiaswust.de/tobiaswust2017',
     year: 2017,
     shortDescription: 'Developer Website',
