@@ -28,6 +28,7 @@ export default function Projects() {
         !filter
         || project.label.toLowerCase().includes(filter.toLowerCase())
         || project.description.toLowerCase().includes(filter.toLowerCase())
+        || project.shortDescription.toLowerCase().includes(filter.toLowerCase())
         || project.skills.some(skill => skill.toLowerCase().includes(filter.toLowerCase()))
       )
       .slice(0, isExpanded ? undefined : 9)

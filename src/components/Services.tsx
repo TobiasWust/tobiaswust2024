@@ -27,8 +27,10 @@ const services = [
 ];
 
 export default function Services() {
-  const showProjects = (filter: string) => {
+  const showProjects = (e: React.MouseEvent, filter: string) => {
+    e.preventDefault();
     window.dispatchEvent(new CustomEvent(PROJECT_FILTER_EVENT, { detail: filter }));
+    document.getElementById('projects')?.scrollIntoView();
   };
 
   return (
@@ -40,7 +42,7 @@ export default function Services() {
             <span className={style.icon}>{service.icon}</span>
             <h3>{service.title}</h3>
             <p>{service.text}</p>
-            <a className='link' href='/#projects' onClick={() => showProjects(service.filter)}>
+            <a className='link' href='/#projects' onClick={(e) => showProjects(e, service.filter)}>
               See related projects →
             </a>
           </li>

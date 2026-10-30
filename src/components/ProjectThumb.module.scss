@@ -1,6 +1,6 @@
 .project {
   color: #111;
-  border-radius: 40px;
+  border-radius: var(--card-radius);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -17,7 +17,6 @@
 
   &:hover {
     box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
-    translate: translateY(-5px);
     rotate: 1deg;
     scale: 1.02;
   }
