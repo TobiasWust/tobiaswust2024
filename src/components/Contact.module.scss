@@ -17,6 +17,11 @@
       margin-bottom: var(--space-m);
     }
 
+    // own line below the heading (the heading is inline-block, so the badge would sit next to it)
+    .availability {
+      margin-bottom: var(--space-m);
+    }
+
     >p:first-of-type {
       margin-bottom: var(--space-m);
     }

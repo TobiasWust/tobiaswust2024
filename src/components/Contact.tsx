@@ -48,7 +48,9 @@ export default function Contact() {
     <section id="contact" className={style.contact}>
       <div className={style.pitch}>
         <h2>{t.contact.heading}</h2>
-        <Availability />
+        <div className={style.availability}>
+          <Availability />
+        </div>
         <p>{t.contact.pitch}</p>
         <p>{rich(t.contact.reply, style.highlight)}</p>
         <div className={style.ways}>
