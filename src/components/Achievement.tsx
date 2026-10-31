@@ -1,15 +1,21 @@
+'use client';
+
 import achievements from '../data/achievements'
 import style from './Achievement.module.scss'
 import { GiTrophy } from "react-icons/gi";
 import Progressbar from './Progressbar';
 import { useEffect, useState } from 'react';
 import achievementStore from '../achievements/achievementStore';
+import { useI18n } from '../i18n/I18nProvider';
+import { localizeAchievement } from '../i18n/localize';
 
 export default function Achievement({ achievementId, active }: {
   achievementId: string
   active: boolean
 }) {
-  const achievement = achievements.find(e => e.id === achievementId);
+  const { t } = useI18n();
+  const found = achievements.find(e => e.id === achievementId);
+  const achievement = found && localizeAchievement(found, t);
   const [progress, setProgress] = useState(0);
   const [maxProgress, setMaxProgress] = useState(1);
   const counters = achievementStore((state) => state.counters);

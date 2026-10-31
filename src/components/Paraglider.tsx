@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import achievementStore from '../achievements/achievementStore';
 import useReducedMotion from '../utils/useReducedMotion';
 import style from './Paraglider.module.scss';
+import { useI18n } from '../i18n/I18nProvider';
 
 // one flight: glide in, circle up in a thermal, glide out
 const GLIDE_IN = 4000;
@@ -19,6 +20,7 @@ export default function Paraglider() {
   const glider = useRef<HTMLButtonElement>(null);
   const escaping = useRef<number | null>(null);
   const reduced = useReducedMotion();
+  const { t } = useI18n();
   const addAchievement = achievementStore((state) => state.addAchievement);
 
   useEffect(() => {
@@ -109,7 +111,7 @@ export default function Paraglider() {
       ref={glider}
       type='button'
       className={style.glider}
-      aria-label='A paraglider catching a thermal'
+      aria-label={t.hero.paraglider}
       onClick={(e) => {
         e.stopPropagation();
         if (escaping.current) return;

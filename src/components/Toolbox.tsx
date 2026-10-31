@@ -10,6 +10,7 @@ import skills from '../data/skills';
 import { dailyTools, toolboxGroups } from '../data/toolbox';
 import { PROJECT_FILTER_EVENT } from './Services';
 import style from './Toolbox.module.scss';
+import { useI18n } from '../i18n/I18nProvider';
 
 // one consistent icon set; each icon takes its brand colour on hover
 // (colours that are too dark for the background are lightened)
@@ -41,6 +42,8 @@ const grouped = new Set(toolboxGroups.flatMap((g) => g.skills));
 const otherSkills = skills.filter((s) => !grouped.has(s.id));
 
 export default function Toolbox() {
+  const { t } = useI18n();
+  const unit = (count: number) => (count === 1 ? t.toolbox.project : t.toolbox.projectsPlural);
   const showProjects = (label: string) => {
     window.dispatchEvent(new CustomEvent(PROJECT_FILTER_EVENT, { detail: label }));
     document.getElementById('projects')?.scrollIntoView();
@@ -48,12 +51,12 @@ export default function Toolbox() {
 
   return (
     <section id='skills' className={style.toolbox}>
-      <h2>Toolbox</h2>
-      <p className={style.intro}>The tools I work with today. Click one to see the projects I built with it.</p>
+      <h2>{t.toolbox.heading}</h2>
+      <p className={style.intro}>{t.toolbox.intro}</p>
       <div className={style.groups}>
         {toolboxGroups.map((group) => (
-          <div key={group.title} className={`card ${style.group}`}>
-            <h3>{group.title}</h3>
+          <div key={group.key} className={`card ${style.group}`}>
+            <h3>{t.toolbox.groups[group.key]}</h3>
             <ul>
               {group.skills.map((id) => {
                 const skill = skills.find((s) => s.id === id);
@@ -65,15 +68,15 @@ export default function Toolbox() {
                   <>
                     {Icon && <Icon aria-hidden className={style.icon} />}
                     <span>{skill.label}</span>
-                    {count > 0 && <small>{count} {count === 1 ? 'project' : 'projects'}</small>}
-                    {count === 0 && dailyTools.includes(id) && <small>daily</small>}
+                    {count > 0 && <small>{count} {unit(count)}</small>}
+                    {count === 0 && dailyTools.includes(id) && <small>{t.toolbox.daily}</small>}
                   </>
                 );
                 return (
                   <li key={id}>
                     {count > 0 ? (
                       <button type='button' className={style.skill} style={{ '--brand': color } as React.CSSProperties} onClick={() => showProjects(skill.label)}
-                        aria-label={`${skill.label}: show ${count} ${count === 1 ? 'project' : 'projects'}`}>
+                        aria-label={`${skill.label}: ${t.toolbox.show} ${count} ${unit(count)}`}>
                         {content}
                       </button>
                     ) : (
@@ -87,7 +90,7 @@ export default function Toolbox() {
         ))}
       </div>
       <p className={style.also}>
-        <span>Also experienced with:</span> {otherSkills.map((s) => s.label).join(' · ')}
+        <span>{t.toolbox.also}</span> {otherSkills.map((s) => s.label).join(' · ')}
       </p>
     </section>
   );

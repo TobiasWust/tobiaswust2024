@@ -1,3 +1,4 @@
+import { createElement } from 'react';
 import { toast } from 'react-toastify';
 import AchievementToast from '../components/AchievementToast';
 
@@ -21,7 +22,8 @@ const achievementStore = create(
     counters: {},
     addAchievement: (achievementId) => {
       if (get().achievementIds.includes(achievementId)) return;
-      toast(() => AchievementToast({ achievementId }));
+      // a real element, not a function call, so the toast can use hooks (it reads the current language)
+      toast(createElement(AchievementToast, { achievementId }));
       set({ achievementIds: [...get().achievementIds, achievementId] })
     },
     setCounter: (counterName, value) => {

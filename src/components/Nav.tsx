@@ -11,8 +11,11 @@ import useAVisits from "../achievements/useAVisits";
 import useAtunic from "../achievements/useAtunic";
 import useAcheater from "../achievements/useAcheater";
 import HireMe from "./HireMe";
+import LanguageSwitch from "./LanguageSwitch";
+import { useI18n } from '../i18n/I18nProvider';
 
 export default function Nav() {
+  const { t } = useI18n();
   useConsoleMsg();
   useAscrollMaster();
   useAfullscreenFanatic();
@@ -24,22 +27,23 @@ export default function Nav() {
   return (
     <nav className={styles.nav}>
       <Link href="/">
-        <Image src='/tw.svg' alt='Tobias Wust - home' width={56} height={26} priority />
+        <Image src='/tw.svg' alt={t.nav.home} width={56} height={26} priority />
       </Link>
       <ul>
         <li>
-          <Link className="link" href="/#services">Services</Link>
+          <Link className="link" href="/#services">{t.nav.services}</Link>
         </li>
         <li>
-          <Link className="link" href="/#projects">Projects</Link>
+          <Link className="link" href="/#projects">{t.nav.projects}</Link>
         </li>
         <li>
-          <Link className="link" href="/#about">About</Link>
+          <Link className="link" href="/#about">{t.nav.about}</Link>
         </li>
         <li>
-          <Link className="link" href="/#contact">Contact</Link>
+          <Link className="link" href="/#contact">{t.nav.contact}</Link>
         </li>
       </ul>
+      <LanguageSwitch />
       <HireMe small />
     </nav>
   );

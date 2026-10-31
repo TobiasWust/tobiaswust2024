@@ -7,6 +7,7 @@ import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
 import achievementStore from '../achievements/achievementStore';
 import { useEffect, useState } from 'react';
 import { OPEN_CONSENT_EVENT } from './CookieConsent';
+import { useI18n } from '../i18n/I18nProvider';
 
 export default function Footer() {
 
@@ -14,6 +15,7 @@ export default function Footer() {
   const addAchievement = achievementStore((state) => state.addAchievement);
   const counters = achievementStore((state) => state.counters);
   const setCounter = achievementStore((state) => state.setCounter);
+  const { t } = useI18n();
 
   // add achievement socialButterfly if clicked all socials
   useEffect(() => {
@@ -56,16 +58,16 @@ export default function Footer() {
         </a>
       </div>
       <p>
-        Copyright © {new Date().getFullYear()} - Made with{" "}
+        Copyright © {new Date().getFullYear()} - {t.footer.madeWith}{" "}
         <GiHearts onClick={() => {
           addAchievement('secretLove');
-        }} /> by{" "}
+        }} /> {t.footer.by}{" "}
         <a className="link" rel="noopener noreferrer" target="_blank" href="https://www.wust.dev">
           Wust
         </a>
       </p>
       <p>
-        Sourcecode available on{" "}
+        {t.footer.source}{" "}
         <a
           className="link"
           rel="noopener noreferrer" target="_blank"
@@ -76,19 +78,19 @@ export default function Footer() {
       </p>
       <div>
         <Link className="link" href="/achievements">
-          Achievements
+          {t.footer.achievements}
         </Link>
       </div>
       <div>
         <Link className="link" href="/imprint">
-          Imprint
+          {t.footer.imprint}
         </Link>
         <Link className="link" href="/privacy">
-          Privacy Policy
+          {t.footer.privacy}
         </Link>
         <button type="button" className={`link ${style.consentButton}`}
           onClick={() => window.dispatchEvent(new Event(OPEN_CONSENT_EVENT))}>
-          Privacy settings
+          {t.footer.privacySettings}
         </button>
       </div>
     </footer>

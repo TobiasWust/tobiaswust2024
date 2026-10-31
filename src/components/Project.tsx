@@ -7,6 +7,7 @@ import skills, { getSkillLogoUrl } from '../data/skills';
 import style from './Project.module.scss';
 import ProjectPlaceholder from './ProjectPlaceholder';
 import ProjectKind from './ProjectKind';
+import { useI18n } from '../i18n/I18nProvider';
 
 export default function Project({
   project,
@@ -17,6 +18,7 @@ export default function Project({
   closeProject: () => void;
 }) {
   const closeProjectButton = useRef<HTMLButtonElement>(null);
+  const { t } = useI18n();
 
   useEffect(() => {
     closeProjectButton.current?.focus();
@@ -33,7 +35,7 @@ export default function Project({
       <button
         ref={closeProjectButton}
         type='button'
-        aria-label='Close project'
+        aria-label={t.projects.close}
         onClick={closeProject}
       >
         X
@@ -62,7 +64,7 @@ export default function Project({
         <p>{project.description}</p>
         {project.result && (
           <p className={style.result}>
-            <strong>Result:</strong> {project.result}
+            <strong>{t.projects.result}</strong> {project.result}
           </p>
         )}
 
@@ -92,7 +94,7 @@ export default function Project({
               href={project.url}
             >
               <VscLinkExternal />
-              Visit Site
+              {t.projects.visitSite}
             </a>
           )}
           {project.github && (
@@ -103,7 +105,7 @@ export default function Project({
               href={project.github}
             >
               <VscGithub />
-              View on GitHub
+              {t.projects.viewOnGithub}
             </a>
           )}
         </div>
