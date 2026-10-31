@@ -1,7 +1,13 @@
-export default function Privacy() {
+import { isLocale } from "../../../i18n/config";
+import { getDictionary } from "../../../i18n/dictionaries";
+
+export default function Privacy({ params }: { params: { lang: string } }) {
+  const lang = isLocale(params.lang) ? params.lang : "en";
+
   return (
     <main>
-      <div className="legal">
+      <div className="legal" lang="de">
+        {lang === "en" && <p lang="en"><em>{getDictionary("en").legal.germanOnly}</em></p>}
         <h1>Datenschutzerklärung</h1>
         <hr />
         <h2>Verantwortliche Stelle</h2>

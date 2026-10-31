@@ -2,43 +2,20 @@
 
 import { FaCode, FaCompass, FaLayerGroup, FaRobot } from 'react-icons/fa';
 import style from './Services.module.scss';
+import { useI18n } from '../i18n/I18nProvider';
 
 export const PROJECT_FILTER_EVENT = 'projects-filter';
 
-type Service = {
-  icon: React.ReactNode;
-  title: string;
-  text: string;
-  filter?: string;
-};
-
-const services: Service[] = [
-  {
-    icon: <FaCompass />,
-    title: 'Product & Technical Direction',
-    text: 'I start with your business, not the code. I turn vague goals into a clear plan, make the architecture calls and direct the work, whether people or AI write the code.',
-  },
-  {
-    icon: <FaRobot />,
-    title: 'AI-Powered Features',
-    text: 'LLM features that solve real problems, like summaries, search, data extraction and assistants, built with costs, privacy and reliability in mind.',
-    filter: 'openai',
-  },
-  {
-    icon: <FaLayerGroup />,
-    title: 'Fullstack Products',
-    text: 'From database to deployment: Node.js APIs, Supabase and Next.js apps that are built to grow with your business.',
-    filter: 'node',
-  },
-  {
-    icon: <FaCode />,
-    title: 'Frontend Engineering',
-    text: 'Fast, accessible React & TypeScript interfaces that turn complex workflows into something people enjoy using.',
-    filter: 'react',
-  },
+// icon and project filter per service, in the same order as t.services.items
+const services: { icon: React.ReactNode; filter?: string }[] = [
+  { icon: <FaCompass /> },
+  { icon: <FaRobot />, filter: 'openai' },
+  { icon: <FaLayerGroup />, filter: 'node' },
+  { icon: <FaCode />, filter: 'react' },
 ];
 
 export default function Services() {
+  const { t } = useI18n();
   const showProjects = (e: React.MouseEvent, filter: string) => {
     e.preventDefault();
     window.dispatchEvent(new CustomEvent(PROJECT_FILTER_EVENT, { detail: filter }));
@@ -47,20 +24,20 @@ export default function Services() {
 
   return (
     <section id='services' className={style.services}>
-      <h2>What I can do for you</h2>
+      <h2>{t.services.heading}</h2>
       <ul>
-        {services.map((service) => (
-          <li key={service.title} className='card'>
+        {services.map((service, i) => (
+          <li key={t.services.items[i].title} className='card'>
             <span className={style.icon}>{service.icon}</span>
-            <h3>{service.title}</h3>
-            <p>{service.text}</p>
+            <h3>{t.services.items[i].title}</h3>
+            <p>{t.services.items[i].text}</p>
             {service.filter ? (
               <a className='link' href='/#projects' onClick={(e) => showProjects(e, service.filter!)}>
-                See related projects →
+                {t.services.relatedProjects}
               </a>
             ) : (
               <a className='link' href='/#contact'>
-                Let&apos;s talk about your project →
+                {t.services.talk}
               </a>
             )}
           </li>

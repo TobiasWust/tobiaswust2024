@@ -2,12 +2,14 @@
 
 import { useRef } from 'react';
 import style from './HireMe.module.scss';
+import { useI18n } from '../i18n/I18nProvider';
 
 // how far the button leans toward the cursor, as a share of the cursor's offset
 const PULL = 0.25;
 
 export default function HireMe({ small }: { small?: boolean }) {
   const ref = useRef<HTMLAnchorElement>(null);
+  const { t } = useI18n();
 
   const lean = (e: React.MouseEvent) => {
     const el = ref.current;
@@ -26,7 +28,7 @@ export default function HireMe({ small }: { small?: boolean }) {
       onMouseMove={lean}
       onMouseLeave={() => { if (ref.current) ref.current.style.translate = ''; }}
     >
-      <span>Hire me</span>
+      <span>{t.nav.hireMe}</span>
     </a>
   )
 }

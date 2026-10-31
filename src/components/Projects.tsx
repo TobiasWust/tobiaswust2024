@@ -1,7 +1,7 @@
 'use client';
 
 import style from './Projects.module.scss';
-import projects, { Project as TProject } from "../data/projects";
+import allProjects, { Project as TProject } from "../data/projects";
 import ProjectThumb from "./ProjectThumb";
 import { useEffect, useMemo, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
@@ -11,8 +11,13 @@ import achievementStore from '../achievements/achievementStore';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { PROJECT_FILTER_EVENT } from './Services';
 import { findSkillByLabel } from '../data/skills';
+import { useI18n } from '../i18n/I18nProvider';
+import { localizeProject } from '../i18n/localize';
 
 export default function Projects() {
+  const { t } = useI18n();
+  // texts in the current language, so search and cards match what the visitor reads
+  const projects = useMemo(() => allProjects.map((p) => localizeProject(p, t)), [t]);
   const [filter, setFilter] = useState('');
   const [fullscreenProject, setFullscreenProject] = useState<TProject | null>(null);
   const [mounted, setMounted] = useState(false);
@@ -37,7 +42,7 @@ export default function Projects() {
           || project.skills.some(s => s.toLowerCase().includes(text));
       })
       .slice(0, isExpanded ? undefined : 9);
-  }, [filter, isExpanded]);
+  }, [filter, isExpanded, projects]);
 
   useEffect(() => setMounted(true), []);
   useEffect(() => {
@@ -85,18 +90,18 @@ export default function Projects() {
     if (projectsOpened.length === 3) {
       addAchievement('projectProspect');
     }
-    if (projectsOpened.length === projects.length) {
+    if (projectsOpened.length === allProjects.length) {
       addAchievement('projectShopper');
     }
   }, [projectsOpened, addAchievement, setCounter, counters.projectsOpened]);
 
   return (
     <section id='projects' className={style.projects}>
-      <h2>Built with Passion</h2>
+      <h2>{t.projects.heading}</h2>
       <p>
-        Client work and side projects I built. Click one for details.
+        {t.projects.intro}
       </p>
-      <div className={style.filter}><input type="search" aria-label="Search projects" placeholder="Search for a project or skill..." value={filter} onChange={e => setFilter(e.target.value)} /></div>
+      <div className={style.filter}><input type="search" aria-label={t.projects.searchLabel} placeholder={t.projects.searchPlaceholder} value={filter} onChange={e => setFilter(e.target.value)} /></div>
       <Flipper flipKey={filteredProjects.length}
         spring="veryGentle"
       >
@@ -143,7 +148,7 @@ export default function Projects() {
                 </Flipped>
               )
 
-              ) : <Flipped><p className={style.noResult}>No projects found. Maybe I should build that one?</p></Flipped>
+              ) : <Flipped><p className={style.noResult}>{t.projects.noResult}</p></Flipped>
             }
           </div>
         </Flipped>
@@ -155,8 +160,8 @@ export default function Projects() {
             if (isExpanded) document.getElementById('projects')?.scrollIntoView();
             setIsExpanded((s) => !s);
           }}>{isExpanded ?
-            (<><FaChevronUp />Show less<FaChevronUp /></>) :
-            (<><FaChevronDown />Show more<FaChevronDown /></>)}
+            (<><FaChevronUp />{t.projects.showLess}<FaChevronUp /></>) :
+            (<><FaChevronDown />{t.projects.showMore}<FaChevronDown /></>)}
           </button>
         </div>
       }

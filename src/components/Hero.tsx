@@ -8,10 +8,12 @@ import projects from '../data/projects';
 import Availability from './Availability';
 import Paraglider from './Paraglider';
 import CountUp from './CountUp';
+import { useI18n } from '../i18n/I18nProvider';
 
 export default function Hero() {
   const [adventure, setAdventure] = useState(false);
   const addAchievement = achievementStore((state) => state.addAchievement);
+  const { t } = useI18n();
 
   const handleAdventureDown = () => {
     if (window.innerWidth < 768) setAdventure(!adventure);
@@ -30,23 +32,23 @@ export default function Hero() {
         <Paraglider />
       </div>
       <Availability />
-      <p className={styles.eyebrow}>Senior Fullstack Engineer</p>
+      <p className={styles.eyebrow}>{t.hero.eyebrow}</p>
       <h1>Tobias Wust</h1>
       <p className={styles.tagline}>
-        AI writes code. I make sure it&apos;s the right code: I turn your business goals into products that ship, faster with AI and with the judgment AI doesn&apos;t have.
+        {t.hero.tagline}
       </p>
-      <p className={styles.adventureLine}>Fullstack expertise with a passion for <span
+      <p className={styles.adventureLine}>{t.hero.adventureBefore}<span
         onMouseDown={handleAdventureDown}
         onMouseUp={handleAdventureUp}
-      >adventure</span>.</p>
+      >{t.hero.adventureWord}</span>{t.hero.adventureAfter}</p>
       <div className={styles.ctas}>
         <HireMe />
-        <a className="btn inverted" href="/#projects">See my work</a>
+        <a className="btn inverted" href="/#projects">{t.hero.seeMyWork}</a>
       </div>
       <ul className={styles.stats}>
-        <li><strong><CountUp to={15} suffix='+' /></strong> years of experience</li>
-        <li><strong><CountUp to={projects.length} suffix='+' /></strong> shipped projects</li>
-        <li><strong>Remote</strong> from Germany</li>
+        <li><strong><CountUp to={15} suffix='+' /></strong> {t.hero.stats.years}</li>
+        <li><strong><CountUp to={projects.length} suffix='+' /></strong> {t.hero.stats.projects}</li>
+        <li><strong>{t.hero.stats.remote}</strong> {t.hero.stats.remoteFrom}</li>
       </ul>
     </section>
   )

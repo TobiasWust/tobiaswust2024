@@ -9,18 +9,14 @@ import { FaCalendarAlt, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 import { BOOKING_URL } from '../data/contact';
 import Availability from './Availability';
 import EmailLink from './EmailLink';
-
-const engagements = [
-  { title: 'Project-based', text: 'A clearly defined scope, delivered end-to-end.' },
-  { title: 'Team extension', text: 'I join your team as a senior developer.' },
-  { title: 'Fractional tech lead', text: 'Part-time technical direction, architecture and reviews.' },
-  { title: 'AI workshop / audit', text: 'Adopting AI-assisted development or planning AI features.' },
-];
+import { useI18n } from '../i18n/I18nProvider';
+import { rich } from '../i18n/rich';
 
 export default function Contact() {
   const [status, setStatus] = useState<String | null>(null);
   const [error, setError] = useState<String | null>(null);
   const addAchievement = achievementStore((state) => state.addAchievement);
+  const { t } = useI18n();
 
   const handleFormSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -51,21 +47,21 @@ export default function Contact() {
   return (
     <section id="contact" className={style.contact}>
       <div className={style.pitch}>
-        <h2>Get in touch</h2>
+        <h2>{t.contact.heading}</h2>
         <Availability />
-        <p>Have a project in mind, need an extra pair of hands on your team, or want a second opinion on your frontend architecture?</p>
-        <p>Share the details and I&apos;ll get back to you <span className={style.highlight}>within 48 hours</span>.</p>
+        <p>{t.contact.pitch}</p>
+        <p>{rich(t.contact.reply, style.highlight)}</p>
         <div className={style.ways}>
-          <h3>Ways to work together</h3>
+          <h3>{t.contact.waysHeading}</h3>
           <ul>
-            {engagements.map((engagement) => (
+            {t.contact.ways.map((engagement) => (
               <li key={engagement.title} title={engagement.text}>{engagement.title}</li>
             ))}
           </ul>
         </div>
         {BOOKING_URL && (
           <a className={`btn ${style.booking}`} href={BOOKING_URL} rel="noopener noreferrer" target="_blank">
-            <FaCalendarAlt /> Book a free 30-min intro call
+            <FaCalendarAlt /> {t.contact.booking}
           </a>
         )}
         <ul className={style.direct}>
@@ -74,18 +70,18 @@ export default function Contact() {
           </li>
           <li>
             <a className="link" href="https://www.linkedin.com/in/tobias-wust/" rel="noopener noreferrer" target="_blank">
-              <SiLinkedin /> Connect on LinkedIn
+              <SiLinkedin /> {t.contact.linkedin}
             </a>
           </li>
           <li>
             <a className="link" href="https://github.com/TobiasWust" rel="noopener noreferrer" target="_blank">
-              <SiGithub /> Browse my GitHub
+              <SiGithub /> {t.contact.github}
             </a>
           </li>
           <li>
             <a className="link" href="https://cv.wust.dev" rel="noopener noreferrer" target="_blank"
               onClick={() => addAchievement('potentialClient')}>
-              <VscLinkExternal /> Read my CV
+              <VscLinkExternal /> {t.contact.cv}
             </a>
           </li>
         </ul>
@@ -94,26 +90,26 @@ export default function Contact() {
       <form onSubmit={handleFormSubmit} name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
 
-        <label className="visually-hidden" htmlFor="name">Name</label>
-        <input type="text" id="name" name="name" autoComplete="name" required placeholder='Name' />
+        <label className="visually-hidden" htmlFor="name">{t.contact.name}</label>
+        <input type="text" id="name" name="name" autoComplete="name" required placeholder={t.contact.name} />
 
-        <label className="visually-hidden" htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" autoComplete="email" required placeholder='Email' />
+        <label className="visually-hidden" htmlFor="email">{t.contact.email}</label>
+        <input type="email" id="email" name="email" autoComplete="email" required placeholder={t.contact.email} />
 
-        <label className="visually-hidden" htmlFor="message">Message</label>
-        <textarea id="message" name="message" required placeholder='Tell me about your project'></textarea>
+        <label className="visually-hidden" htmlFor="message">{t.contact.message}</label>
+        <textarea id="message" name="message" required placeholder={t.contact.message}></textarea>
 
         <button type="submit" disabled={status === 'pending'}>
-          {status === 'pending' ? 'Sending…' : 'Send message'}
+          {status === 'pending' ? t.contact.sending : t.contact.send}
         </button>
         <p role="status" className={style.status}>
           {status === 'ok' && (
             <>
               <FaPaperPlane aria-hidden className={style.plane} />
-              Thank you for reaching out :)
+              {t.contact.thanks}
             </>
           )}
-          {status === 'error' && `Error: ${error}`}
+          {status === 'error' && `${t.contact.error} ${error}`}
         </p>
       </form>
     </section>

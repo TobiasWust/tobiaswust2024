@@ -4,6 +4,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import style from './CookieConsent.module.scss';
+import { useI18n } from '../i18n/I18nProvider';
 
 const GA_ID = 'G-C4JPK514R9';
 const STORAGE_KEY = 'analytics-consent';
@@ -35,6 +36,7 @@ function removeAnalyticsCookies() {
 export default function CookieConsent() {
   const [consent, setConsent] = useState<Consent>(null);
   const [open, setOpen] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     const stored = readConsent();
@@ -64,15 +66,14 @@ export default function CookieConsent() {
     <>
       {consent === 'granted' && <GoogleAnalytics gaId={GA_ID} />}
       {open && (
-        <div className={style.banner} role='dialog' aria-label='Privacy settings'>
+        <div className={style.banner} role='dialog' aria-label={t.consent.label}>
           <p>
-            May I use Google Analytics to see how visitors use this site? It sets cookies and sends data to Google.
-            You can change your choice anytime under &quot;Privacy settings&quot; in the footer.
-            {' '}<Link className='link' href='/privacy'>Privacy policy</Link>
+            {t.consent.text}
+            {' '}<Link className='link' href='/privacy'>{t.consent.policy}</Link>
           </p>
           <div className={style.actions}>
-            <button type='button' className='btn inverted' onClick={() => decide('denied')}>Decline</button>
-            <button type='button' className='btn inverted' onClick={() => decide('granted')}>Accept</button>
+            <button type='button' className='btn inverted' onClick={() => decide('denied')}>{t.consent.decline}</button>
+            <button type='button' className='btn inverted' onClick={() => decide('granted')}>{t.consent.accept}</button>
           </div>
         </div>
       )}

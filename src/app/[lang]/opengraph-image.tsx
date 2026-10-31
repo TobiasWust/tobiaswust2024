@@ -1,10 +1,13 @@
 import { ImageResponse } from 'next/og';
+import { isLocale } from '../../i18n/config';
+import { getDictionary } from '../../i18n/dictionaries';
 
 export const alt = 'Tobias Wust - Freelance Fullstack Developer';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default function OpengraphImage() {
+export default function OpengraphImage({ params }: { params: { lang: string } }) {
+  const { meta } = getDictionary(isLocale(params.lang) ? params.lang : 'en');
   return new ImageResponse(
     (
       <div
@@ -25,9 +28,9 @@ export default function OpengraphImage() {
             Tobias Wust
           </span>
         </div>
-        <div style={{ marginTop: 40, fontSize: 48 }}>Freelance Fullstack Developer</div>
+        <div style={{ marginTop: 40, fontSize: 48 }}>{meta.ogTagline}</div>
         <div style={{ marginTop: 16, fontSize: 32, color: '#f68714' }}>
-          React · TypeScript · Node.js · 15+ years
+          {meta.ogStack}
         </div>
         <div
           style={{

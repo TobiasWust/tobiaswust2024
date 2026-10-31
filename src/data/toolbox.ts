@@ -1,19 +1,19 @@
 // skill ids from skills.tsx, grouped for the Toolbox section
-export const toolboxGroups = [
+export const toolboxGroups: { key: 'frontend' | 'backend' | 'ai' | 'tooling'; skills: string[] }[] = [
   {
-    title: 'Frontend',
+    key: 'frontend',
     skills: ['react', 'nextjs', 'typescript', 'tailwindcss', 'react-query', 'vite'],
   },
   {
-    title: 'Backend & Data',
+    key: 'backend',
     skills: ['nodejs', 'supabase', 'mongodb', 'stripe', 'docker'],
   },
   {
-    title: 'AI',
+    key: 'ai',
     skills: ['claude-icon', 'openai', 'github-copilot'],
   },
   {
-    title: 'Cloud & Tooling',
+    key: 'tooling',
     skills: ['aws', 'microsoft-azure', 'git', 'figma', 'sentry'],
   },
 ];

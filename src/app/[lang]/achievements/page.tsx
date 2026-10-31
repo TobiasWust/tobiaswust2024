@@ -1,18 +1,20 @@
 'use client';
 
 import { useEffect, useMemo, useState } from "react";
-import achievementStore from "../../achievements/achievementStore";
-import Achievement from "../../components/Achievement";
-import Progressbar from "../../components/Progressbar";
-import achievements from "../../data/achievements";
+import achievementStore from "../../../achievements/achievementStore";
+import Achievement from "../../../components/Achievement";
+import Progressbar from "../../../components/Progressbar";
+import achievements from "../../../data/achievements";
 import style from './page.module.scss';
 import { toast } from "react-toastify";
+import { useI18n } from "../../../i18n/I18nProvider";
 
 export default function PAchievements() {
   const activeAchievements = achievementStore((state) => state.achievementIds);
   const resetAchievements = achievementStore((state) => state.resetAchievements);
   const addAchievement = achievementStore((state) => state.addAchievement);
   const [clickedReset, setClickedReset] = useState(false);
+  const { t } = useI18n();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export default function PAchievements() {
   const handleConfirm = () => {
     setClickedReset(false);
     resetAchievements();
-    toast('Achievements reset', {
+    toast(t.achievementsPage.resetDone, {
       type: 'success'
     })
   };
@@ -40,10 +42,10 @@ export default function PAchievements() {
   return (
     <main className={style.achievements}>
       <section>
-        <h2>Achievements</h2>
-        <p>This website is filled with secrets. Can you find them all?</p>
+        <h2>{t.achievementsPage.heading}</h2>
+        <p>{t.achievementsPage.intro}</p>
         <Progressbar value={mountedActiveAchievements.length} max={achievements.length} />
-        <p><small>Sorry, some of them are not available on mobile or not a11y friendly :(</small></p>
+        <p><small>{t.achievementsPage.mobileNote}</small></p>
         <div className={style.achievementGrid}>
           {achievements.map((achievement) => (
             <Achievement
@@ -56,14 +58,14 @@ export default function PAchievements() {
         {!clickedReset ?
           (<div className={style.confirmWrapper}>
             <button className="btn" type="button" onClick={handleReset}>
-              Reset All Achievements
+              {t.achievementsPage.reset}
             </button>
           </div>)
           :
           (<div className={style.confirmWrapper}>
-            <span>Really Reset All Achievements?</span>
-            <button type="button" onClick={handleConfirm} className="btn inverted">Confirm</button>
-            <button type="button" onClick={handleCancel} className="btn">Cancel</button>
+            <span>{t.achievementsPage.resetQuestion}</span>
+            <button type="button" onClick={handleConfirm} className="btn inverted">{t.achievementsPage.confirm}</button>
+            <button type="button" onClick={handleCancel} className="btn">{t.achievementsPage.cancel}</button>
           </div>)
         }
       </section>
