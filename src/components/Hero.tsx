@@ -31,6 +31,7 @@ export default function Hero() {
         <Hexagons />
         <Paraglider />
       </div>
+      <Availability />
       <p className={styles.eyebrow}>{t.hero.eyebrow}</p>
       <h1>Tobias Wust</h1>
       <p className={styles.tagline}>
@@ -44,8 +45,6 @@ export default function Hero() {
         <HireMe />
         <a className="btn inverted" href="/#projects">{t.hero.seeMyWork}</a>
       </div>
-      {/* right under the buttons: reassurance at the moment a visitor decides to get in touch */}
-      <Availability />
       <ul className={styles.stats}>
         <li><strong><CountUp to={15} suffix='+' /></strong> {t.hero.stats.years}</li>
         <li><strong><CountUp to={projects.length} suffix='+' /></strong> {t.hero.stats.projects}</li>
