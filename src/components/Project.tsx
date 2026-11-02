@@ -2,7 +2,7 @@ import { CldImage } from 'next-cloudinary';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { VscGithub, VscLinkExternal } from 'react-icons/vsc';
-import { Project as TProject } from '../data/projects';
+import { Project as TProject, screenshotCrop } from '../data/projects';
 import skills, { getSkillLogoUrl } from '../data/skills';
 import style from './Project.module.scss';
 import ProjectPlaceholder from './ProjectPlaceholder';
@@ -46,10 +46,7 @@ export default function Project({
           width='500'
           height='300'
           alt={project.label}
-          crop={{
-            type: 'auto',
-            source: true,
-          }}
+          crop={screenshotCrop(project)}
         />
       ) : (
         <ProjectPlaceholder label={project.label} />

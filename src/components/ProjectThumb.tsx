@@ -1,7 +1,7 @@
 import { CldImage } from 'next-cloudinary';
 import Image from 'next/image';
 import { Flipped } from 'react-flip-toolkit';
-import { Project as TProject } from '../data/projects';
+import { Project as TProject, screenshotCrop } from '../data/projects';
 import skills, { getSkillLogoUrl } from '../data/skills';
 import style from './ProjectThumb.module.scss';
 import ProjectPlaceholder from './ProjectPlaceholder';
@@ -43,10 +43,7 @@ export default function ProjectThumb({
             height='300'
             alt={project.label}
             draggable={false}
-            crop={{
-              type: 'auto',
-              source: true,
-            }}
+            crop={screenshotCrop(project)}
           />
         ) : (
           <ProjectPlaceholder label={project.label} />

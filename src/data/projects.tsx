@@ -3,6 +3,9 @@ export type Project = {
   id: string;
   year: number;
   screenshot?: string;
+  // 'top' keeps the whole image and only trims the bottom edge; default is Cloudinary's smart crop,
+  // which zooms in and can cut off parts that matter (like a menu bar)
+  screenshotCrop?: 'top';
   description: string;
   shortDescription: string;
   skills: string[];
@@ -15,6 +18,12 @@ export type Project = {
 };
 
 export type Projects = Project[];
+
+export function screenshotCrop(project: Project) {
+  return project.screenshotCrop === 'top'
+    ? { type: 'fill' as const, gravity: 'north', source: true }
+    : { type: 'auto' as const, source: true };
+}
 
 const projects: Projects = [
   {
@@ -35,6 +44,7 @@ const projects: Projects = [
     id: 'fnlockbar',
     kind: 'side',
     screenshot: 'tobiaswust.de/fnlockbar',
+    screenshotCrop: 'top',
     result: 'Free download on GitHub.',
     year: 2026,
     shortDescription: 'macOS Menu Bar App for the fn Key',
