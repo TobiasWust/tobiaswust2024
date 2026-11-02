@@ -31,6 +31,18 @@ const projects: Projects = [
     url: 'https://www.node.energy',
   },
   {
+    label: 'FnLockBar',
+    id: 'fnlockbar',
+    kind: 'side',
+    result: 'Released as v1.1.0 on GitHub, built and published automatically with GitHub Actions.',
+    year: 2026,
+    shortDescription: 'macOS menu bar app for the fn key mode',
+    description:
+      'FnLockBar is a tiny native macOS menu bar app that shows whether the F1–F12 keys are currently function keys or media keys, and switches between them with a click or a global shortcut. It reads the state the keyboard driver actually uses, so the indicator stays correct no matter which tool changed it, and keeps System Settings in sync when toggling. A system-style HUD shows every change, and it can start at login. Written in Swift and AppKit as a single source file, with no dependencies and near-zero CPU.',
+    skills: ['swift'],
+    github: 'https://github.com/TobiasWust/FnLockBar',
+  },
+  {
     label: 'KataKeeper',
     id: 'katakeeper',
     kind: 'side',
