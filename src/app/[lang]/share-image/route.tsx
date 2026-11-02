@@ -1,12 +1,18 @@
 import { ImageResponse } from 'next/og';
-import { isLocale } from '../../i18n/config';
-import { getDictionary } from '../../i18n/dictionaries';
+import { isLocale, locales } from '../../../i18n/config';
+import { getDictionary } from '../../../i18n/dictionaries';
 
-export const alt = 'Tobias Wust - Freelance Fullstack Developer';
-export const size = { width: 1200, height: 630 };
-export const contentType = 'image/png';
+// a plain route instead of Next's opengraph-image file: that one puts its internal /en/… path into the
+// og:image tag, which 404s behind the domain middleware. /share-image gets rewritten like every other page.
+const size = { width: 1200, height: 630 };
 
-export default function OpengraphImage({ params }: { params: { lang: string } }) {
+export const dynamic = 'force-static';
+
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
+
+export function GET(_: Request, { params }: { params: { lang: string } }) {
   const { meta } = getDictionary(isLocale(params.lang) ? params.lang : 'en');
   return new ImageResponse(
     (
