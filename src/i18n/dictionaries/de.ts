@@ -226,9 +226,9 @@ const de: Dictionary = {
       result: 'Live im Produktivbetrieb: Die von mir gebauten Oberflächen werden für Energie- und Erlösmonitoring, Anlagen- und Betreiberverwaltung sowie das Kunden-Onboarding genutzt.',
     },
     fnlockbar: {
-      shortDescription: 'macOS-Menüleisten-App für den fn-Tastenmodus',
-      description: 'FnLockBar ist eine kleine native macOS-App für die Menüleiste, die anzeigt, ob die Tasten F1–F12 gerade als Funktionstasten oder als Medientasten arbeiten, und per Klick oder globalem Tastenkürzel zwischen beiden umschaltet. Sie liest den Zustand, den der Tastaturtreiber tatsächlich verwendet, sodass die Anzeige immer stimmt, egal welches Tool den Modus geändert hat, und hält beim Umschalten die Systemeinstellungen synchron. Ein HUD im System-Stil zeigt jede Änderung an, und auf Wunsch startet die App beim Anmelden. Geschrieben in Swift und AppKit als einzelne Quelldatei, ohne Abhängigkeiten und mit nahezu null CPU-Last.',
-      result: 'Als v1.1.0 auf GitHub veröffentlicht, automatisch gebaut und veröffentlicht mit GitHub Actions.',
+      shortDescription: 'macOS-Menüleisten-App für die fn-Taste',
+      description: 'Sind F1–F12 gerade Funktionstasten oder Medientasten? Dafür habe ich FnLockBar gebaut, eine kleine macOS-App für die Menüleiste, die immer den aktuellen Modus anzeigt und ihn per Klick oder Tastenkürzel umschaltet. Geschrieben in Swift, ganz ohne Abhängigkeiten.',
+      result: 'Kostenlos auf GitHub zum Download.',
     },
     katakeeper: {
       shortDescription: 'Spaced-Repetition-Training für Kata und Bewegungsabläufe',
