@@ -34,6 +34,7 @@ const projects: Projects = [
     label: 'FnLockBar',
     id: 'fnlockbar',
     kind: 'side',
+    screenshot: 'tobiaswust.de/fnlockbar',
     result: 'Released as v1.1.0 on GitHub, built and published automatically with GitHub Actions.',
     year: 2026,
     shortDescription: 'macOS menu bar app for the fn key mode',
