@@ -258,8 +258,8 @@ a {
   max-width: var(--max-width);
   background-color: var(--wu-white);
   color: var(--wu-black);
-  padding: 1rem;
-  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem);
+  margin: var(--space-l) auto;
   border-radius: var(--border-radius);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
@@ -270,11 +270,21 @@ a {
 
   h2 {
     font-size: 1.25rem;
-    margin-bottom: 1rem;
+    margin: 1.75rem 0 .75rem;
   }
 
   p {
     margin-bottom: 1rem;
+  }
+
+  // the global reset removes list padding, which would push bullets outside the card
+  ul {
+    padding-left: 1.4em;
+    margin-bottom: 1rem;
+  }
+
+  li {
+    margin-bottom: .35rem;
   }
 
   a {
