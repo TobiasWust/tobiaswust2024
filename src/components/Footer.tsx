@@ -6,7 +6,6 @@ import { GiHearts } from "react-icons/gi";
 import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
 import achievementStore from '../achievements/achievementStore';
 import { useEffect, useState } from 'react';
-import { OPEN_CONSENT_EVENT } from './CookieConsent';
 import { useI18n } from '../i18n/I18nProvider';
 
 export default function Footer() {
@@ -88,10 +87,6 @@ export default function Footer() {
         <Link className="link" href="/privacy">
           {t.footer.privacy}
         </Link>
-        <button type="button" className={`link ${style.consentButton}`}
-          onClick={() => window.dispatchEvent(new Event(OPEN_CONSENT_EVENT))}>
-          {t.footer.privacySettings}
-        </button>
       </div>
     </footer>
   );

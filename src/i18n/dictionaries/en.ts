@@ -160,14 +160,6 @@ const en = {
     achievements: 'Achievements',
     imprint: 'Imprint',
     privacy: 'Privacy Policy',
-    privacySettings: 'Privacy settings',
-  },
-  consent: {
-    label: 'Privacy settings',
-    text: 'May I use Google Analytics to see how visitors use this site? It sets cookies and sends data to Google. You can change your choice anytime under "Privacy settings" in the footer.',
-    policy: 'Privacy policy',
-    decline: 'Decline',
-    accept: 'Accept',
   },
   achievementsPage: {
     heading: 'Achievements',

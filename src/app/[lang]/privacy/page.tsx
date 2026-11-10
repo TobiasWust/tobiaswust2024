@@ -108,37 +108,16 @@ export default function Privacy({ params }: { params: { lang: string } }) {
           Einfluss. Nähere Informationen können Sie der Datenschutzerklärung von YouTube unter
           <a href="http://www.google.de/intl/de/policies/privacy/">www.google.de/intl/de/policies/privacy/</a> entnehmen. Zudem verweisen wir für den generellen Umgang mit und die Deaktivierung
           von Cookies auf unsere allgemeine Darstellung in dieser Datenschutzerklärung.</p> */}
-        <h2>Google Analytics</h2>
-        <p>Sofern Sie hierzu Ihre Einwilligung erteilt haben, verwenden wir auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und
-          § 25 Abs. 1 TDDDG das Tool Google Analytics der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland
-          („Google“). Ohne Ihre Einwilligung wird Google Analytics nicht geladen. Sie können Ihre Einwilligung jederzeit mit
-          Wirkung für die Zukunft widerrufen, indem Sie im Footer dieser Seite auf „Privacy settings“ klicken. Damit kann die Nutzung von Webseiten analysiert werden, dabei können aus den
-          Daten pseudonyme Profile der Nutzer erstellt werden. Dazu werden von Google verschiedene Techniken angewandt, unter
-          anderem auch Cookies auf Ihrem Computer gespeichert. Diese speichern Informationen über die Nutzung unserer Seite,
-          die wir zur Verbesserung unseres Angebotes einsetzen.</p>
-        <p>Die von Google erhobenen Daten können in Staaten außerhalb der EU, insbesondere die USA, übermittelt werden. Google
-          ist unter dem EU-US Data Privacy Framework zertifiziert, auf dessen Grundlage ein Angemessenheitsbeschluss der
-          EU-Kommission besteht. Nähere Informationen zu Ihren Rechten finden Sie unter</p>
+        <h2>Reichweitenmessung mit GoatCounter</h2>
+        <p>Um zu verstehen, welche Seiten wie oft aufgerufen werden, nutzen wir auf Grundlage unseres berechtigten Interesses
+          gem. Art. 6 Abs. 1 lit. f DSGVO den Dienst GoatCounter (goatcounter.com). GoatCounter setzt keine Cookies und
+          erstellt keine Nutzerprofile. Bei einem Seitenaufruf werden lediglich allgemeine Angaben wie die aufgerufene Seite,
+          die verweisende Seite (Referrer), Browser, Bildschirmgröße und das Land übermittelt. Ihre IP-Adresse wird von
+          GoatCounter nicht gespeichert.</p>
+        <p>Weitere Informationen finden Sie in der Datenschutzerklärung von GoatCounter:</p>
         <p>
-          <a href="http://ec.europa.eu/justice/data-protection/document/citizens-guide_en.pdf">http://ec.europa.eu/justice/data-protection/document/citizens-guide_en.pdf</a>
+          <a href="https://www.goatcounter.com/help/privacy">https://www.goatcounter.com/help/privacy</a>
         </p>
-        <p>Wir haben ergänzende Vorkehrungen getroffen, um einen angemessenen Schutz ihrer Daten möglichst sicherzustellen. Wir
-          anonymisieren Ihre IP-Adresse vor der Übertragung an Google. Dies erfolgte durch Aktivierung der Funktion Anonymizelp()
-          innerhalb des Google Analytics Tracking Codes.</p>
-        <p>Weiter haben wir mit Google einen Vertrag zur Auftragsdatenverarbeitung geschlossen, wonach Google Ihre Daten nicht mit
-          anderen von Google erhobenen Daten zusammenführen wird, um Ihre Identität zu ermitteln.</p>
-        <p>Sofern Ihnen dies nicht ausreicht, können sie darüber hinaus unter dem Link</p>
-        <p>
-          <a href="http://tools.google.com/dlpage/gaoptout?hl=de">http://tools.google.com/dlpage/gaoptout?hl=de</a>
-        </p>
-        <p>das Browser-Plugin von Google zur Sperrung von Google Analytics herunterladen und installieren, womit die Erfassung und
-          Weitergabe ihrer personenbezogenen Daten durch Google blockiert wird.</p>
-        <p>Wenn Sie sich über die Vorkehrungen von Google zum Datenschutz informieren möchten, benutzen Sie bitte den folgenden
-          Link:
-        </p>
-        <p>
-          <a href="https://www.google.de/intl/de/policies/privacy/">https://www.google.de/intl/de/policies/privacy/</a>.</p>
-        <p></p>
         {/* <h2>Amazon Partnerprogramm</h2>
         <p>Wir verwenden im Rahmen unseres berechtigten Interesses an einem wirtschaftlichen Online Angebot gem. Art.6 Abs. 1 lit.f
           DSGVO an dem Amazon EU-Partnerprogramm der Amazon Europe Core S.à.r.l., die Amazon EU S.à.r.l, der Amazon Services

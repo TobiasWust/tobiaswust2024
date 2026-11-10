@@ -156,14 +156,6 @@ const de: Dictionary = {
     achievements: 'Achievements',
     imprint: 'Impressum',
     privacy: 'Datenschutz',
-    privacySettings: 'Datenschutz-Einstellungen',
-  },
-  consent: {
-    label: 'Datenschutz-Einstellungen',
-    text: 'Darf ich Google Analytics nutzen, um zu sehen, wie Besucher diese Seite verwenden? Dabei werden Cookies gesetzt und Daten an Google übermittelt. Sie können Ihre Wahl jederzeit unter „Datenschutz-Einstellungen“ im Footer ändern.',
-    policy: 'Datenschutzerklärung',
-    decline: 'Ablehnen',
-    accept: 'Akzeptieren',
   },
   achievementsPage: {
     heading: 'Achievements',

@@ -6,7 +6,7 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import CookieConsent from '../../components/CookieConsent';
+import Script from 'next/script';
 import { isLocale, Locale, locales, siteUrls } from "../../i18n/config";
 import { getDictionary } from "../../i18n/dictionaries";
 import { I18nProvider } from "../../i18n/I18nProvider";
@@ -118,8 +118,13 @@ export default function RootLayout({
             pauseOnFocusLoss
             pauseOnHover
           />
-          <CookieConsent />
         </I18nProvider>
+        {/* cookie-free, anonymous page views; ignores localhost by default */}
+        <Script
+          data-goatcounter="https://wustdev.goatcounter.com/count"
+          src="https://gc.zgo.at/count.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
