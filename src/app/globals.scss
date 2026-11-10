@@ -241,6 +241,17 @@ a {
   --toastify-color-success: var(--wu-green);
   --toastify-icon-color-success: var(--wu-green);
   --toastify-color-progress-success: var(--wu-green);
+  // the container uses toastify's dark theme; point its colors at ours so toasts follow light/dark mode
+  --toastify-color-dark: var(--surface);
+  --toastify-text-color-dark: var(--text);
+
+  .Toastify__toast {
+    border: 1px solid var(--card-border);
+  }
+
+  .Toastify__close-button {
+    color: var(--text);
+  }
 }
 
 .legal {
