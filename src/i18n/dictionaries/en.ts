@@ -21,6 +21,7 @@ const en = {
     contact: 'Contact',
     hireMe: 'Hire me',
     switchLanguageLabel: 'Diese Seite auf Deutsch',
+    theme: 'Toggle light/dark mode',
   },
   hero: {
     availability: 'Currently accepting new projects',

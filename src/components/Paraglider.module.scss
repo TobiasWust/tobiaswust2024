@@ -24,13 +24,13 @@
   }
 
   .lines {
-    stroke: rgba(254, 248, 248, .6);
+    stroke: var(--muted);
     stroke-width: .8;
     fill: none;
   }
 
   .pilot {
-    fill: var(--wu-white);
+    fill: var(--text);
   }
 
   &:focus-visible {

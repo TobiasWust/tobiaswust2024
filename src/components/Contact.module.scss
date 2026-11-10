@@ -32,7 +32,7 @@
   }
 
   .highlight {
-    color: var(--wu-orange);
+    color: var(--accent-text);
   }
 
   .ways {
@@ -42,7 +42,7 @@
       font-size: var(--step-0);
       text-transform: uppercase;
       letter-spacing: .1em;
-      color: var(--wu-orange);
+      color: var(--accent-text);
       margin-bottom: var(--space-xs);
     }
 
@@ -83,7 +83,7 @@
       gap: .5em;
 
       svg {
-        color: var(--wu-orange);
+        color: var(--accent-text);
       }
     }
   }
@@ -92,7 +92,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-s);
-    background-color: var(--wu-black);
+    background-color: var(--surface);
     padding: var(--space-l);
     border: 1px solid var(--card-border);
     border-left: 5px solid var(--wu-orange);
@@ -107,13 +107,13 @@
     padding: 12px;
     font: inherit;
     font-size: 1rem;
-    color: var(--wu-white);
-    background: var(--wu-blue);
+    color: var(--text);
+    background: var(--input-bg);
     border-left: 1px solid transparent;
     transition: all 0.2s ease-in-out;
 
     &::placeholder {
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--muted);
     }
 
     &:focus-visible {
@@ -139,7 +139,7 @@
     &:hover:not(:disabled) {
       background: transparent;
       border: 1px solid var(--wu-orange);
-      color: var(--wu-orange);
+      color: var(--accent-text);
     }
 
     &:disabled {
@@ -161,7 +161,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    color: var(--wu-orange);
+    color: var(--accent-text);
     animation: fly 1.6s cubic-bezier(.5, 0, .75, .4) forwards;
   }
 }

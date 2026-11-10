@@ -8,7 +8,7 @@
 
   >p {
     margin-top: var(--space-s);
-    color: var(--wu-white);
+    color: var(--text);
     opacity: .85;
   }
 }
@@ -33,15 +33,15 @@
     padding: 10px;
     font: inherit;
     font-weight: bold;
-    color: var(--wu-white);
+    color: var(--text);
     transition: all 0.2s ease-in-out;
     border: 1px solid var(--wu-orange);
     border-radius: 12px;
-    background: var(--wu-black);
+    background: var(--input-bg);
   }
 
   input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--muted);
   }
 
   input:focus-visible {
@@ -90,7 +90,7 @@
   .noResult {
     text-align: center;
     font-size: 1.5rem;
-    color: var(--wu-orange)
+    color: var(--accent-text)
   }
 
 }

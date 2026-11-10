@@ -25,7 +25,7 @@
   }
 
   .highlight {
-    color: var(--wu-orange);
+    color: var(--accent-text);
   }
 
   .cv {
@@ -39,7 +39,7 @@
     a {
       display: flex;
       align-items: center;
-      color: var(--wu-orange);
+      color: var(--accent-text);
       text-decoration: none;
       font-size: 1.5rem;
       gap: .5em;

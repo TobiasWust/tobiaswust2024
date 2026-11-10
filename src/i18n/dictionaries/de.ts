@@ -18,6 +18,7 @@ const de: Dictionary = {
     contact: 'Kontakt',
     hireMe: 'Anfragen',
     switchLanguageLabel: 'This page in English',
+    theme: 'Hell/Dunkel umschalten',
   },
   hero: {
     availability: 'Aktuell offen für neue Projekte',
@@ -217,6 +218,7 @@ const de: Dictionary = {
     stalker: { label: 'Stalker', description: 'Die Seite 30-mal besucht.' },
     networker: { label: 'Networker', description: 'Ein Codewort auf LinkedIn gefunden.' },
     thermalHunter: { label: 'Thermikjäger', description: 'Den Gleitschirm ganz oben auf der Seite eingefangen.' },
+    dayAndNight: { label: 'Tag und Nacht', description: 'Zwischen hellem und dunklem Design gewechselt.' },
     reset: { label: 'Zurücksetzen oder nicht?', description: 'Auf Zurücksetzen geklickt, aber dann Nein gesagt.' },
   },
   projectTexts: {

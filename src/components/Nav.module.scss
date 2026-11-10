@@ -1,12 +1,12 @@
 .nav {
   display: grid;
-  grid-template-columns: 1fr auto auto auto;
+  grid-template-columns: 1fr auto auto auto auto;
   align-items: center;
   padding: .5rem clamp(1rem, 4vw, 2rem);
-  background-color: rgba(14, 21, 56, .85);
+  background-color: var(--nav-bg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--card-border);
-  color: #fff;
+  color: var(--text);
   gap: 1rem;
   position: sticky;
   top: 0;
@@ -22,7 +22,7 @@
 
       a {
         white-space: nowrap;
-        color: #fff;
+        color: var(--text);
         text-decoration: none;
         font-size: var(--step-0);
         font-weight: 500;

@@ -54,6 +54,17 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
+const themeScript = `(() => {
+  let saved = null;
+  try { saved = localStorage.getItem("theme"); } catch {}
+  const system = matchMedia("(prefers-color-scheme: light)");
+  const apply = (theme) => (document.documentElement.dataset.theme = theme);
+  apply(saved || (system.matches ? "light" : "dark"));
+  system.addEventListener("change", (e) => {
+    try { if (!localStorage.getItem("theme")) apply(e.matches ? "light" : "dark"); } catch {}
+  });
+})();`;
+
 function personJsonLd(lang: Locale) {
   return {
     "@context": "https://schema.org",
@@ -82,7 +93,11 @@ export default function RootLayout({
   const lang = params.lang;
 
   return (
-    <html lang={lang}>
+    // the theme script sets data-theme before React hydrates, so React shouldn't complain about it
+    <html lang={lang} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className={`${inter.className} ${inter.variable} ${spaceGrotesk.variable}`}>
         <script
           type="application/ld+json"

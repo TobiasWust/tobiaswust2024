@@ -6,7 +6,7 @@
   height: 100%;
   overflow: hidden;
   text-decoration: none;
-  box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+  box-shadow: var(--thumb-shadow);
   cursor: pointer;
   position: relative;
   transform: perspective(900px) rotateX(var(--tilt-y, 0deg)) rotateY(var(--tilt-x, 0deg));
@@ -34,7 +34,7 @@
   animation-range: entry 5% cover 25%;
 
   &:hover {
-    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+    box-shadow: var(--thumb-shadow-hover);
     scale: 1.02;
   }
 

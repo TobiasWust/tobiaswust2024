@@ -1,5 +1,5 @@
 .achievement {
-  background: var(--wu-black);
+  background: var(--surface);
   display: flex;
   align-items: center;
   gap: 1em;
@@ -16,14 +16,14 @@
   }
 
   svg {
-    color: var(--wu-orange);
+    color: var(--accent-text);
     height: 2em;
     width: 2em;
     flex-shrink: 0;
   }
 
   h3 {
-    color: var(--wu-orange);
+    color: var(--accent-text);
   }
 
   p {

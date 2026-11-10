@@ -22,6 +22,7 @@
     p,
     ul {
       background-color: #11111177;
+      color: var(--wu-white);
     }
   }
 
@@ -38,7 +39,7 @@
   }
 
   .eyebrow {
-    color: var(--wu-orange);
+    color: var(--accent-text);
     font-size: var(--step-0);
     font-weight: 600;
     letter-spacing: 0.15em;
@@ -102,7 +103,7 @@
       font-family: var(--font-display), sans-serif;
       font-size: var(--step-2);
       font-weight: 700;
-      color: var(--wu-orange);
+      color: var(--accent-text);
     }
   }
 }

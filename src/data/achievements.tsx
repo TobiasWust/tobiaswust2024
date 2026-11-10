@@ -193,6 +193,11 @@ const achievements: Achievement[] = [
     secret: true,
   },
   {
+    label: 'Day and Night',
+    id: 'dayAndNight',
+    description: 'Switched between light and dark mode.',
+  },
+  {
     label: 'To reset or not to reset',
     id: 'reset',
     description: 'Used reset button but said no.',

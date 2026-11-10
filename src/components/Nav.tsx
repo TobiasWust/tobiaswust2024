@@ -12,6 +12,7 @@ import useAtunic from "../achievements/useAtunic";
 import useAcheater from "../achievements/useAcheater";
 import HireMe from "./HireMe";
 import LanguageSwitch from "./LanguageSwitch";
+import ThemeToggle from "./ThemeToggle";
 import { useI18n } from '../i18n/I18nProvider';
 
 export default function Nav() {
@@ -43,6 +44,7 @@ export default function Nav() {
           <Link className="link" href="/#contact">{t.nav.contact}</Link>
         </li>
       </ul>
+      <ThemeToggle />
       <LanguageSwitch />
       <HireMe small />
     </nav>

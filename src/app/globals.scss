@@ -5,9 +5,6 @@
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
   --wu-orange: #f68714;
   --wu-green: #3dba6a;
   --wu-white: #fef8f8;
@@ -29,10 +26,46 @@
   --space-l: 2.5rem;
   --space-xl: clamp(3rem, 2rem + 4vw, 6rem);
 
-  // cards
   --card-radius: 24px;
+
+  // theme: dark is the default, the light values below match the resume (cv.wust.dev)
+  --bg: var(--wu-blue);
+  --text: var(--wu-white);
+  --muted: rgba(254, 248, 248, 0.7);
+  // orange as text color; light mode needs a darker shade for contrast
+  --accent-text: var(--wu-orange);
   --card-border: rgba(254, 248, 248, 0.12);
   --card-bg: rgba(254, 248, 248, 0.04);
+  --surface: var(--wu-black);
+  --input-bg: var(--wu-blue);
+  --nav-bg: rgba(14, 21, 56, .85);
+  --footer-bg: #111;
+  --footer-text: #ddd;
+  --tag: rgba(254, 248, 248, .08);
+  --hex-base: rgba(254, 248, 248, 0.025);
+  --thumb-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+  --thumb-shadow-hover: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  color-scheme: dark;
+}
+
+// data-theme is set before first paint by the inline script in app/[lang]/layout.tsx
+:root[data-theme="light"] {
+  --bg: #f7f5f4;
+  --text: var(--wu-blue);
+  --muted: #5b6178;
+  --accent-text: #b85f05;
+  --card-border: #e3e4ec;
+  --card-bg: #fff;
+  --surface: #fff;
+  --input-bg: #f0f1f6;
+  --nav-bg: rgba(247, 245, 244, .85);
+  --footer-bg: #ecebe9;
+  --footer-text: #3c4258;
+  --tag: #f0f1f6;
+  --hex-base: rgba(14, 21, 56, 0.04);
+  --thumb-shadow: 0 1px 2px rgb(14 21 56 / 0.06), 0 6px 20px rgb(14 21 56 / 0.08);
+  --thumb-shadow-hover: 0 2px 4px rgb(14 21 56 / 0.08), 0 12px 32px rgb(14 21 56 / 0.14);
+  color-scheme: light;
 }
 
 * {
@@ -50,12 +83,10 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--text);
   font-size: var(--step-0);
   line-height: 1.5;
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: var(--bg);
 }
 
 body.barrel {
@@ -63,7 +94,7 @@ body.barrel {
 }
 
 main {
-  background: var(--wu-blue);
+  background: var(--bg);
 }
 
 h1,
@@ -142,14 +173,14 @@ section {
   &:hover {
     background: transparent;
     border: 1px solid var(--wu-orange);
-    color: var(--wu-orange);
+    color: var(--accent-text);
     cursor: pointer;
   }
 
   &.inverted {
     background: transparent;
     border: 1px solid var(--wu-orange);
-    color: var(--wu-orange);
+    color: var(--accent-text);
 
     &:hover {
       background: var(--wu-orange);
@@ -194,11 +225,6 @@ a {
   transform: scaleX(1);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
 
 .visually-hidden {
   clip: rect(0 0 0 0);
