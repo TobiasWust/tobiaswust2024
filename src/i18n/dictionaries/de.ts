@@ -225,6 +225,10 @@ const de: Dictionary = {
       description: 'Als Senior Frontend Developer habe ich an opti.node mitgearbeitet, der Plattform von node.energy für den Betrieb erneuerbarer Energieanlagen. Ich habe React-Oberflächen für Energie- und Erlösmonitoring, Anlagen- und Betreiberverwaltung, Direktvermarktungsprozesse und das Kunden-Onboarding entwickelt. Dazu gehörten Werkzeuge zur Datenprüfung und für Reports, bei denen ich komplexe betriebliche und regulatorische Anforderungen in klare, praxisnahe Oberflächen übersetzt habe.',
       result: 'Live im Produktivbetrieb: Die von mir gebauten Oberflächen werden für Energie- und Erlösmonitoring, Anlagen- und Betreiberverwaltung sowie das Kunden-Onboarding genutzt.',
     },
+    repylo: {
+      shortDescription: 'Bunter Trainings-Tracker',
+      description: 'repylo ist ein bunter, schneller Trainings-Tracker als PWA. Kein Konto, kein Backend, kein Tracking: Ihre Daten bleiben auf Ihren eigenen Geräten und werden Ende-zu-Ende-verschlüsselt zwischen ihnen synchronisiert. Die App schlägt vor, was als Nächstes dran ist und wann mehr Gewicht drin ist, und zeigt den Fortschritt in übersichtlichen Statistiken.',
+    },
     fnlockbar: {
       shortDescription: 'macOS-Menüleisten-App für die fn-Taste',
       description: 'Sind F1–F12 gerade Funktionstasten oder Medientasten? Dafür habe ich FnLockBar gebaut, eine kleine macOS-App für die Menüleiste, die immer den aktuellen Modus anzeigt und ihn per Klick oder Tastenkürzel umschaltet. Geschrieben in Swift, ganz ohne Abhängigkeiten.',

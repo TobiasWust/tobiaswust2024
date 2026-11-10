@@ -1,11 +1,10 @@
-import { CldImage } from 'next-cloudinary';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { VscGithub, VscLinkExternal } from 'react-icons/vsc';
-import { Project as TProject, screenshotCrop } from '../data/projects';
+import { Project as TProject } from '../data/projects';
 import skills, { getSkillLogoUrl } from '../data/skills';
 import style from './Project.module.scss';
-import ProjectPlaceholder from './ProjectPlaceholder';
+import ProjectScreenshot from './ProjectScreenshot';
 import ProjectKind from './ProjectKind';
 import { useI18n } from '../i18n/I18nProvider';
 
@@ -40,17 +39,7 @@ export default function Project({
       >
         X
       </button>
-      {project.screenshot ? (
-        <CldImage
-          src={project.screenshot}
-          width='500'
-          height='300'
-          alt={project.label}
-          crop={screenshotCrop(project)}
-        />
-      ) : (
-        <ProjectPlaceholder label={project.label} />
-      )}
+      <ProjectScreenshot project={project} />
       <div className={style.content}>
         <div className={style.header}>
           <h3 id={`project-title-${project.id}`}>{project.label}</h3>

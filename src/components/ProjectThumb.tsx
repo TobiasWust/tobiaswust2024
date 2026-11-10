@@ -1,10 +1,9 @@
-import { CldImage } from 'next-cloudinary';
 import Image from 'next/image';
 import { Flipped } from 'react-flip-toolkit';
-import { Project as TProject, screenshotCrop } from '../data/projects';
+import { Project as TProject } from '../data/projects';
 import skills, { getSkillLogoUrl } from '../data/skills';
 import style from './ProjectThumb.module.scss';
-import ProjectPlaceholder from './ProjectPlaceholder';
+import ProjectScreenshot from './ProjectScreenshot';
 import ProjectKind from './ProjectKind';
 
 // max tilt in degrees when the cursor is at a card's edge
@@ -36,18 +35,7 @@ export default function ProjectThumb({
   return (
     <div className={style.project} onMouseMove={tilt} onMouseLeave={untilt} {...rest}>
       <div className={style.description}>
-        {project.screenshot ? (
-          <CldImage
-            src={project.screenshot}
-            width='500'
-            height='300'
-            alt={project.label}
-            draggable={false}
-            crop={screenshotCrop(project)}
-          />
-        ) : (
-          <ProjectPlaceholder label={project.label} />
-        )}
+        <ProjectScreenshot project={project} draggable={false} />
       </div>
       <div className={style.content}>
         <Flipped inverseFlipId={`project-${project.id}`} scale>

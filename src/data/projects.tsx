@@ -40,6 +40,18 @@ const projects: Projects = [
     url: 'https://www.node.energy',
   },
   {
+    label: 'repylo',
+    id: 'repylo',
+    kind: 'side',
+    year: 2026,
+    screenshot: '/projects/repylo.jpg',
+    shortDescription: 'Colorful Workout Tracker',
+    description:
+      'repylo is a colorful, fast workout tracker that runs as a PWA. No account, no backend, no tracking: your data stays on your own devices and syncs end-to-end encrypted between them. It suggests what to train next and when to add weight, and shows your progress in clear stats.',
+    skills: ['react', 'typescript', 'vite', 'pwa'],
+    github: 'https://github.com/TobiasWust/repylo',
+  },
+  {
     label: 'FnLockBar',
     id: 'fnlockbar',
     kind: 'side',
