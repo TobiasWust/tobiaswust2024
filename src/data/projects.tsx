@@ -44,7 +44,7 @@ const projects: Projects = [
     id: 'repylo',
     kind: 'side',
     year: 2026,
-    screenshot: '/projects/repylo.jpg',
+    screenshot: 'tobiaswust.de/repylo',
     shortDescription: 'Colorful Workout Tracker',
     description:
       'repylo is a colorful, fast workout tracker that runs as a PWA. No account, no backend, no tracking: your data stays on your own devices and syncs end-to-end encrypted between them. It suggests what to train next and when to add weight, and shows your progress in clear stats.',
