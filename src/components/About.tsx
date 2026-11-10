@@ -21,7 +21,7 @@ export default function About() {
         ))}
         <p className={style.cv}><a className="link"
           onClick={() => addAchievement('potentialClient')}
-          rel="noopener noreferrer" target="_blank" href="https://cv.wust.dev"><VscLinkExternal />{t.about.cv}</a>
+          rel="noopener noreferrer" target="_blank" href={t.about.cvUrl}><VscLinkExternal />{t.about.cv}</a>
           <HireMe />
         </p>
       </div>

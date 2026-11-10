@@ -127,6 +127,8 @@ const en = {
       'If you\'re looking for a dedicated developer to bring your web project to life, I\'d love to connect and explore how we can work together!',
     ],
     cv: 'Check out my CV',
+    // the CV in the same language as the page
+    cvUrl: 'https://cv.wust.dev',
   },
   contact: {
     heading: 'Get in touch',

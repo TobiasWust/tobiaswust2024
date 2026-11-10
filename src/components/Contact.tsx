@@ -81,7 +81,7 @@ export default function Contact() {
             </a>
           </li>
           <li>
-            <a className="link" href="https://cv.wust.dev" rel="noopener noreferrer" target="_blank"
+            <a className="link" href={t.about.cvUrl} rel="noopener noreferrer" target="_blank"
               onClick={() => addAchievement('potentialClient')}>
               <VscLinkExternal /> {t.contact.cv}
             </a>

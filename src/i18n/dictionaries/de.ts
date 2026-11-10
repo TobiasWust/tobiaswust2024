@@ -124,6 +124,7 @@ const de: Dictionary = {
       'Wenn Sie einen engagierten Entwickler suchen, der Ihr Webprojekt zum Leben erweckt, freue ich mich darauf, Sie kennenzulernen und herauszufinden, wie wir zusammenarbeiten können!',
     ],
     cv: 'Zu meinem Lebenslauf',
+    cvUrl: 'https://lebenslauf.wust.dev',
   },
   contact: {
     heading: 'Kontakt',
