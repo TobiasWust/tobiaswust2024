@@ -141,6 +141,7 @@ const en = {
       { title: 'Fractional tech lead', text: 'Part-time technical direction, architecture and reviews.' },
       { title: 'AI workshop / audit', text: 'Adopting AI-assisted development or planning AI features.' },
     ],
+    bookingIntro: 'Prefer to talk first?',
     booking: 'Book a free 30-min intro call',
     linkedin: 'Connect on LinkedIn',
     github: 'Browse my GitHub',

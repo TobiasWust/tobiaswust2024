@@ -61,11 +61,6 @@ export default function Contact() {
             ))}
           </ul>
         </div>
-        {BOOKING_URL && (
-          <a className={`btn ${style.booking}`} href={BOOKING_URL} rel="noopener noreferrer" target="_blank">
-            <FaCalendarAlt /> {t.contact.booking}
-          </a>
-        )}
         <ul className={style.direct}>
           <li>
             <EmailLink className="link"><FaEnvelope /> </EmailLink>
@@ -89,31 +84,42 @@ export default function Contact() {
         </ul>
       </div>
 
-      <form onSubmit={handleFormSubmit} name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
+      {/* both ways to get in touch side by side: the form, and a call as the quieter alternative */}
+      <div className={style.side}>
+        <form onSubmit={handleFormSubmit} name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
 
-        <label className="visually-hidden" htmlFor="name">{t.contact.name}</label>
-        <input type="text" id="name" name="name" autoComplete="name" required placeholder={t.contact.name} />
+          <label className="visually-hidden" htmlFor="name">{t.contact.name}</label>
+          <input type="text" id="name" name="name" autoComplete="name" required placeholder={t.contact.name} />
 
-        <label className="visually-hidden" htmlFor="email">{t.contact.email}</label>
-        <input type="email" id="email" name="email" autoComplete="email" required placeholder={t.contact.email} />
+          <label className="visually-hidden" htmlFor="email">{t.contact.email}</label>
+          <input type="email" id="email" name="email" autoComplete="email" required placeholder={t.contact.email} />
 
-        <label className="visually-hidden" htmlFor="message">{t.contact.message}</label>
-        <textarea id="message" name="message" required placeholder={t.contact.message}></textarea>
+          <label className="visually-hidden" htmlFor="message">{t.contact.message}</label>
+          <textarea id="message" name="message" required placeholder={t.contact.message}></textarea>
 
-        <button type="submit" disabled={status === 'pending'}>
-          {status === 'pending' ? t.contact.sending : t.contact.send}
-        </button>
-        <p role="status" className={style.status}>
-          {status === 'ok' && (
-            <>
-              <FaPaperPlane aria-hidden className={style.plane} />
-              {t.contact.thanks}
-            </>
-          )}
-          {status === 'error' && `${t.contact.error} ${error}`}
-        </p>
-      </form>
+          <button type="submit" disabled={status === 'pending'}>
+            {status === 'pending' ? t.contact.sending : t.contact.send}
+          </button>
+          <p role="status" className={style.status}>
+            {status === 'ok' && (
+              <>
+                <FaPaperPlane aria-hidden className={style.plane} />
+                {t.contact.thanks}
+              </>
+            )}
+            {status === 'error' && `${t.contact.error} ${error}`}
+          </p>
+        </form>
+        {BOOKING_URL && (
+          <div className={style.call}>
+            <p>{t.contact.bookingIntro}</p>
+            <a className={style.booking} href={BOOKING_URL} rel="noopener noreferrer" target="_blank">
+              <FaCalendarAlt /> {t.contact.booking}
+            </a>
+          </div>
+        )}
+      </div>
     </section>
   )
 }

@@ -137,6 +137,7 @@ const de: Dictionary = {
       { title: 'Tech Lead in Teilzeit', text: 'Technische Leitung in Teilzeit, Architektur und Reviews.' },
       { title: 'KI-Workshop / Audit', text: 'KI-gestützte Entwicklung einführen oder KI-Features planen.' },
     ],
+    bookingIntro: 'Lieber direkt sprechen?',
     booking: 'Kostenloses Erstgespräch buchen',
     linkedin: 'Auf LinkedIn vernetzen',
     github: 'Mein GitHub ansehen',
