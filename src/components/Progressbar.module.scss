@@ -15,8 +15,11 @@
     justify-content: center;
     align-items: center;
     text-wrap: nowrap;
-    animation: showbar 1s .5s forwards;
-    translate: -100%
+    // static (full) bar unless motion is welcome; then it slides in
+    @media (prefers-reduced-motion: no-preference) {
+      animation: showbar 1s .5s forwards;
+      translate: -100%;
+    }
   }
 
   .maxbar {

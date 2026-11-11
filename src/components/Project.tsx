@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { VscGithub, VscLinkExternal } from 'react-icons/vsc';
 import { Project as TProject } from '../data/projects';
 import skills, { getSkillLogoUrl } from '../data/skills';
@@ -16,26 +16,40 @@ export default function Project({
   project: TProject;
   closeProject: () => void;
 }) {
-  const closeProjectButton = useRef<HTMLButtonElement>(null);
+  const dialog = useRef<HTMLDialogElement>(null);
   const { t } = useI18n();
 
-  useEffect(() => {
-    closeProjectButton.current?.focus();
+  // native modal: focus trap, inert page, Esc and the back gesture come from the browser.
+  // The <dialog> is a transparent full-screen layer; the visible card inside it is a normal element,
+  // because the flip animation can't measure an element that is itself in the top layer.
+  useLayoutEffect(() => {
+    const el = dialog.current;
+    if (el && !el.open) el.showModal();
   }, []);
 
   return (
-    <div
-      className={style.project}
-      role='dialog'
-      aria-modal='true'
+    <dialog
+      ref={dialog}
+      className={style.dialog}
       aria-labelledby={`project-title-${project.id}`}
-      {...rest}
+      // Esc and the back gesture fire `cancel`: let React unmount it instead of the browser hiding it
+      // first, so the flip animation back into the card starts from the visible card
+      onCancel={(e) => {
+        e.preventDefault();
+        closeProject();
+      }}
+      onClose={closeProject}
+      // a click on the dialog itself (not the card) is a click next to the card: light dismiss, in every browser
+      onClick={(e) => {
+        if (e.target === e.currentTarget) closeProject();
+      }}
     >
+      <div className={style.project} {...rest}>
       <button
-        ref={closeProjectButton}
         type='button'
         aria-label={t.projects.close}
         onClick={closeProject}
+        autoFocus
       >
         X
       </button>
@@ -96,6 +110,7 @@ export default function Project({
           )}
         </div>
       </div>
-    </div>
+      </div>
+    </dialog>
   );
 }

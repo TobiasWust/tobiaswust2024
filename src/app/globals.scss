@@ -48,8 +48,8 @@
   color-scheme: dark;
 }
 
-// data-theme is set before first paint by the inline script in app/[lang]/layout.tsx
-:root[data-theme="light"] {
+// light values, shared by the system preference and the manual override below
+@mixin light-theme {
   --bg: #f7f5f4;
   --text: var(--wu-blue);
   --muted: #5b6178;
@@ -68,6 +68,18 @@
   color-scheme: light;
 }
 
+// no stored choice: follow the system (works without JavaScript too)
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    @include light-theme;
+  }
+}
+
+// a stored override wins; data-theme is set before first paint by the inline script in app/[lang]/layout.tsx
+:root[data-theme="light"] {
+  @include light-theme;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -78,8 +90,11 @@ html,
 body {
   scroll-padding-top: 3rem;
   max-width: 100vw;
-  scroll-behavior: smooth;
   overflow-x: clip;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -90,7 +105,9 @@ body {
 }
 
 body.barrel {
-  animation: barrel 3s;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: barrel 3s;
+  }
 }
 
 main {
@@ -116,9 +133,12 @@ h3 {
   transition: translate .2s ease, border-color .2s ease, box-shadow .2s ease;
 
   &:hover {
-    translate: 0 -4px;
     border-color: var(--wu-orange);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+
+    @media (prefers-reduced-motion: no-preference) {
+      translate: 0 -4px;
+    }
   }
 }
 
@@ -140,8 +160,10 @@ section {
     display: inline-block;
 
     // like a label stuck on with tape that you just nudged
-    &:hover {
-      animation: wiggle .5s ease-in-out;
+    @media (prefers-reduced-motion: no-preference) {
+      &:hover {
+        animation: wiggle .5s ease-in-out;
+      }
     }
 
     &::after {
@@ -154,9 +176,12 @@ section {
 
       view-timeline-name: --revealing-after;
       view-timeline-axis: block;
-      animation: linear revealLtr both;
-      animation-timeline: --revealing-after;
-      animation-range: entry 0% cover 30%;
+
+      @media (prefers-reduced-motion: no-preference) {
+        animation: linear revealLtr both;
+        animation-timeline: --revealing-after;
+        animation-range: entry 0% cover 30%;
+      }
     }
   }
 }
@@ -226,6 +251,24 @@ a {
 }
 
 
+// hidden until it gets keyboard focus, then it slides in above the nav
+.skip-link {
+  position: fixed;
+  top: .5rem;
+  left: .5rem;
+  z-index: 300;
+  padding: .6em 1em;
+  background: var(--wu-orange);
+  color: var(--wu-black);
+  font-weight: bold;
+  translate: 0 -200%;
+
+  // :focus, not :focus-visible: it's only reachable by keyboard anyway, and must always show when focused
+  &:focus {
+    translate: 0 0;
+  }
+}
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -293,21 +336,6 @@ a {
   }
 }
 
-
-@media (prefers-reduced-motion: reduce) {
-  html,
-  body {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
 
 @keyframes revealLtr {
   from {

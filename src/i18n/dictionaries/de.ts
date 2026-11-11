@@ -19,6 +19,7 @@ const de: Dictionary = {
     hireMe: 'Anfragen',
     switchLanguageLabel: 'This page in English',
     theme: 'Hell/Dunkel umschalten',
+    skip: 'Zum Inhalt springen',
   },
   hero: {
     availability: 'Aktuell offen für neue Projekte',
@@ -35,6 +36,8 @@ const de: Dictionary = {
       remoteFrom: 'aus Deutschland',
     },
     paraglider: 'Ein Gleitschirm in der Thermik',
+    pauseAnimations: 'Animationen pausieren',
+    resumeAnimations: 'Animationen fortsetzen',
   },
   services: {
     heading: 'Was ich für Sie tun kann',
@@ -144,6 +147,7 @@ const de: Dictionary = {
     cv: 'Lebenslauf lesen',
     name: 'Name',
     email: 'E-Mail',
+    messageLabel: 'Nachricht',
     message: 'Erzählen Sie mir von Ihrem Projekt',
     send: 'Nachricht senden',
     sending: 'Wird gesendet…',

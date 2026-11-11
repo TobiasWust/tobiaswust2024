@@ -5,7 +5,11 @@
   display: inline-block;
   background: #fff;
   margin: 20px;
-  animation: jelly 0.5s 4s;
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: jelly 0.5s 4s;
+  }
+
   // the cursor lean uses `translate`, so it doesn't fight the jelly `transform`
   transition: translate .25s ease-out;
 

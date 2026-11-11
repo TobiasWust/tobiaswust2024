@@ -3,7 +3,7 @@
 import style from './Projects.module.scss';
 import allProjects, { Project as TProject } from "../data/projects";
 import ProjectThumb from "./ProjectThumb";
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Flipped, Flipper, spring } from 'react-flip-toolkit';
 import Project from './Project';
 import { createPortal } from 'react-dom';
@@ -45,15 +45,16 @@ export default function Projects() {
   }, [filter, isExpanded, projects]);
 
   useEffect(() => setMounted(true), []);
+  // the card that opened the dialog is unmounted while it's open, so the browser can't return focus to it
+  const lastOpened = useRef<string | null>(null);
   useEffect(() => {
-    const close = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setFullscreenProject(null);
-      }
+    if (fullscreenProject) {
+      lastOpened.current = fullscreenProject.id;
+    } else if (lastOpened.current) {
+      document.querySelector<HTMLButtonElement>(`[data-project="${lastOpened.current}"]`)?.focus();
+      lastOpened.current = null;
     }
-    window.addEventListener('keydown', close)
-    return () => window.removeEventListener('keydown', close)
-  }, []);
+  }, [fullscreenProject]);
 
   useEffect(() => {
     const applyFilter = (e: Event) => setFilter((e as CustomEvent<string>).detail);
@@ -102,6 +103,19 @@ export default function Projects() {
         {t.projects.intro}
       </p>
       <div className={style.filter}><input type="search" aria-label={t.projects.searchLabel} placeholder={t.projects.searchPlaceholder} value={filter} onChange={e => setFilter(e.target.value)} /></div>
+      {/* before the grid on purpose: React runs effects in tree order, so the dialog is already open
+          (showModal) when the grid's flip animation measures it */}
+      {mounted ? createPortal(
+        <Flipper portalKey='projectPortal' flipKey={fullscreenProject}>
+          {fullscreenProject?.id &&
+            <Flipped flipId={`project-${fullscreenProject.id}`} portalKey='projectPortal'>
+              <Project
+                project={fullscreenProject}
+                closeProject={() => setFullscreenProject(null)}
+              />
+            </Flipped>
+          }
+        </Flipper>, document.body) : null}
       <Flipper flipKey={filteredProjects.length}
         spring="veryGentle"
       >
@@ -134,7 +148,7 @@ export default function Projects() {
                   <Flipper portalKey='projectPortal' flipKey={fullscreenProject?.id}>
                     {fullscreenProject?.id !== project.id &&
                       <Flipped flipId={`project-${project.id}`} portalKey='projectPortal'>
-                        <button type='button' onClick={() => {
+                        <button type='button' data-project={project.id} onClick={() => {
                           setFullscreenProject(project)
                           if (!projectsOpened.includes(project.id)) {
                             setProjectsOpened([...projectsOpened, project.id])
@@ -166,17 +180,6 @@ export default function Projects() {
         </div>
       }
 
-      {mounted ? createPortal(
-        <Flipper portalKey='projectPortal' flipKey={fullscreenProject}>
-          {fullscreenProject?.id &&
-            <Flipped flipId={`project-${fullscreenProject.id}`} portalKey='projectPortal'>
-              <Project
-                project={fullscreenProject}
-                closeProject={() => setFullscreenProject(null)}
-              />
-            </Flipped>
-          }
-        </Flipper>, document.body) : null}
     </section>
   )
 }

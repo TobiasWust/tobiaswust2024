@@ -88,15 +88,26 @@ export default function Contact() {
       <div className={style.side}>
         <form onSubmit={handleFormSubmit} name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
+          {/* honeypot: hidden from people and assistive tech; bots that fill it get dropped by Netlify */}
+          <div className="visually-hidden" aria-hidden="true">
+            <label htmlFor="bot-field">Leave empty</label>
+            <input type="text" id="bot-field" name="bot-field" tabIndex={-1} autoComplete="off" />
+          </div>
 
-          <label className="visually-hidden" htmlFor="name">{t.contact.name}</label>
-          <input type="text" id="name" name="name" autoComplete="name" required placeholder={t.contact.name} />
+          <div className={style.field}>
+            <label htmlFor="name">{t.contact.name}</label>
+            <input type="text" id="name" name="name" autoComplete="name" required />
+          </div>
 
-          <label className="visually-hidden" htmlFor="email">{t.contact.email}</label>
-          <input type="email" id="email" name="email" autoComplete="email" required placeholder={t.contact.email} />
+          <div className={style.field}>
+            <label htmlFor="email">{t.contact.email}</label>
+            <input type="email" id="email" name="email" autoComplete="email" autoCapitalize="none" spellCheck={false} required />
+          </div>
 
-          <label className="visually-hidden" htmlFor="message">{t.contact.message}</label>
-          <textarea id="message" name="message" required placeholder={t.contact.message}></textarea>
+          <div className={style.field}>
+            <label htmlFor="message">{t.contact.messageLabel}</label>
+            <textarea id="message" name="message" required placeholder={t.contact.message}></textarea>
+          </div>
 
           <button type="submit" disabled={status === 'pending'}>
             {status === 'pending' ? t.contact.sending : t.contact.send}

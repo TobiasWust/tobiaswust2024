@@ -40,7 +40,7 @@ export default function PAchievements() {
   };
 
   return (
-    <main className={style.achievements}>
+    <main id="content" className={style.achievements}>
       <section>
         <h2>{t.achievementsPage.heading}</h2>
         <p>{t.achievementsPage.intro}</p>

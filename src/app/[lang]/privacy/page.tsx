@@ -7,7 +7,7 @@ export default function Privacy({ params }: { params: { lang: string } }) {
   const lang = isLocale(params.lang) ? params.lang : "en";
 
   return (
-    <main>
+    <main id="content">
       <div className="legal" lang="de">
         {lang === "en" && <p lang="en"><em>{getDictionary("en").legal.germanOnly}</em></p>}
         <h1>Datenschutzerklärung</h1>

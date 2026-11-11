@@ -1,0 +1,28 @@
+.pause {
+  position: absolute;
+  right: var(--space-s);
+  bottom: var(--space-s);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  min-height: 32px;
+  padding: .35em .8em;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: var(--nav-bg);
+  color: var(--muted);
+  font: inherit;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: color .2s ease, border-color .2s ease;
+
+  &:hover {
+    color: var(--text);
+    border-color: var(--wu-orange);
+  }
+
+  svg {
+    font-size: .7rem;
+  }
+}

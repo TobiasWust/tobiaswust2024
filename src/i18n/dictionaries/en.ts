@@ -22,6 +22,7 @@ const en = {
     hireMe: 'Hire me',
     switchLanguageLabel: 'Diese Seite auf Deutsch',
     theme: 'Toggle light/dark mode',
+    skip: 'Skip to content',
   },
   hero: {
     availability: 'Currently accepting new projects',
@@ -38,6 +39,8 @@ const en = {
       remoteFrom: 'from Germany',
     },
     paraglider: 'A paraglider catching a thermal',
+    pauseAnimations: 'Pause animations',
+    resumeAnimations: 'Resume animations',
   },
   services: {
     heading: 'What I can do for you',
@@ -148,6 +151,7 @@ const en = {
     cv: 'Read my CV',
     name: 'Name',
     email: 'Email',
+    messageLabel: 'Message',
     message: 'Tell me about your project',
     send: 'Send message',
     sending: 'Sending…',

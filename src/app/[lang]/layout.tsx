@@ -54,16 +54,14 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-const themeScript = `(() => {
-  let saved = null;
-  try { saved = localStorage.getItem("theme"); } catch {}
-  const system = matchMedia("(prefers-color-scheme: light)");
-  const apply = (theme) => (document.documentElement.dataset.theme = theme);
-  apply(saved || (system.matches ? "light" : "dark"));
-  system.addEventListener("change", (e) => {
-    try { if (!localStorage.getItem("theme")) apply(e.matches ? "light" : "dark"); } catch {}
-  });
-})();`;
+// only applies a stored override; without one, CSS follows the system preference on its own
+const themeScript = `try {
+  const saved = localStorage.getItem("theme");
+  if (saved === "light" || saved === "dark") {
+    document.documentElement.dataset.theme = saved;
+    document.querySelector('meta[name="color-scheme"]').content = saved;
+  }
+} catch {}`;
 
 function personJsonLd(lang: Locale) {
   return {
@@ -96,6 +94,7 @@ export default function RootLayout({
     // the theme script sets data-theme before React hydrates, so React shouldn't complain about it
     <html lang={lang} suppressHydrationWarning>
       <head>
+        <meta name="color-scheme" content="light dark" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className={`${inter.className} ${inter.variable} ${spaceGrotesk.variable}`}>
@@ -104,6 +103,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd(lang)) }}
         />
         <I18nProvider lang={lang} dictionary={getDictionary(lang)}>
+          <a className="skip-link" href="#content">{getDictionary(lang).nav.skip}</a>
           <Nav />
           {children}
           <Footer />

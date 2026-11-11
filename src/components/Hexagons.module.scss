@@ -36,8 +36,10 @@
     transition: opacity 2s ease-out;
     // intro wave: sweeps left to right, slightly diagonal, then fades out again
     // "backwards" only holds the start frame during the delay; "both" would pin opacity: 0 afterwards and kill hover
-    animation: wave 1.6s ease-in-out backwards;
-    animation-delay: calc((var(--col) + var(--row) * 0.5) * 60ms + 600ms);
+    @media (prefers-reduced-motion: no-preference) {
+      animation: wave 1.6s ease-in-out backwards;
+      animation-delay: calc((var(--col) + var(--row) * 0.5) * 60ms + 600ms);
+    }
   }
 
   &:hover::before,
@@ -50,8 +52,10 @@
 // a click (or an idle gust) sends a wave out from a point; the delay grows with distance.
 // it needs its own keyframes: the browser only restarts an animation when its name changes
 .rippling .hexagon::before {
-  animation: ripple 1.4s ease-in-out backwards;
-  animation-delay: var(--ripple-delay);
+  @media (prefers-reduced-motion: no-preference) {
+    animation: ripple 1.4s ease-in-out backwards;
+    animation-delay: var(--ripple-delay);
+  }
 }
 
 @keyframes ripple {

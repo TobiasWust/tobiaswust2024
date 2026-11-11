@@ -131,6 +131,18 @@
     border-radius: var(--card-radius);
   }
 
+  // label sits closer to its field than fields sit to each other
+  .field {
+    display: grid;
+    gap: .35rem;
+
+    label {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+  }
+
   input,
   textarea {
     width: 100%;
@@ -189,12 +201,18 @@
   }
 
   // the message takes off once it's sent
+  // decoration only: without motion it would just sit on top of the text, so it's not shown at all
   .plane {
+    display: none;
     position: absolute;
     left: 0;
     top: 0;
     color: var(--accent-text);
-    animation: fly 1.6s cubic-bezier(.5, 0, .75, .4) forwards;
+
+    @media (prefers-reduced-motion: no-preference) {
+      display: block;
+      animation: fly 1.6s cubic-bezier(.5, 0, .75, .4) forwards;
+    }
   }
 }
 

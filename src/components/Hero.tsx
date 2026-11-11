@@ -8,6 +8,7 @@ import projects from '../data/projects';
 import Availability from './Availability';
 import Paraglider from './Paraglider';
 import CountUp from './CountUp';
+import MotionPause from './MotionPause';
 import { useI18n } from '../i18n/I18nProvider';
 
 export default function Hero() {
@@ -30,6 +31,7 @@ export default function Hero() {
       <div className={styles.background}>
         <Hexagons />
         <Paraglider />
+        <MotionPause />
       </div>
       <Availability />
       <p className={styles.eyebrow}>{t.hero.eyebrow}</p>

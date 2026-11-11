@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import achievementStore from '../achievements/achievementStore';
 import styles from './Hexagons.module.scss'
 import useReducedMotion from '../utils/useReducedMotion';
+import motionStore from '../utils/motionStore';
 
 // regular pointy-top hexagon geometry, handed to Hexagons.module.scss as CSS variables
 const HEX_WIDTH = 100;
@@ -33,6 +34,7 @@ export default function Hexagons() {
   const lastTouched = useRef<Element | null>(null);
   const [grid, setGrid] = useState({ rows: 8, cols: 18 });
   const reduced = useReducedMotion();
+  const paused = motionStore((state) => state.paused);
   const lastActivity = useRef(0);
 
   useEffect(() => {
@@ -59,11 +61,13 @@ export default function Hexagons() {
   const ripple = useCallback((x: number, y: number) => {
     const el = container.current;
     if (!el) return;
-    el.querySelectorAll<HTMLElement>(`.${styles.hexagon}`).forEach((hexagon) => {
+    // read every position first, then write: interleaving the two forces a layout per hexagon
+    const hexagons = Array.from(el.querySelectorAll<HTMLElement>(`.${styles.hexagon}`));
+    const delays = hexagons.map((hexagon) => {
       const r = hexagon.getBoundingClientRect();
-      const distance = Math.hypot(r.left + r.width / 2 - x, r.top + r.height / 2 - y);
-      hexagon.style.setProperty('--ripple-delay', `${Math.round(distance * RIPPLE_MS_PER_PX)}ms`);
+      return Math.round(Math.hypot(r.left + r.width / 2 - x, r.top + r.height / 2 - y) * RIPPLE_MS_PER_PX);
     });
+    hexagons.forEach((hexagon, i) => hexagon.style.setProperty('--ripple-delay', `${delays[i]}ms`));
     // restart the animation even if a ripple is still running
     el.classList.remove(styles.rippling);
     void el.offsetWidth;
@@ -73,7 +77,7 @@ export default function Hexagons() {
   // when the hero sits idle, an occasional gust drifts through from the left
   useEffect(() => {
     const el = container.current;
-    if (!el || reduced) return;
+    if (!el || reduced || paused) return;
     let visible = true;
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; });
     observer.observe(el);
@@ -89,7 +93,7 @@ export default function Hexagons() {
       observer.disconnect();
       window.removeEventListener('pointermove', markActive);
     };
-  }, [reduced, ripple]);
+  }, [reduced, paused, ripple]);
 
   const light = (hexagon: Element) => {
     hexagon.classList.add(styles.lit);

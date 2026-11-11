@@ -47,6 +47,11 @@
   input:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(246, 135, 20, .4);
+
+    // box-shadow disappears in forced-colors (high contrast) mode; keep a real outline there
+    @media (forced-colors: active) {
+      outline: 2px solid CanvasText;
+    }
   }
 
   span {

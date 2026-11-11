@@ -13,7 +13,10 @@
 
   &:hover {
     border-color: var(--wu-orange);
-    rotate: 20deg;
+
+    @media (prefers-reduced-motion: no-preference) {
+      rotate: 20deg;
+    }
   }
 
   svg {
@@ -24,6 +27,19 @@
 
 // show the sun in dark mode (switch to light) and the moon in light mode
 :global(:root[data-theme="light"]) .sun,
-:global(:root:not([data-theme="light"])) .moon {
+:global(:root[data-theme="dark"]) .moon {
   display: none;
+}
+
+// no override: the system preference decides which icon shows
+@media (prefers-color-scheme: light) {
+  :global(:root:not([data-theme="dark"])) .sun {
+    display: none;
+  }
+}
+
+@media not (prefers-color-scheme: light) {
+  :global(:root:not([data-theme="light"])) .moon {
+    display: none;
+  }
 }

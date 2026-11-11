@@ -1,20 +1,45 @@
 'use client';
 
+import { useEffect } from 'react';
 import achievementStore from '../achievements/achievementStore';
 import { useI18n } from '../i18n/I18nProvider';
 import style from './ThemeToggle.module.scss';
 
-// flips the theme that the inline script in app/[lang]/layout.tsx set before the first paint
+type Theme = 'light' | 'dark';
+
+const systemTheme = (): Theme => (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+
+// a stored theme pins the override; null means "follow the system" (same as the inline script in app/[lang]/layout.tsx)
+function applyTheme(theme: Theme | null) {
+  const root = document.documentElement;
+  if (theme) root.dataset.theme = theme;
+  else delete root.dataset.theme;
+  document.querySelector('meta[name="color-scheme"]')?.setAttribute('content', theme ?? 'light dark');
+}
+
 export default function ThemeToggle() {
   const { t } = useI18n();
   const addAchievement = achievementStore((state) => state.addAchievement);
 
+  // keep other open tabs in sync
+  useEffect(() => {
+    const sync = (e: StorageEvent) => {
+      if (e.key === 'theme') applyTheme(e.newValue === 'light' || e.newValue === 'dark' ? e.newValue : null);
+    };
+    window.addEventListener('storage', sync);
+    return () => window.removeEventListener('storage', sync);
+  }, []);
+
   const toggle = () => {
-    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-    document.documentElement.dataset.theme = next;
+    const rendered = (document.documentElement.dataset.theme as Theme | undefined) ?? systemTheme();
+    const target: Theme = rendered === 'light' ? 'dark' : 'light';
+    // switching back to what the system wants undoes the override instead of pinning it
+    const stored = target === systemTheme() ? null : target;
     try {
-      localStorage.setItem('theme', next);
+      if (stored) localStorage.setItem('theme', stored);
+      else localStorage.removeItem('theme');
     } catch { }
+    applyTheme(stored);
     addAchievement('dayAndNight');
   };
 

@@ -9,7 +9,7 @@ import WhyMe from "../../components/WhyMe";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main id="content" className={styles.main}>
       <Hero />
       <Services />
       <Projects />

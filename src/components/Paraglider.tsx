@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import achievementStore from '../achievements/achievementStore';
 import useReducedMotion from '../utils/useReducedMotion';
+import motionStore from '../utils/motionStore';
 import style from './Paraglider.module.scss';
 import { useI18n } from '../i18n/I18nProvider';
 
@@ -20,13 +21,14 @@ export default function Paraglider() {
   const glider = useRef<HTMLButtonElement>(null);
   const escaping = useRef<number | null>(null);
   const reduced = useReducedMotion();
+  const paused = motionStore((state) => state.paused);
   const { t } = useI18n();
   const addAchievement = achievementStore((state) => state.addAchievement);
 
   useEffect(() => {
     const el = glider.current;
     const hero = el?.parentElement;
-    if (!el || !hero || reduced) return;
+    if (!el || !hero || reduced || paused) return;
 
     let frame = 0;
     let start = performance.now() + 3000;
@@ -34,6 +36,12 @@ export default function Paraglider() {
     let last = { x: -100, y: 0 };
     let prevX = -100;
     let facing = 1;
+
+    // visibility (not just opacity) so the button can't be tabbed to while it's invisible
+    const hide = () => {
+      el.style.opacity = '0';
+      el.style.visibility = 'hidden';
+    };
 
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; });
     observer.observe(hero);
@@ -44,7 +52,7 @@ export default function Paraglider() {
 
       const t = now - start;
       if (t < 0) {
-        el.style.opacity = '0';
+        hide();
         return;
       }
       if (t > FLIGHT || (escaping.current && now - escaping.current > 1500)) {
@@ -92,6 +100,7 @@ export default function Paraglider() {
       if (Math.abs(x - prevX) > 0.2) facing = x > prevX ? 1 : -1;
       prevX = x;
       el.style.opacity = '1';
+      el.style.visibility = 'visible';
       el.style.translate = `${x}px ${y}px`;
       el.style.rotate = `${bank * facing}deg`;
       el.style.scale = `${facing} 1`;
@@ -101,8 +110,9 @@ export default function Paraglider() {
     return () => {
       cancelAnimationFrame(frame);
       observer.disconnect();
+      hide();
     };
-  }, [reduced]);
+  }, [reduced, paused]);
 
   if (reduced) return null;
 

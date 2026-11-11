@@ -9,8 +9,11 @@
   box-shadow: var(--thumb-shadow);
   cursor: pointer;
   position: relative;
-  transform: perspective(900px) rotateX(var(--tilt-y, 0deg)) rotateY(var(--tilt-x, 0deg));
   transition: transform .2s ease-out, box-shadow .2s ease;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transform: perspective(900px) rotateX(var(--tilt-y, 0deg)) rotateY(var(--tilt-x, 0deg));
+  }
 
   // soft light that follows the cursor
   &::after {
@@ -29,13 +32,19 @@
 
   view-timeline-name: --revealing-image;
   view-timeline-axis: block;
-  animation: linear reveal both;
-  animation-timeline: --revealing-image;
-  animation-range: entry 5% cover 25%;
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: linear reveal both;
+    animation-timeline: --revealing-image;
+    animation-range: entry 5% cover 25%;
+  }
 
   &:hover {
     box-shadow: var(--thumb-shadow-hover);
-    scale: 1.02;
+
+    @media (prefers-reduced-motion: no-preference) {
+      scale: 1.02;
+    }
   }
 
   img {

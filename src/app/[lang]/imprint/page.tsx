@@ -6,7 +6,7 @@ export default function Imprint({ params }: { params: { lang: string } }) {
   const { legal } = getDictionary(isLocale(params.lang) ? params.lang : "en");
 
   return (
-    <main>
+    <main id="content">
       <div className="legal">
         <h1>{legal.imprint}</h1>
         <hr />
