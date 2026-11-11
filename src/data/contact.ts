@@ -3,5 +3,5 @@ export const EMAIL_USER = 'kontakt';
 export const EMAIL_DOMAIN = 'tobiaswust.de';
 
 // set to your Calendly / Cal.com link to show the "Book a call" button
-export const BOOKING_URL = '';
+export const BOOKING_URL = 'https://calendly.com/kontakt-tobiaswust/30min';
 
