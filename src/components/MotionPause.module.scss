@@ -1,7 +1,6 @@
 .pause {
   position: absolute;
-  // bottom left: the achievement toasts live bottom right and would cover it
-  left: var(--space-s);
+  right: var(--space-s);
   bottom: var(--space-s);
   z-index: 2;
   display: inline-flex;

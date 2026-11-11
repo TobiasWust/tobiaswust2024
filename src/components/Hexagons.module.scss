@@ -79,3 +79,10 @@
     opacity: 0.9;
   }
 }
+
+// paused via the hero's pause button: everything stays still, including the hover trail
+.container.paused .hexagon::before {
+  animation: none;
+  opacity: 0;
+  transition: none;
+}

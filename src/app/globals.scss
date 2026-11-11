@@ -288,8 +288,12 @@ a {
   --toastify-color-dark: var(--surface);
   --toastify-text-color-dark: var(--text);
 
+  // the container spans the corner even where no toast is showing; let clicks through to the page there
+  pointer-events: none;
+
   .Toastify__toast {
     border: 1px solid var(--card-border);
+    pointer-events: auto;
   }
 
   .Toastify__close-button {

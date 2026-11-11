@@ -95,6 +95,12 @@ export default function Hexagons() {
     };
   }, [reduced, paused, ripple]);
 
+  // paused: no wave, ripple, gust or hover trail. Set as a class after mount: the stored choice only exists in
+  // the browser, so putting it in className would make the server and client render differ
+  useEffect(() => {
+    container.current?.classList.toggle(styles.paused, paused);
+  }, [paused]);
+
   const light = (hexagon: Element) => {
     hexagon.classList.add(styles.lit);
     setTimeout(() => hexagon.classList.remove(styles.lit), 100);
@@ -103,6 +109,7 @@ export default function Hexagons() {
 
   // :hover never fires while dragging a finger, so track touches by hand
   const handleTouchMove = (e: React.TouchEvent) => {
+    if (paused) return;
     const touch = e.touches[0];
     const hexagon = document.elementFromPoint(touch.clientX, touch.clientY);
     if (!hexagon?.classList.contains(styles.hexagon) || hexagon === lastTouched.current) return;
@@ -116,7 +123,7 @@ export default function Hexagons() {
       className={styles.container}
       style={geometry}
       onTouchMove={handleTouchMove}
-      onClick={(e) => !reduced && ripple(e.clientX, e.clientY)}
+      onClick={(e) => !reduced && !paused && ripple(e.clientX, e.clientY)}
       aria-hidden='true'
     >
       {
