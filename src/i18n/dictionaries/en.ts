@@ -122,6 +122,7 @@ const en = {
   about: {
     heading: 'My Story',
     greeting: 'Hi, I\'m Tobias!',
+    portraitAlt: 'Portrait of Tobias Wust',
     paragraphs: [
       'I\'ve been passionate about software development since I was 11, and I\'ve kept honing my skills and staying at the cutting edge of technology ever since. After earning a Bachelor of Science in Business Information Systems, I started my career in the public sector, where I spent four valuable years working with SAP/ABAP.',
       'Today, I\'m a *freelance developer* specializing in *web development*, particularly with *React, TypeScript, and Node.js*. I\'ve worked on a wide range of projects, from small business websites to large-scale applications, and I\'m always eager to take on new challenges and learn new technologies.',

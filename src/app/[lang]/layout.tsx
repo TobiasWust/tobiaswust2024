@@ -77,6 +77,8 @@ function personJsonLd(lang: Locale) {
       "https://www.linkedin.com/in/tobias-wust/",
     ],
     knowsAbout: ["React", "TypeScript", "Node.js", "Next.js", "Web development", "AI-assisted development", "LLM integration", "Technical leadership"],
+    // lets search engines connect the portrait to the person
+    image: "https://res.cloudinary.com/tobiaswust/image/upload/c_fill,g_face,w_800,h_800/f_jpg,q_auto/tobiaswust.de/business-portrait-2026",
   };
 }
 

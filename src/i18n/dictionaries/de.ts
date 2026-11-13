@@ -119,6 +119,7 @@ const de: Dictionary = {
   about: {
     heading: 'Meine Geschichte',
     greeting: 'Hallo, ich bin Tobias!',
+    portraitAlt: 'Porträt von Tobias Wust',
     paragraphs: [
       'Softwareentwicklung begeistert mich, seit ich 11 bin, und seitdem entwickle ich meine Fähigkeiten ständig weiter und bleibe technisch am Puls der Zeit. Nach meinem Bachelor of Science in Wirtschaftsinformatik habe ich meine Laufbahn im öffentlichen Sektor begonnen und dort vier wertvolle Jahre mit SAP/ABAP gearbeitet.',
       'Heute bin ich *freiberuflicher Entwickler* mit Schwerpunkt *Webentwicklung*, vor allem mit *React, TypeScript und Node.js*. Ich habe an ganz unterschiedlichen Projekten gearbeitet, von Websites für kleine Unternehmen bis zu großen Anwendungen, und freue mich immer über neue Herausforderungen und neue Technologien.',

@@ -1,5 +1,6 @@
 'use client';
 
+import { CldImage } from 'next-cloudinary';
 import { VscLinkExternal } from 'react-icons/vsc';
 import style from './About.module.scss';
 import achievementStore from '../achievements/achievementStore';
@@ -15,6 +16,16 @@ export default function About() {
     <section id='about' className={style.about}>
       <div>
         <h2>{t.about.heading}</h2>
+        {/* floats next to the story on wide screens, sits above it on phones */}
+        <CldImage
+          className={style.portrait}
+          src='tobiaswust.de/business-portrait-2026'
+          width='600'
+          height='750'
+          crop={{ type: 'fill', gravity: 'face', source: true }}
+          sizes='(max-width: 700px) 240px, 300px'
+          alt={t.about.portraitAlt}
+        />
         <p><span className={style.highlight}>{t.about.greeting}</span></p>
         {t.about.paragraphs.map((paragraph) => (
           <p key={paragraph.slice(0, 20)}>{rich(paragraph, style.highlight)}</p>
