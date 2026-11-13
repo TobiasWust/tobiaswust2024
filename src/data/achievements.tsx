@@ -85,27 +85,27 @@ const achievements: Achievement[] = [
   {
     label: 'Hexagon Hoverer',
     id: 'hexagonHoverer',
-    description: 'Hovered 30 Hexagons.',
+    description: 'Hovered 100 Hexagons.',
     withProgress: true,
-    maxProgress: 30,
+    maxProgress: 100,
     counterName: 'hexagonsHovered'
   },
   {
     label: 'Hexagon Hunter',
     id: 'hexagonHunter',
-    description: 'Hovered 500 Hexagons.',
+    description: 'Hovered 2000 Hexagons.',
     withProgress: true,
-    maxProgress: 500,
+    maxProgress: 2000,
     counterName: 'hexagonsHovered',
     secret: true
   },
   {
     label: 'Hexagon Hero',
     id: 'hexagonHero',
-    description: 'Hovered 5000 Hexagons.',
+    description: 'Hovered 20000 Hexagons.',
     secret: true,
     withProgress: true,
-    maxProgress: 5000,
+    maxProgress: 20000,
     counterName: 'hexagonsHovered'
   },
   {

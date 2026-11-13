@@ -38,9 +38,9 @@ export default function Hexagons() {
   const lastActivity = useRef(0);
 
   useEffect(() => {
-    if (counters?.hexagonsHovered > 30) addAchievement('hexagonHoverer')
-    if (counters?.hexagonsHovered > 500) addAchievement('hexagonHunter')
-    if (counters?.hexagonsHovered > 5000) addAchievement('hexagonHero')
+    if (counters?.hexagonsHovered >= 100) addAchievement('hexagonHoverer')
+    if (counters?.hexagonsHovered >= 2000) addAchievement('hexagonHunter')
+    if (counters?.hexagonsHovered >= 20000) addAchievement('hexagonHero')
   }, [counters.hexagonsHovered, addAchievement])
 
   // size the grid so it always covers the whole hero
