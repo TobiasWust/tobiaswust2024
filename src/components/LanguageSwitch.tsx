@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { otherLanguageUrl } from '../i18n/config';
+import { importAchievementsFromUrl, withAchievements } from '../achievements/crossDomainSync';
 import { useI18n } from '../i18n/I18nProvider';
 import style from './LanguageSwitch.module.scss';
 
@@ -10,6 +11,11 @@ export default function LanguageSwitch() {
   const { lang, t } = useI18n();
   const target = lang === 'en' ? 'de' : 'en';
   const [href, setHref] = useState<string | undefined>();
+
+  // achievements carried over from the other domain; the switch is in the nav on every page
+  useEffect(() => {
+    importAchievementsFromUrl();
+  }, []);
 
   // the target depends on the current URL (path, hash, localhost), so build it in the browser
   useEffect(() => {
@@ -27,7 +33,10 @@ export default function LanguageSwitch() {
       lang={target}
       aria-label={t.nav.switchLanguageLabel}
       title={t.nav.switchLanguageLabel}
-      onClick={() => setHref(otherLanguageUrl(new URL(window.location.href), target))}
+      // set right on the element: the achievements are read at click time, and a state update could land after navigation starts
+      onClick={(e) => {
+        e.currentTarget.href = withAchievements(otherLanguageUrl(new URL(window.location.href), target));
+      }}
     >
       {target.toUpperCase()}
     </a>
