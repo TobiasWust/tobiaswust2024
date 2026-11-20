@@ -79,6 +79,8 @@ const en = {
     visitSite: 'Visit Site',
     viewOnGithub: 'View on GitHub',
     close: 'Close project',
+    enlargeScreenshot: 'Enlarge screenshot',
+    closeScreenshot: 'Close screenshot',
   },
   why: {
     heading: 'Why senior experience matters more with AI',

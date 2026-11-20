@@ -4,7 +4,7 @@ import { VscGithub, VscLinkExternal } from 'react-icons/vsc';
 import { Project as TProject } from '../data/projects';
 import skills, { getSkillLogoUrl } from '../data/skills';
 import style from './Project.module.scss';
-import ProjectScreenshot from './ProjectScreenshot';
+import ScreenshotLightbox from './ScreenshotLightbox';
 import ProjectKind from './ProjectKind';
 import { useI18n } from '../i18n/I18nProvider';
 
@@ -53,7 +53,7 @@ export default function Project({
       >
         X
       </button>
-      <ProjectScreenshot project={project} />
+      <ScreenshotLightbox project={project} />
       <div className={style.content}>
         <div className={style.header}>
           <h3 id={`project-title-${project.id}`}>{project.label}</h3>

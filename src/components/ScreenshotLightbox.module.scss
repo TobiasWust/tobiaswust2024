@@ -1,0 +1,64 @@
+.trigger {
+  display: block;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--wu-orange);
+    outline-offset: -3px;
+  }
+}
+
+.lightbox {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 1em;
+  border: none;
+  background: transparent;
+  cursor: zoom-out;
+
+  &[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &::backdrop {
+    background: rgba(14, 21, 56, .85);
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--card-radius);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 30px;
+  }
+
+  button {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 3em;
+    height: 3em;
+    border: none;
+    border-radius: 50%;
+    background: var(--wu-orange);
+    cursor: pointer;
+  }
+}

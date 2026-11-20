@@ -76,6 +76,8 @@ const de: Dictionary = {
     visitSite: 'Website besuchen',
     viewOnGithub: 'Auf GitHub ansehen',
     close: 'Projekt schließen',
+    enlargeScreenshot: 'Screenshot vergrößern',
+    closeScreenshot: 'Screenshot schließen',
   },
   why: {
     heading: 'Warum Erfahrung mit KI wichtiger wird',
