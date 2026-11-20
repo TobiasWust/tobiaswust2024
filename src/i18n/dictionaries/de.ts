@@ -226,6 +226,11 @@ const de: Dictionary = {
       description: 'Als Senior Frontend Developer habe ich an opti.node mitgearbeitet, der Plattform von node.energy für den Betrieb erneuerbarer Energieanlagen. Ich habe React-Oberflächen für Energie- und Erlösmonitoring, Anlagen- und Betreiberverwaltung, Direktvermarktungsprozesse und das Kunden-Onboarding entwickelt. Dazu gehörten Werkzeuge zur Datenprüfung und für Reports, bei denen ich komplexe betriebliche und regulatorische Anforderungen in klare, praxisnahe Oberflächen übersetzt habe.',
       result: 'Live im Produktivbetrieb: Die von mir gebauten Oberflächen werden für Energie- und Erlösmonitoring, Anlagen- und Betreiberverwaltung sowie das Kunden-Onboarding genutzt.',
     },
+    thermikdoku: {
+      shortDescription: 'Logikrätsel mit Gleitschirmen',
+      description: 'Thermikdoku ist ein Logikrätsel mit Gleitschirmen, gemacht fürs Handy: In jede Reihe, jede Spalte und jede farbige Thermik-Zone gehört genau ein Schirm, und die Schirme dürfen sich nicht berühren, auch nicht schräg. Jedes Rätsel wird prozedural erzeugt, hat genau eine Lösung und ist ohne Raten lösbar. Ein Logik-Löser ordnet die Rätsel in vier Schwierigkeitsstufen ein und steckt auch hinter den Tipps, die den nächsten Denkschritt erklären. Dazu gibt es einen täglichen Tagesflug mit Serienzähler, niedliche handgemalte Figuren, Combos, Konfetti und Synth-Sounds.',
+      result: 'Live als kostenlose, werbefreie PWA, die auch offline funktioniert.',
+    },
     repylo: {
       shortDescription: 'Bunter Trainings-Tracker',
       description: 'repylo ist ein bunter, schneller Trainings-Tracker als PWA. Kein Konto, kein Backend, kein Tracking: Ihre Daten bleiben auf Ihren eigenen Geräten und werden Ende-zu-Ende-verschlüsselt zwischen ihnen synchronisiert. Die App schlägt vor, was als Nächstes dran ist und wann mehr Gewicht drin ist, und zeigt den Fortschritt in übersichtlichen Statistiken.',

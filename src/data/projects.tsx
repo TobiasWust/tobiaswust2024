@@ -40,6 +40,20 @@ const projects: Projects = [
     url: 'https://www.node.energy',
   },
   {
+    label: 'Thermikdoku',
+    id: 'thermikdoku',
+    kind: 'side',
+    result: 'Live as a free, ad-free PWA that also works offline.',
+    year: 2026,
+    screenshot: 'tobiaswust.de/thermikdoku',
+    shortDescription: 'Paragliding Logic Puzzle',
+    description:
+      'Thermikdoku is a logic puzzle with paragliders, made for phones: place exactly one glider in every row, every column and every colored thermal zone, and no two gliders may touch, not even diagonally. Every puzzle is generated procedurally, has exactly one solution and can be solved without guessing. A logic solver rates each puzzle into four difficulty levels and powers the hints, which explain the next step. On top there is a daily flight with a streak counter, cute hand-drawn characters, combos, confetti and synth sounds. The game is in German.',
+    skills: ['javascript', 'html-5', 'css-3', 'pwa'],
+    github: 'https://github.com/TobiasWust/thermikdoku',
+    url: 'https://thermikdoku.netlify.app',
+  },
+  {
     label: 'repylo',
     id: 'repylo',
     kind: 'side',
