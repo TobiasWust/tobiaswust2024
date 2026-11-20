@@ -122,6 +122,8 @@ export default function RootLayout({
           />
         </I18nProvider>
         {/* cookie-free, anonymous page views; ignores localhost by default */}
+        {/* both domains share one path space (/ on wust.dev and tobiaswust.de), so prefix the host to tell languages apart */}
+        <script dangerouslySetInnerHTML={{ __html: 'window.goatcounter={path:function(p){return location.host+p}}' }} />
         <Script
           data-goatcounter="https://wustdev.goatcounter.com/count"
           src="https://gc.zgo.at/count.js"
