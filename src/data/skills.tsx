@@ -40,7 +40,8 @@ const skills: Skills = [
   { id: 'microsoft-azure', label: 'Azure' },
   { id: 'aws', label: 'AWS' },
   { id: 'html-5', label: 'HTML' },
-  { id: 'css-3', label: 'CSS' },
+  // the CDN renamed css-3.svg to css.svg; the id stays because projects reference it
+  { id: 'css-3', label: 'CSS', logoUrl: `${SVG_LIBRARY_BASE_URL}/css.svg` },
   { id: 'unity', label: 'Unity' },
   { id: 'c-sharp', label: 'C#' },
   { id: 'swift', label: 'Swift' },
