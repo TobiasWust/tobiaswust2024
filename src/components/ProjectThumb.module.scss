@@ -81,10 +81,15 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 1em;
-      height: 1em;
+      height: 1rem;
       overflow: hidden;
 
+      li {
+        display: flex;
+      }
+
       img {
+        display: block;
         height: 1rem;
       }
     }
