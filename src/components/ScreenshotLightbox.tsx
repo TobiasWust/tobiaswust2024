@@ -18,8 +18,9 @@ export default function ScreenshotLightbox({ project }: { project: Project }) {
 
   const close = () => dialog.current?.close();
 
+  // wrapped in a div: the project card styles its direct child <button> as the round close button
   return (
-    <>
+    <div className={style.wrapper}>
       <button
         type='button'
         className={style.trigger}
@@ -47,6 +48,6 @@ export default function ScreenshotLightbox({ project }: { project: Project }) {
           X
         </button>
       </dialog>
-    </>
+    </div>
   );
 }
