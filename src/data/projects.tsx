@@ -40,6 +40,20 @@ const projects: Projects = [
     url: 'https://www.node.energy',
   },
   {
+    label: 'GoatPocket',
+    id: 'goatpocket',
+    kind: 'side',
+    result: 'Live as a free, open source PWA with a demo mode, in English and German.',
+    year: 2026,
+    screenshot: 'tobiaswust.de/goatpocket',
+    shortDescription: 'GoatCounter Stats for Your Phone',
+    description:
+      'GoatPocket is a mobile dashboard for GoatCounter, the privacy-friendly web analytics. Big numbers, a chart you can scrub with your finger, and every row opens a breakdown, for example from a referrer to the exact search engines. It handles multiple sites and accounts and works with self-hosted GoatCounter instances. There is no backend: the browser talks straight to the GoatCounter API, and the token never leaves your device. Plain JavaScript without a build step, installable as a PWA, with light and dark mode.',
+    skills: ['javascript', 'html-5', 'css-3', 'pwa'],
+    github: 'https://github.com/TobiasWust/goatpocket',
+    url: 'https://goatpocket.com',
+  },
+  {
     label: 'Thermikdoku',
     id: 'thermikdoku',
     kind: 'side',
