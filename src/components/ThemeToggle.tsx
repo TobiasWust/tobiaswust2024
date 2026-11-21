@@ -8,7 +8,7 @@ import { useI18n } from '../i18n/I18nProvider';
 const setColorSchemeMeta = (theme: 'light' | 'dark' | null) =>
   document.querySelector('meta[name="color-scheme"]')?.setAttribute('content', theme ?? 'light dark');
 
-// the round toggle from the shared wust-ui header; the icon shows the current theme
+// the round toggle from the shared wust-ui header; the icon shows the theme it switches to
 export default function ThemeToggle() {
   const { t } = useI18n();
   const addAchievement = achievementStore((state) => state.addAchievement);
@@ -38,7 +38,7 @@ export default function ThemeToggle() {
       onClick={toggle}
       aria-label={t.nav.theme}
       title={t.nav.theme}
-      // both icons render; CSS shows the one for the current theme, so there's no mismatch before hydration
+      // both icons render; CSS picks the one to show, so there's no mismatch before hydration
       dangerouslySetInnerHTML={{ __html: icons.moon + icons.sun }}
     />
   );
