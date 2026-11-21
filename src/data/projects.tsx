@@ -15,6 +15,9 @@ export type Project = {
   kind: 'client' | 'side';
   // outcome shown in the project details; only facts, no invented numbers
   result?: string;
+  // outdated, too small or no longer relevant: kept here for the record, but not shown anywhere
+  // and not counted for stats or achievements
+  archived?: boolean;
 };
 
 export type Projects = Project[];
@@ -25,7 +28,7 @@ export function screenshotCrop(project: Project) {
     : { type: 'auto' as const, source: true };
 }
 
-const projects: Projects = [
+const allProjects: Projects = [
   {
     label: 'node.energy — opti.node',
     id: 'node-energy-opti-node',
@@ -139,6 +142,7 @@ const projects: Projects = [
   {
     label: 'HostHopper',
     id: 'hosthopper',
+    archived: true,
     kind: 'side',
     result: 'Published on the Chrome Web Store.',
     screenshot: 'tobiaswust.de/hosthopper',
@@ -173,6 +177,7 @@ const projects: Projects = [
   {
     label: 'Wust.dev 2024',
     id: 'wustdev2024',
+    archived: true,
     kind: 'side',
     screenshot: 'tobiaswust.de/tobiaswust2024',
     year: 2024,
@@ -206,6 +211,7 @@ const projects: Projects = [
   {
     label: 'GamesWeAllOwn',
     id: 'gamesweallown',
+    archived: true,
     kind: 'side',
     screenshot: 'tobiaswust.de/gamesweallown',
     year: 2023,
@@ -275,6 +281,7 @@ const projects: Projects = [
   {
     label: 'Mother',
     id: 'mother',
+    archived: true,
     kind: 'side',
     screenshot: 'tobiaswust.de/mother',
     year: 2021,
@@ -287,6 +294,7 @@ const projects: Projects = [
   {
     label: 'Funkhelfer.de',
     id: 'funkhelfer',
+    archived: true,
     kind: 'side',
     screenshot: 'tobiaswust.de/funkhelfer',
     year: 2020,
@@ -300,6 +308,7 @@ const projects: Projects = [
   {
     label: 'Serwema Product Search',
     id: 'serwema',
+    archived: true,
     kind: 'client',
     result: 'Live on serwema.de: the client manages its products in WordPress, and customers can search them.',
     screenshot: 'tobiaswust.de/serwema',
@@ -313,6 +322,7 @@ const projects: Projects = [
   {
     label: 'Game Snowbody',
     id: 'snowbody',
+    archived: true,
     kind: 'side',
     screenshot: 'tobiaswust.de/snowbody',
     year: 2020,
@@ -326,6 +336,7 @@ const projects: Projects = [
   {
     label: 'Stupidnes',
     id: 'stupidnes',
+    archived: true,
     kind: 'side',
     screenshot: 'tobiaswust.de/stupidnes',
     year: 2019,
@@ -339,6 +350,7 @@ const projects: Projects = [
   {
     label: 'Thermalcenter',
     id: 'thermalcenter',
+    archived: true,
     kind: 'side',
     screenshot: 'tobiaswust.de/thermalcenter',
     year: 2018,
@@ -352,6 +364,7 @@ const projects: Projects = [
   {
     label: 'Game Morserunner',
     id: 'morserunner',
+    archived: true,
     kind: 'side',
     screenshot: 'tobiaswust.de/morserunner',
     year: 2017,
@@ -364,6 +377,7 @@ const projects: Projects = [
   {
     label: 'tobiaswust.de 2017',
     id: 'tobiaswust2017',
+    archived: true,
     kind: 'side',
     screenshot: 'tobiaswust.de/tobiaswust2017',
     year: 2017,
@@ -374,5 +388,7 @@ const projects: Projects = [
     // url: 'https://tobiaswust2017.wust.io',
   },
 ];
+
+const projects = allProjects.filter((p) => !p.archived);
 
 export default projects;
