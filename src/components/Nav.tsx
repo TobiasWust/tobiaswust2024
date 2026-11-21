@@ -16,7 +16,8 @@ import ThemeToggle from "./ThemeToggle";
 import { useI18n } from '../i18n/I18nProvider';
 
 export default function Nav() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const blogUrl = lang === 'de' ? 'https://blog.tobiaswust.de/' : 'https://blog.wust.dev/';
   useConsoleMsg();
   useAscrollMaster();
   useAfullscreenFanatic();
@@ -42,8 +43,8 @@ export default function Nav() {
           <li>
             <Link href="/#about">{t.nav.about}</Link>
           </li>
-          <li className='wu-optional'>
-            <Link href="/#contact">{t.nav.contact}</Link>
+          <li>
+            <a href={blogUrl}>{t.nav.blog} <span aria-hidden="true">↗</span></a>
           </li>
         </ul>
       </nav>

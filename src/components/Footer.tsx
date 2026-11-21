@@ -79,8 +79,13 @@ export default function Footer() {
         <Link className="link" href="/achievements">
           {t.footer.achievements}
         </Link>
-        <a className="link" rel="noopener noreferrer" target="_blank" href={`https://games.wust.dev/${lang}/`}>
-          {t.footer.games}
+      </div>
+      <div>
+        <a className="link" href={`https://games.wust.dev/${lang}/`}>
+          {t.footer.games} <span aria-hidden="true">↗</span>
+        </a>
+        <a className="link" href={lang === 'de' ? 'https://blog.tobiaswust.de/' : 'https://blog.wust.dev/'}>
+          {t.footer.blog} <span aria-hidden="true">↗</span>
         </a>
       </div>
       <div>
