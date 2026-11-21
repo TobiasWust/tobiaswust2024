@@ -1,0 +1,13 @@
+# www.tobiaswust.de is a domain alias of this site; send it to the main address
+# so Google only sees one version (wust.dev already does this through Netlify's primary domain)
+[[redirects]]
+  from = "https://www.tobiaswust.de/*"
+  to = "https://tobiaswust.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.tobiaswust.de/*"
+  to = "https://tobiaswust.de/:splat"
+  status = 301
+  force = true
