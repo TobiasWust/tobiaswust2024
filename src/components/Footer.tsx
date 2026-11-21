@@ -14,7 +14,7 @@ export default function Footer() {
   const addAchievement = achievementStore((state) => state.addAchievement);
   const counters = achievementStore((state) => state.counters);
   const setCounter = achievementStore((state) => state.setCounter);
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   // add achievement socialButterfly if clicked all socials
   useEffect(() => {
@@ -79,6 +79,9 @@ export default function Footer() {
         <Link className="link" href="/achievements">
           {t.footer.achievements}
         </Link>
+        <a className="link" rel="noopener noreferrer" target="_blank" href={`https://games.wust.dev/${lang}/`}>
+          {t.footer.games}
+        </a>
       </div>
       <div>
         <Link className="link" href="/imprint">

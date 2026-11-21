@@ -166,6 +166,7 @@ const en = {
     by: 'by',
     source: 'Sourcecode available on',
     achievements: 'Achievements',
+    games: 'Games',
     imprint: 'Imprint',
     privacy: 'Privacy Policy',
   },

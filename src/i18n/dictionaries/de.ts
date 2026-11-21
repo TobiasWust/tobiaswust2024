@@ -162,6 +162,7 @@ const de: Dictionary = {
     by: 'gemacht von',
     source: 'Quellcode verfügbar auf',
     achievements: 'Achievements',
+    games: 'Spiele',
     imprint: 'Impressum',
     privacy: 'Datenschutz',
   },
@@ -232,6 +233,11 @@ const de: Dictionary = {
       shortDescription: 'GoatCounter-Statistiken fürs Handy',
       description: 'GoatPocket ist ein Dashboard fürs Handy für GoatCounter, die datenschutzfreundliche Webanalyse. Große Zahlen, ein Diagramm, über das man mit dem Finger fährt, und jede Zeile öffnet eine Aufschlüsselung, etwa von einer Verweisquelle bis zu den einzelnen Suchmaschinen. Mehrere Websites und Konten sind möglich, selbst gehostete GoatCounter-Instanzen auch. Es gibt kein Backend: Der Browser spricht direkt mit der GoatCounter-API, und der Token verlässt nie das Gerät. Reines JavaScript ohne Build-Schritt, installierbar als PWA, mit hellem und dunklem Modus.',
       result: 'Live als kostenlose Open-Source-PWA mit Demo-Modus, auf Deutsch und Englisch.',
+    },
+    'wust-dev-games': {
+      shortDescription: 'Browserspiele für zwischendurch',
+      description: 'Auf wust.dev games sammle ich meine kleinen Browserspiele an einem Ort: kostenlos, ohne Werbung und ohne Anmeldung, und sie laufen auch offline. Aktuell sind das Thermikdoku, ein Logikrätsel mit Gleitschirmen, One More Slice, ein gemütliches Schiebepuzzle mit Kuchen und über 500 Levels, und GlideSweeper, Minesweeper am Himmel ohne Zahlen. Man kann suchen, nach Kategorien und Tags filtern, Favoriten merken und nach Beliebtheit sortieren, die aus anonymen Zählern für Spielstarts und Herzen kommt. Die Seite wird mit einem kleinen Node.js-Build-Skript statisch erzeugt und läuft auf Netlify, mit einer Serverless-Funktion für die Zähler.',
+      result: 'Live mit drei Spielen, auf Deutsch und Englisch.',
     },
     thermikdoku: {
       shortDescription: 'Logikrätsel mit Gleitschirmen',

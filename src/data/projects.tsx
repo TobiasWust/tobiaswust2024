@@ -57,6 +57,19 @@ const allProjects: Projects = [
     url: 'https://goatpocket.com',
   },
   {
+    label: 'wust.dev games',
+    id: 'wust-dev-games',
+    kind: 'side',
+    result: 'Live with three games, in English and German.',
+    year: 2026,
+    screenshot: '/games-wust-dev.jpg',
+    shortDescription: 'Browser Games for in Between',
+    description:
+      'wust.dev games collects my small browser games in one place: free, without ads and without sign-up, and they also work offline. Right now there are Thermikdoku, a logic puzzle with paragliders, One More Slice, a cosy cake sliding puzzle with over 500 levels, and GlideSweeper, Minesweeper in the sky without numbers. You can search, filter by category and tag, keep favourites and sort by popularity, which comes from anonymous counters for game starts and hearts. The site is generated statically with a small Node.js build script and runs on Netlify, with one serverless function for the counters.',
+    skills: ['javascript', 'nodejs', 'html-5', 'css-3'],
+    url: 'https://games.wust.dev',
+  },
+  {
     label: 'Thermikdoku',
     id: 'thermikdoku',
     kind: 'side',
