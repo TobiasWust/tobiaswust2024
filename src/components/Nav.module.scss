@@ -1,50 +1,7 @@
+// layout, links, language switch and theme toggle come from wust-ui/header.css
 .nav {
-  display: grid;
-  grid-template-columns: 1fr auto auto auto auto;
-  align-items: center;
-  padding: .5rem clamp(1rem, 4vw, 2rem);
-  background-color: var(--nav-bg);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--card-border);
-  color: var(--text);
-  gap: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-
-    li {
-      margin-right: 1.25rem;
-
-      a {
-        white-space: nowrap;
-        color: var(--text);
-        text-decoration: none;
-        font-size: var(--step-0);
-        font-weight: 500;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      flex-wrap: nowrap;
-
-      li {
-        margin-right: .75rem;
-      }
-
-      li:nth-child(1),
-      li:nth-child(4) {
-        display: none;
-      }
-    }
-
-    // on narrow phones the remaining links don't fit next to the language switch and Hire me
-    @media screen and (max-width: 440px) {
-      display: none;
-    }
+  :global(.wu-brand) img {
+    height: 24px;
+    width: auto;
   }
 }

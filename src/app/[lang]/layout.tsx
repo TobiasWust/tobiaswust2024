@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Inter, Space_Grotesk } from "next/font/google";
+import "wust-ui/header.css";
 import "../globals.scss";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";

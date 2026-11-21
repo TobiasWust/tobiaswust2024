@@ -1,22 +1,14 @@
 'use client';
 
 import { useEffect } from 'react';
+import { applyTheme, icons, toggleTheme } from 'wust-ui';
 import achievementStore from '../achievements/achievementStore';
 import { useI18n } from '../i18n/I18nProvider';
-import style from './ThemeToggle.module.scss';
 
-type Theme = 'light' | 'dark';
-
-const systemTheme = (): Theme => (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-
-// a stored theme pins the override; null means "follow the system" (same as the inline script in app/[lang]/layout.tsx)
-function applyTheme(theme: Theme | null) {
-  const root = document.documentElement;
-  if (theme) root.dataset.theme = theme;
-  else delete root.dataset.theme;
+const setColorSchemeMeta = (theme: 'light' | 'dark' | null) =>
   document.querySelector('meta[name="color-scheme"]')?.setAttribute('content', theme ?? 'light dark');
-}
 
+// the round toggle from the shared wust-ui header; the icon shows the current theme
 export default function ThemeToggle() {
   const { t } = useI18n();
   const addAchievement = achievementStore((state) => state.addAchievement);
@@ -24,35 +16,30 @@ export default function ThemeToggle() {
   // keep other open tabs in sync
   useEffect(() => {
     const sync = (e: StorageEvent) => {
-      if (e.key === 'theme') applyTheme(e.newValue === 'light' || e.newValue === 'dark' ? e.newValue : null);
+      if (e.key !== 'theme') return;
+      const theme = e.newValue === 'light' || e.newValue === 'dark' ? e.newValue : null;
+      applyTheme(theme);
+      setColorSchemeMeta(theme);
     };
     window.addEventListener('storage', sync);
     return () => window.removeEventListener('storage', sync);
   }, []);
 
   const toggle = () => {
-    const rendered = (document.documentElement.dataset.theme as Theme | undefined) ?? systemTheme();
-    const target: Theme = rendered === 'light' ? 'dark' : 'light';
-    // switching back to what the system wants undoes the override instead of pinning it
-    const stored = target === systemTheme() ? null : target;
-    try {
-      if (stored) localStorage.setItem('theme', stored);
-      else localStorage.removeItem('theme');
-    } catch { }
-    applyTheme(stored);
+    toggleTheme();
+    setColorSchemeMeta((document.documentElement.dataset.theme as 'light' | 'dark' | undefined) ?? null);
     addAchievement('dayAndNight');
   };
 
   return (
-    <button type='button' className={style.toggle} onClick={toggle} aria-label={t.nav.theme} title={t.nav.theme}>
-      {/* both icons render; CSS shows the one for the current theme, so there's no mismatch before hydration */}
-      <svg className={style.sun} viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' aria-hidden='true'>
-        <circle cx='12' cy='12' r='4' />
-        <path d='M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4' />
-      </svg>
-      <svg className={style.moon} viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' aria-hidden='true'>
-        <path d='M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z' />
-      </svg>
-    </button>
+    <button
+      type='button'
+      className='wu-icon-btn wu-theme'
+      onClick={toggle}
+      aria-label={t.nav.theme}
+      title={t.nav.theme}
+      // both icons render; CSS shows the one for the current theme, so there's no mismatch before hydration
+      dangerouslySetInnerHTML={{ __html: icons.moon + icons.sun }}
+    />
   );
 }
