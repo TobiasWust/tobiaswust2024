@@ -228,6 +228,11 @@ const de: Dictionary = {
     reset: { label: 'Zurücksetzen oder nicht?', description: 'Auf Zurücksetzen geklickt, aber dann Nein gesagt.' },
   },
   projectTexts: {
+    belegablage: {
+      shortDescription: 'Belege offline sortieren für ein Autohaus',
+      description: 'Für Teichmann & Wust Automobile, ein Autohaus in Familienhand, habe ich ein Desktop-Programm gebaut, das gescannte Belege sortiert. Es liest jeden Scan aus einem Eingangsordner, erkennt Kategorie, Jahr und Rechnungsnummer, auch handschriftliche, verkleinert das Bild und legt es unter dem richtigen Namen im richtigen Ordner ab. Texterkennung und Zuordnung laufen vollständig offline auf dem Büro-PC: PP-OCR-Modelle über ONNX Runtime und ein Klassifikator, der aus jedem bestätigten Beleg dazulernt. Unsichere Belege werden zur kurzen Prüfung gezeigt, außerdem erkennt das Programm Doppelscans, Lücken in der Nummernfolge sowie unscharfe oder auf dem Kopf liegende Scans. Einmal im Monat packt es alle Belege mit einer Excel-Liste für den Steuerberater zusammen. Es läuft unter Windows und macOS, mit automatischen Updates, Sicherung in der Belegablage und Fehlerberichten an Sentry, aus denen alle persönlichen Daten entfernt werden.',
+      result: 'Gemessen an rund 1.900 von Hand abgelegten Belegen trifft das Programm je nach Art in 81–97 % der Fälle die richtige Kategorie, und in 98,7 %, wenn es sich zu mindestens 95 % sicher ist. Im Dezember 2026 wird es im Autohaus getestet, ab 2027 soll es täglich genutzt werden.',
+    },
     'node-energy-opti-node': {
       shortDescription: 'Frontend-Entwicklung für den Betrieb erneuerbarer Energien',
       description: 'Als Senior Frontend Developer habe ich an opti.node mitgearbeitet, der Plattform von node.energy für den Betrieb erneuerbarer Energieanlagen. Ich habe React-Oberflächen für Energie- und Erlösmonitoring, Anlagen- und Betreiberverwaltung, Direktvermarktungsprozesse und das Kunden-Onboarding entwickelt. Dazu gehörten Werkzeuge zur Datenprüfung und für Reports, bei denen ich komplexe betriebliche und regulatorische Anforderungen in klare, praxisnahe Oberflächen übersetzt habe.',

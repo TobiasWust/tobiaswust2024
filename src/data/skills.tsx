@@ -65,6 +65,7 @@ const skills: Skills = [
   },
   // simpleicons.org/icons/pwa.svg serves an HTML page, not the SVG; the default CDN has it
   { id: 'pwa', label: 'PWA' },
+  { id: 'electron', label: 'Electron' },
 ] as const;
 
 export default skills;
