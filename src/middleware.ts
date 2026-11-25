@@ -17,6 +17,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // skip Next internals, the Netlify form stub and static files; sitemap.xml and robots.txt still go through
-  matcher: ['/((?!_next|__forms\\.html|favicon\\.ico|.*\\.(?:svg|png|jpg|jpeg|webp|gif|ico|html|js|css|woff2?)$).*)'],
+  // skip Next internals, the Netlify form stub, app-ads.txt (AdMob) and static files; sitemap.xml and robots.txt still go through
+  matcher: ['/((?!_next|__forms\\.html|app-ads\\.txt|favicon\\.ico|.*\\.(?:svg|png|jpg|jpeg|webp|gif|ico|html|js|css|woff2?)$).*)'],
 };
