@@ -48,6 +48,8 @@
 
   >button {
     position: absolute;
+    // above the screenshot gallery, which is positioned too (for its arrows) and comes later in the DOM
+    z-index: 1;
     top: -1em;
     right: -1em;
     padding: 1em;
