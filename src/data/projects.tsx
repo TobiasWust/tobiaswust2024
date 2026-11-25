@@ -41,14 +41,14 @@ const allProjects: Projects = [
     label: 'Teichmann & Wust — Belegablage',
     id: 'belegablage',
     kind: 'client',
-    result: 'Measured on about 1,900 receipts filed by hand, the app picks the right category in 81–97 % of cases depending on the type, and in 98.7 % when it is at least 95 % sure. Testing at the dealership starts in December 2026, daily use is planned from 2027.',
+    result: 'Measured on about 1,900 receipts filed by hand, the app picks the right category in 81–97 % of cases depending on the type, and in 98.7 % when it is at least 95 % sure. Testing at the garage starts in December 2026, daily use is planned from 2027.',
     year: 2026,
     // taken with made-up sample receipts, no real customer data
     screenshot: '/belegablage-eingang.jpg',
     moreScreenshots: ['/belegablage-pruefen.jpg', '/belegablage-einsortiert.jpg', '/belegablage-steuerberater.jpg'],
-    shortDescription: 'Offline receipt sorting for a car dealership',
+    shortDescription: 'Offline receipt sorting for a car repair shop',
     description:
-      'For Teichmann & Wust Automobile, a family-run car dealership, I built a desktop app that sorts scanned receipts. It reads every scan from an inbox folder, recognises category, year and invoice number, even handwritten ones, shrinks the image and files it under the right name in the right folder. Text recognition and classification run fully offline on the office PC: PP-OCR models via ONNX Runtime and a classifier that learns from every confirmed receipt. Uncertain receipts are shown for a quick check, and the app also spots duplicate scans, gaps in the numbering and blurry or upside-down scans. Once a month it packs all receipts with an Excel list for the tax advisor. It runs on Windows and macOS with automatic updates, backups inside the receipt archive and error reports to Sentry that strip all personal data.',
+      'For Teichmann & Wust Automobile, a family-run car repair shop with a towing service, I built a desktop app that sorts scanned receipts. It reads every scan from an inbox folder, recognises category, year and invoice number, even handwritten ones, shrinks the image and files it under the right name in the right folder. Text recognition and classification run fully offline on the office PC: PP-OCR models via ONNX Runtime and a classifier that learns from every confirmed receipt. Uncertain receipts are shown for a quick check, and the app also spots duplicate scans, gaps in the numbering and blurry or upside-down scans. Once a month it packs all receipts with an Excel list for the tax advisor. It runs on Windows and macOS with automatic updates, backups inside the receipt archive and error reports to Sentry that strip all personal data.',
     skills: ['electron', 'javascript', 'nodejs', 'sentry'],
   },
   {
