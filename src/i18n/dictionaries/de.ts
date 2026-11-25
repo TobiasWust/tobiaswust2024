@@ -96,7 +96,7 @@ const de: Dictionary = {
         text: 'Jede Zeile, ob von mir oder von KI geschrieben, wird geprüft, getestet und abgesichert, bevor sie Ihre Nutzer erreicht.',
       },
     ],
-    practiceHeading: 'In der Praxis bei node.energy',
+    practiceHeading: 'In der Praxis: aktuelles Kundenprojekt',
     practiceText: 'Ich baue React-Oberflächen für eine Plattform für erneuerbare Energien und nutze dabei täglich Claude Code, GitHub Copilot und KI-Chat-Assistenten.',
     aiDoesHeading: 'KI beschleunigt',
     aiDoes: ['Features und Oberflächen', 'Tests und Refactoring', 'Reviews und Debugging'],

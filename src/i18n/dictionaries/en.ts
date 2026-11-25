@@ -99,7 +99,7 @@ const en = {
         text: 'Every line, whether written by me or by AI, is reviewed, tested and secure before it reaches your users.',
       },
     ],
-    practiceHeading: 'In practice at node.energy',
+    practiceHeading: 'In practice: current client work',
     practiceText: 'I build React interfaces for a renewable energy platform and use Claude Code, GitHub Copilot and AI chat assistants every day.',
     aiDoesHeading: 'AI speeds up',
     aiDoes: ['Features and UI', 'Tests and refactoring', 'Reviews and debugging'],
