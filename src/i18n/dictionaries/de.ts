@@ -245,8 +245,8 @@ const de: Dictionary = {
     },
     'wust-dev-games': {
       shortDescription: 'Browserspiele für zwischendurch',
-      description: 'Auf wust.dev games sammle ich meine kleinen Browserspiele an einem Ort: kostenlos, ohne Werbung und ohne Anmeldung, und sie laufen auch offline. Aktuell sind das Thermikdoku, ein Logikrätsel mit Gleitschirmen, One More Slice, ein gemütliches Schiebepuzzle mit Kuchen und über 500 Levels, und GlideSweeper, Minesweeper am Himmel ohne Zahlen. Man kann suchen, nach Kategorien und Tags filtern, Favoriten merken und nach Beliebtheit sortieren, die aus anonymen Zählern für Spielstarts und Herzen kommt. Die Seite wird mit einem kleinen Node.js-Build-Skript statisch erzeugt und läuft auf Netlify, mit einer Serverless-Funktion für die Zähler.',
-      result: 'Live mit drei Spielen, auf Deutsch und Englisch.',
+      description: 'Auf wust.dev games sammle ich meine kleinen Browserspiele an einem Ort: kostenlos, ohne Werbung und ohne Anmeldung, und sie laufen auch offline. Aktuell sind es sechs: Thermikdoku, ein Logikrätsel mit Gleitschirmen, One More Slice, ein gemütliches Schiebepuzzle mit Kuchen und über 500 Levels, GlideSweeper, Minesweeper am Himmel ohne Zahlen, Shuttle Jam, ein Parkplatz-Rätsel am Landeplatz, Thermalcenter 2, in dem man mit zwei Bremsleinen Thermik zentrieren lernt, und Morserunner 2, das in 100 Stationen Morsezeichen beibringt. Man kann suchen, nach Kategorien und Tags filtern, Favoriten merken und nach Beliebtheit sortieren, die aus anonymen Zählern für Spielstarts und Herzen kommt. Die Seite wird mit einem kleinen Node.js-Build-Skript statisch erzeugt und läuft auf Netlify, mit einer Serverless-Funktion für die Zähler.',
+      result: 'Live mit sechs Spielen, auf Deutsch und Englisch.',
     },
     thermikdoku: {
       shortDescription: 'Logikrätsel mit Gleitschirmen',
