@@ -81,6 +81,9 @@ const en = {
     close: 'Close project',
     enlargeScreenshot: 'Enlarge screenshot',
     closeScreenshot: 'Close screenshot',
+    previousScreenshot: 'Previous screenshot',
+    nextScreenshot: 'Next screenshot',
+    showScreenshot: 'Show screenshot',
   },
   why: {
     heading: 'Why senior experience matters more with AI',

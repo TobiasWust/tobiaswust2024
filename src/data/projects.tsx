@@ -6,6 +6,9 @@ export type Project = {
   // 'top' keeps the whole image and only trims the bottom edge; default is Cloudinary's smart crop,
   // which zooms in and can cut off parts that matter (like a menu bar)
   screenshotCrop?: 'top';
+  // further images after the screenshot, browsable with arrows in the project details;
+  // same format as screenshot (Cloudinary id or a path in public/), the thumbnail only shows the first
+  moreScreenshots?: string[];
   description: string;
   shortDescription: string;
   skills: string[];
@@ -21,6 +24,11 @@ export type Project = {
 };
 
 export type Projects = Project[];
+
+// all images of a project in display order, the first one is the thumbnail
+export function screenshots(project: Project) {
+  return project.screenshot ? [project.screenshot, ...(project.moreScreenshots ?? [])] : [];
+}
 
 export function screenshotCrop(project: Project) {
   return project.screenshotCrop === 'top'
@@ -49,6 +57,7 @@ const allProjects: Projects = [
     result: 'Live as a free, open source PWA with a demo mode, in English and German.',
     year: 2026,
     screenshot: 'tobiaswust.de/goatpocket',
+    moreScreenshots: ['tobiaswust.de/goatpocket-2'],
     shortDescription: 'GoatCounter Stats for Your Phone',
     description:
       'GoatPocket is a mobile dashboard for GoatCounter, the privacy-friendly web analytics. Big numbers, a chart you can scrub with your finger, and every row opens a breakdown, for example from a referrer to the exact search engines. It handles multiple sites and accounts and works with self-hosted GoatCounter instances. There is no backend: the browser talks straight to the GoatCounter API, and the token never leaves your device. Plain JavaScript without a build step, installable as a PWA, with light and dark mode.',
@@ -63,6 +72,7 @@ const allProjects: Projects = [
     result: 'Live with three games, in English and German.',
     year: 2026,
     screenshot: '/games-wust-dev.jpg',
+    moreScreenshots: ['tobiaswust.de/games-wust-dev-2'],
     shortDescription: 'Browser Games for in Between',
     description:
       'wust.dev games collects my small browser games in one place: free, without ads and without sign-up, and they also work offline. Right now there are Thermikdoku, a logic puzzle with paragliders, One More Slice, a cosy cake sliding puzzle with over 500 levels, and GlideSweeper, Minesweeper in the sky without numbers. You can search, filter by category and tag, keep favourites and sort by popularity, which comes from anonymous counters for game starts and hearts. The site is generated statically with a small Node.js build script and runs on Netlify, with one serverless function for the counters.',
@@ -76,6 +86,7 @@ const allProjects: Projects = [
     result: 'Live as a free, ad-free PWA that also works offline.',
     year: 2026,
     screenshot: 'tobiaswust.de/thermikdoku',
+    moreScreenshots: ['tobiaswust.de/thermikdoku-2', 'tobiaswust.de/thermikdoku-3'],
     shortDescription: 'Paragliding Logic Puzzle',
     description:
       'Thermikdoku is a logic puzzle with paragliders, made for phones: place exactly one glider in every row, every column and every colored thermal zone, and no two gliders may touch, not even diagonally. Every puzzle is generated procedurally, has exactly one solution and can be solved without guessing. A logic solver rates each puzzle into four difficulty levels and powers the hints, which explain the next step. On top there is a daily flight with a streak counter, cute hand-drawn characters, combos, confetti and synth sounds. The game is in German.',
@@ -89,6 +100,7 @@ const allProjects: Projects = [
     kind: 'side',
     year: 2026,
     screenshot: 'tobiaswust.de/repylo',
+    moreScreenshots: ['tobiaswust.de/repylo-3'],
     shortDescription: 'Colorful Workout Tracker',
     description:
       'repylo is a colorful, fast workout tracker that runs as a PWA. No account, no backend, no tracking: your data stays on your own devices and syncs end-to-end encrypted between them. It suggests what to train next and when to add weight, and shows your progress in clear stats.',
@@ -102,6 +114,7 @@ const allProjects: Projects = [
     kind: 'side',
     screenshot: 'tobiaswust.de/fnlockbar',
     screenshotCrop: 'top',
+    moreScreenshots: ['tobiaswust.de/fnlockbar-2'],
     result: 'Free download on GitHub.',
     year: 2026,
     shortDescription: 'macOS Menu Bar App for the fn Key',

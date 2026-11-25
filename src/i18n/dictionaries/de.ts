@@ -78,6 +78,9 @@ const de: Dictionary = {
     close: 'Projekt schließen',
     enlargeScreenshot: 'Screenshot vergrößern',
     closeScreenshot: 'Screenshot schließen',
+    previousScreenshot: 'Vorheriger Screenshot',
+    nextScreenshot: 'Nächster Screenshot',
+    showScreenshot: 'Screenshot zeigen',
   },
   why: {
     heading: 'Warum Erfahrung mit KI wichtiger wird',
