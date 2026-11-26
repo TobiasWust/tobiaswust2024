@@ -81,7 +81,7 @@ export default function Footer() {
         </Link>
       </div>
       <div>
-        <a className="link" href={`https://games.wust.dev/${lang}/`}>
+        <a className="link" href={`https://littlelift.games/en/games/`}>
           {t.footer.games} <span aria-hidden="true">↗</span>
         </a>
         <a className="link" href={lang === 'de' ? 'https://blog.tobiaswust.de/' : 'https://blog.wust.dev/'}>

@@ -91,7 +91,7 @@ const allProjects: Projects = [
     description:
       'wust.dev games collects my small browser games in one place: free, without ads and without sign-up, and they also work offline. Right now there are six: Thermikdoku, a logic puzzle with paragliders, One More Slice, a cosy cake sliding puzzle with over 500 levels, GlideSweeper, Minesweeper in the sky without numbers, Shuttle Jam, a parking puzzle at the landing field, Thermalcenter 2, where you learn to centre thermals with two brake lines, and Morserunner 2, which teaches Morse code over 100 stations. You can search, filter by category and tag, keep favourites and sort by popularity, which comes from anonymous counters for game starts and hearts. The site is generated statically with a small Node.js build script and runs on Netlify, with one serverless function for the counters.',
     skills: ['javascript', 'nodejs', 'html-5', 'css-3'],
-    url: 'https://games.wust.dev',
+    url: 'https://littlelift.games/en/games/',
   },
   {
     label: 'Thermikdoku',
