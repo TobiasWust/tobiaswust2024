@@ -89,7 +89,7 @@ const allProjects: Projects = [
     moreScreenshots: ['/littlelift-games-2.jpg'],
     shortDescription: 'Small Games With a Little Lift',
     description:
-      'Little Lift Games is my small minigame studio: short, friendly games for in between, a round on the train or during a coffee break. In the browser they are free, without ads and without sign-up, and many also work offline. Right now there are six: Thermix, a comic-style sorting puzzle with 3D paragliders in Alpine thermals, Morserunner 2, which teaches Morse code over 100 stations, Shuttle Jam, a parking puzzle at the landing field, Thermikdoku, a logic puzzle with paragliders, One More Slice, a cosy cake sliding puzzle, and GlideSweeper, Minesweeper in the sky without numbers. The name comes from paragliding, where lift is the rising air that carries you up, and paragliders, clouds and thermals float through several of the games. On the game shelf you can search, filter by category and tag, keep favourites and sort by popularity, which comes from anonymous counters for game starts and hearts. The site is generated statically with a small Node.js build script and runs on Netlify, with one serverless function for the counters.',
+      'Little Lift Games is my small minigame studio: short, friendly puzzle and skill games for in between, many of them with paragliders, clouds and thermals. In the browser they are free, without ads and without sign-up, and many also work offline. The site is generated statically with a small Node.js build script and runs on Netlify.',
     skills: ['javascript', 'nodejs', 'html-5', 'css-3'],
     url: 'https://littlelift.games/en/',
   },
