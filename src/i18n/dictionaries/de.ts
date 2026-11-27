@@ -250,7 +250,7 @@ const de: Dictionary = {
     },
     thermikdoku: {
       shortDescription: 'Logikrätsel mit Gleitschirmen',
-      description: 'Thermikdoku ist ein Logikrätsel mit Gleitschirmen, gemacht fürs Handy: In jede Reihe, jede Spalte und jede farbige Thermik-Zone gehört genau ein Schirm, und die Schirme dürfen sich nicht berühren, auch nicht schräg. Jedes Rätsel wird prozedural erzeugt, hat genau eine Lösung und ist ohne Raten lösbar. Ein Logik-Löser ordnet die Rätsel in vier Schwierigkeitsstufen ein und steckt auch hinter den Tipps, die den nächsten Denkschritt erklären. Dazu gibt es einen täglichen Tagesflug mit Serienzähler, niedliche handgemalte Figuren, Combos, Konfetti und Synth-Sounds.',
+      description: 'Thermikdoku ist ein Logikrätsel mit Gleitschirmen, gemacht fürs Handy: In jede Reihe, jede Spalte und jede farbige Thermik-Zone gehört genau ein Schirm, und kein Schirm darf einen anderen berühren. Jedes Rätsel wird prozedural erzeugt und ist ohne Raten lösbar, ein Logik-Löser stuft die Schwierigkeit ein und erklärt als Tipp den nächsten Denkschritt. Dazu gibt es einen täglichen Tagesflug mit Serienzähler.',
       result: 'Live als kostenlose, werbefreie PWA, die auch offline funktioniert.',
     },
     repylo: {
